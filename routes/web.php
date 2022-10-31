@@ -18,15 +18,16 @@ use Illuminate\Support\Facades\Route;
 //( From here i'm using the Routing for backend ---->)
 
 
-Route::get('/',[backendController::class,'home']);
 Route::get('/frontend',[backendController::class,'frontend']);
 
 
-Route::get('/parents',[backendController::class,'parentsPage']);
-Route::get('/students',[backendController::class,'studentsPage']);
-Route::get('/tutor',[backendController::class,'tutorPage']);
-Route::get('/tution',[backendController::class,'tutionPage']);
-Route::get('/payments',[backendController::class,'paymentsPage']);
-Route::get('/service',[backendController::class,'servicePage']);
-Route::get('/contact',[backendController::class,'contactPage']);
-Route::get('/about',[backendController::class,'aboutPage']);
+
+Route::get('/',[backendController::class,'home'])->name('base-url');
+Route::get('/parents',[backendController::class,'parentsPage'])->name('parents-url');
+Route::get('/students',[backendController::class,'studentsPage'])->name('students-url');
+Route::get('/tutor',[backendController::class,'tutorPage'])->name('tutor-url');
+Route::get('/tution',[backendController::class,'tutionPage'])->name('tution-url');
+Route::get('/payments',[backendController::class,'paymentsPage'])->name('payment-url');
+Route::get('/service',[backendController::class,'servicePage'])->name('service-url');
+Route::get('/contact',[backendController::class,'contactPage'])->name('contact-url');
+Route::get('/about',[backendController::class,'aboutPage'])->name('about-url');
