@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\backendController;
+use App\Http\Controllers\parentsController;
+use App\Http\Controllers\studentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,3 +33,17 @@ Route::get('/payments',[backendController::class,'paymentsPage'])->name('payment
 Route::get('/service',[backendController::class,'servicePage'])->name('service-url');
 Route::get('/contact',[backendController::class,'contactPage'])->name('contact-url');
 Route::get('/about',[backendController::class,'aboutPage'])->name('about-url');
+
+
+
+
+
+Route::get('/createpage',[parentsController::class,'createPage'])->name('create.page');
+
+Route::post('/create/form',[parentsController::class,'store'])->name('category.store');
+
+//students page route
+
+Route::get('/createstdpage',[studentController::class,'stdPage'])->name('stdpage');
+
+ROute::post('/std_form_fillup',[studentController::class,'std_store'])->name('std_storepage');

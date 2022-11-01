@@ -2,6 +2,8 @@
 
 @section('content')
 
-<h1>hiii.....students</h1>
+<a href="{{route('stdpage')}}">
+    <span class="btn btn-success">+Create New Form</span>
+</a>
 
 @endsection

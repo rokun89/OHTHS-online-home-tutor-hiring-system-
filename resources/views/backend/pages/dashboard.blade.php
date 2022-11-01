@@ -2,8 +2,10 @@
 
 @section('content')
 
-<h1>this is dashboard</h1>
-
+<a href="{{route('create.page')}}">
+    <span class="btn btn-success">+Create New Form</span>
+</a>
+shbjhb
 
 
 @endsection
