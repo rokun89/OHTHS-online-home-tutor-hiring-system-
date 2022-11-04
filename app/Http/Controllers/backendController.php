@@ -12,13 +12,9 @@ class backendController extends Controller
     public function home()
     {
      
-      //return view('backend.master');
+      //return view('backend.master');   
 
-      $test=parents::all(); //for query select * from categories; this the method
-   
-        //dd($test);
-
-      return view('backend.pages.dashboard',compact('test')); 
+      return view('backend.pages.dashboard'); 
     }
 
 
@@ -29,12 +25,18 @@ public function frontend()
         
 
 
+
     //*Thoose are the for pages controller
 
 public function parentsPage()
 {
-    return view('backend.pages.parents');
+    $test=parents::all(); //for query select * from categories; this the method
+
+    //dd($test);
+
+    return view('backend.pages.parents',compact('test'));
 }
+
 
 
 

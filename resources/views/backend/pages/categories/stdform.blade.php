@@ -48,7 +48,7 @@
       </label>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
+  <button type="submit" class="btn btn-primary">submit</button>
 </form>
 
 

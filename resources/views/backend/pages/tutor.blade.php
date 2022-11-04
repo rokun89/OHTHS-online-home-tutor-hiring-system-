@@ -2,6 +2,11 @@
 
 @section('content')
 
-<h1>Hii ...........Tutor</h1>
+<a href="#">
+    <span class="btn btn-success">+Create New Form</span>
+</a>
+
+
+
 
 @endsection
