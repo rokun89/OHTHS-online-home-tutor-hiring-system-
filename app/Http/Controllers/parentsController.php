@@ -11,6 +11,7 @@ class parentsController extends Controller
 
     public function createPage()
 {
+  
     return view('backend.pages.categories.create');
 }
 

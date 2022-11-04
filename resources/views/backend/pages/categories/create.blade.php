@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <form action="{{route('category.store')}}" method="post">
     @csrf
 

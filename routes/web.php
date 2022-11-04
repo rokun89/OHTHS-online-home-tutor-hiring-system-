@@ -36,7 +36,7 @@ Route::get('/about',[backendController::class,'aboutPage'])->name('about-url');
 
 
 
-
+//parents controller route
 
 Route::get('/createpage',[parentsController::class,'createPage'])->name('create.page');
 

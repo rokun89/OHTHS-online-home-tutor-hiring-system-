@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{url('logo.png')}}">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>Online Home Tutor Hiring System</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/dashboard/">
 

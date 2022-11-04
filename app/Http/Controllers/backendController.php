@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\parents;
+use App\Models\students;
 use Illuminate\Http\Request;
 
 class backendController extends Controller
@@ -11,8 +13,15 @@ class backendController extends Controller
     {
      
       //return view('backend.master');
-      return view('backend.pages.dashboard'); 
+
+      $test=parents::all(); //for query select * from categories; this the method
+   
+        //dd($test);
+
+      return view('backend.pages.dashboard',compact('test')); 
     }
+
+
 public function frontend()
     {
         return view('frontend.frontend'); //simple frontend controller
@@ -27,10 +36,17 @@ public function parentsPage()
     return view('backend.pages.parents');
 }
 
+
+
 public function studentsPage()
 {
-    return view('backend.pages.students');
+    $test2=students::all();
+
+    return view('backend.pages.students',compact('test2'));
+    
 }
+
+
 
 public function tutorPage()
 {
