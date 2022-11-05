@@ -3,6 +3,7 @@
 use App\Http\Controllers\backendController;
 use App\Http\Controllers\parentsController;
 use App\Http\Controllers\studentController;
+use App\Http\Controllers\tutorsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,14 +37,23 @@ Route::get('/about',[backendController::class,'aboutPage'])->name('about-url');
 
 
 
-//parents controller route
+//parents form controller route
 
 Route::get('/createpage',[parentsController::class,'createPage'])->name('create.page');
 
 Route::post('/create/form',[parentsController::class,'store'])->name('category.store');
 
-//students page route
+
+
+//students form route
 
 Route::get('/createstdpage',[studentController::class,'stdPage'])->name('stdpage');
 
 ROute::post('/std_form_fillup',[studentController::class,'std_store'])->name('std_storepage');
+
+
+
+//tutor form route
+
+Route::get('/tutor-form',[tutorsController::class,'tutorForm'])->name('tutor.form.page');
+Route::post('/tutor-form-store',[tutorsController::class,'tutor_store'])->name('tutor.store.page');

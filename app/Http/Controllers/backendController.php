@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\parents;
 use App\Models\students;
+use App\Models\Tutors;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 
 class backendController extends Controller
@@ -52,8 +54,15 @@ public function studentsPage()
 
 public function tutorPage()
 {
-    return view('backend.pages.tutor');
+    $tutor=Tutors::all();
+
+
+    return view('backend.pages.tutor',compact('tutor'));
 }
+
+
+
+
 
 public function tutionPage()
 {

@@ -38,16 +38,16 @@
       <input type="text" class="form-control" id="inputCity">
     </div>
     
+    <div>
+  <label for="">Select Status</label>
+    <select name="status" id="" class="form-control">
+  <option value="active">Active</option>
+ <option value="inactive">Inactive</option>
+    </select>
+ </div>
     
   </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input name="status" class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Status
-      </label>
-    </div>
-  </div>
+
   <button type="submit" class="btn btn-primary">submit</button>
 </form>
 

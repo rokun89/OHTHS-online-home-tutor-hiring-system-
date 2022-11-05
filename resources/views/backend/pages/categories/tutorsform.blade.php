@@ -2,8 +2,13 @@
 
 @section('content')
 
-<form action="{{route('category.store')}}" method="post">
-    @csrf
+
+
+<form action="{{route('tutor.store.page')}}" method="post">
+
+@csrf
+
+
 
 <div class="form-group">
     <label for="inputAddress2">Name</label>
@@ -18,12 +23,23 @@
       <label for="inputPassword4">Password</label>
       <input name="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
     </div>
-    <div class="form-group">
+    <div class="form-group col-md-6">
     <label for="inputAddress2">Contact</label>
-    <input name="contact" type="text" class="form-control" id="inputAddress2" placeholder="Enter Your contact Here">
+    <input name="phone" type="number" class="form-control" id="inputAddress2" placeholder="Enter Your Contact Info">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="inputAddress2">N-ID</label>
+    <input name="n_id" type="number" class="form-control" id="inputAddress2" placeholder="Your n-id">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="inputAddress2">Subject</label>
+    <input name="subject" type="text" class="form-control" id="inputAddress2" placeholder="Enter your subject">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="inputAddress2">Salary</label>
+    <input name="salary" type="number" class="form-control" id="inputAddress2" placeholder="$">
   </div>
   </div>
-  
   <div class="form-group">
     <label for="inputAddress">Address</label>
     <input name="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
@@ -31,39 +47,30 @@
 
   <div>
     <label for="">Enter description</label>
-    <textarea  class="form-control" name="description" id="" cols="" rows="" placeholder="Enter Description"></textarea>
+    <input type="text"  class="form-control" name="description" id="" cols="" rows="" placeholder="Enter Description"></textarea>
   </div>
 
   <div>
     <label for="">Occupation</label>
-    <textarea  class="form-control" name="occupation" id="" cols="" rows="" placeholder="Enter Occupation"></textarea>
+    <input type="text"  class="form-control" name="occupation" id="" cols="" rows="" placeholder="Enter Occupation"></textarea>
   </div>
 
-  
-  <div class="form-group">
-    <label for="inputAddress2">n-id</label>
-    <input name="n_id" type="text" class="form-control" id="inputAddress2" placeholder="Enter Your n-id Here">
-  </div>
-  
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input name="city" type="text" class="form-control" id="inputCity">
-    </div>
-
-    <div>
+    <div class="form-group col-md-2">
   <label for="">Status</label>
     <select name="status" id="" class="form-control">
   <option value="active">Active</option>
  <option value="inactive">Inactive</option>
     </select>
  </div>
-
-
+    </div>
+  
+  <div>
+  <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 
-  <button type="submit" class="btn btn-primary">submit</button>
 </form>
+
 
 
 

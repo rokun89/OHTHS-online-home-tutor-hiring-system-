@@ -12,7 +12,7 @@ class parentsController extends Controller
     public function createPage()
 {
   
-    return view('backend.pages.categories.create');
+    return view('backend.pages.categories.parentsform');
 }
 
 public function store(Request $request)
@@ -24,9 +24,11 @@ public function store(Request $request)
         'email'=>$request->email,
         'login_pass'=>$request->password,
         'address'=>$request->address,
-        'status'=>$request->check_me_out,
+        'status'=>$request->status,
         'contact'=>$request->contact,
         'n_id'=>$request->n_id,
+        'description'=>$request->description,
+        'occupation'=>$request->occupation,
       ]); 
 
       return redirect()->back();
