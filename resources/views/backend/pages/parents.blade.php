@@ -7,6 +7,12 @@
     <span class="btn btn-success">+Create New Form</span>
 </a>
 
+@if(Session('message'))
+ <div class="alert alert-success">{{session('message')}}
+  
+ </div> 
+
+@endif
 
 <h1>Parents Table</h1>
 

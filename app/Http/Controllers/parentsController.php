@@ -31,7 +31,7 @@ public function store(Request $request)
         'occupation'=>$request->occupation,
       ]); 
 
-      return redirect()->back();
+      return redirect(route('parents-url'))->with('message','Submitted Successfully!');
 
 
       

@@ -27,7 +27,7 @@ public function std_store(Request $stdvar)
         'status'=>$stdvar->status,
     ]);
 
-return redirect()->back();
+    return redirect(route('students-url'))->with('message','Submitted Successfully!');
 
 
 }

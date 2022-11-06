@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\parents;
+use App\Models\Payments;
 use App\Models\students;
 use App\Models\Tutors;
 use GuzzleHttp\Promise\Create;
@@ -69,10 +70,18 @@ public function tutionPage()
     return view('backend.pages.tution');
 }
 
+
+
+
 public function paymentsPage()
 {
-    return view('backend.pages.payments');
+    $payment=Payments::all();
+
+    return view('backend.pages.payments',compact('payment'));
 }
+
+
+
 
 public function servicePage()
 {

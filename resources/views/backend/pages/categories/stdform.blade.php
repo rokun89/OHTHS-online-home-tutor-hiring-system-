@@ -3,6 +3,7 @@
 @section('content')
 
 
+
 <form action="{{route('std_storepage')}}" method="post">
     @csrf
 

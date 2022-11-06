@@ -32,7 +32,7 @@ class tutorsController extends Controller
 
         ]);
 
-        return redirect()->back();
+        return redirect(route('tutor-url'))->with('message','Submitted Successfully!');
 
     }
     

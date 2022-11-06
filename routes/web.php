@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\backendController;
 use App\Http\Controllers\parentsController;
+use App\Http\Controllers\paymentsController;
 use App\Http\Controllers\studentController;
 use App\Http\Controllers\tutorsController;
 use Illuminate\Support\Facades\Route;
@@ -57,3 +58,9 @@ ROute::post('/std_form_fillup',[studentController::class,'std_store'])->name('st
 
 Route::get('/tutor-form',[tutorsController::class,'tutorForm'])->name('tutor.form.page');
 Route::post('/tutor-form-store',[tutorsController::class,'tutor_store'])->name('tutor.store.page');
+
+
+//Payments form route
+
+Route::get('/payments-form',[paymentsController::class,'payments_form_page'])->name('payments.form');
+Route::post('/payments-form-store',[paymentsController::class,'payments_store'])->name('payments.store.page');

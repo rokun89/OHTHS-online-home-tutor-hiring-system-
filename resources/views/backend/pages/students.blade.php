@@ -7,6 +7,10 @@
 </a>
 <h1>Student Table</h1>
 
+@if(Session('message'))
+<div> <div class="alert alert-success">{{session('message')}}</div> </div>
+
+@endif
 
 <table class="table">
   <thead>
