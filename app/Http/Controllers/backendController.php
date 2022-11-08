@@ -33,7 +33,7 @@ public function frontend()
 
 public function parentsPage()
 {
-    $test=parents::all(); //for query select * from categories; this the method
+    $test=parents::paginate(6); //for query select * from categories; this the method
 
     //dd($test);
 

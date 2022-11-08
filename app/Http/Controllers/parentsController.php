@@ -15,9 +15,14 @@ class parentsController extends Controller
     return view('backend.pages.categories.parentsform');
 }
 
+
+
 public function store(Request $request)
 {
-    //dd($request->all());
+  //dd($request->all());
+  
+  $request->validate(['name'=>'required']);
+    
 
       parents::create([
         'name'=>$request->name,

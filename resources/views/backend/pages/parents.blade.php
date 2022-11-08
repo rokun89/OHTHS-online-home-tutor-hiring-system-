@@ -8,9 +8,7 @@
 </a>
 
 @if(Session('message'))
- <div class="alert alert-success">{{session('message')}}
-  
- </div> 
+ <div class="alert alert-success">{{session('message')}}</div> 
 
 @endif
 
@@ -56,5 +54,7 @@
     @endforeach
   </tbody>
 </table>
+
+{{$test->links()}}
 
 @endsection
