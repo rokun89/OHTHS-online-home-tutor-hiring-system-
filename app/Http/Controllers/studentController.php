@@ -17,9 +17,18 @@ public function std_store(Request $stdvar)
 {
     //dd($stdvar->all());
 
+    $testName=null;
+    if($stdvar->hasFile('image'))
+        {
+            
+            $testName=date('Ymdhmi').'.'.$stdvar->file('image')->getClientOriginalExtension();
+            $stdvar->file('image')->storeAs('/uploads',$testName);
+        }
+
 
     students::create([
         'name'=>$stdvar->name,
+        'images'=>$testName,
         'email'=>$stdvar->email,
         'contact'=>$stdvar->contact,
         'login_pass'=>$stdvar->password,

@@ -4,8 +4,14 @@
 
 
 
-<form action="{{route('std_storepage')}}" method="post">
+<form action="{{route('std_storepage')}}" method="post" enctype="multipart/form-data">
+
     @csrf
+
+    <div class="form-group">
+    <label for="inputAddress2">Images</label>
+    <input name="image" type="file" class="form-control" id="" placeholder="">
+  </div>    
 
 <div class="form-group">
     <label for="inputAddress2">Name</label>

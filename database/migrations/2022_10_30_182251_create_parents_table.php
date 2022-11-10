@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('parents', function (Blueprint $table) {
 
             $table->id();
+            $table->string('images');
             $table->string('name');
             $table->string('email');
             $table->string('contact');
