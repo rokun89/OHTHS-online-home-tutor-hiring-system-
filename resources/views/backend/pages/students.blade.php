@@ -44,5 +44,9 @@
     </tr>
 
     @endforeach
+    </tbody>
+</table>
+
+{{$test2->links()}}
 
 @endsection

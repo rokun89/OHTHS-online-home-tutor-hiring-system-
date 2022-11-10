@@ -52,6 +52,7 @@
   </tbody>
 </table>
 
+{{$tutor->links()}}
 
 
 @endsection

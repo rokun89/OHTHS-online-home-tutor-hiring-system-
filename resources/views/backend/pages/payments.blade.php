@@ -49,5 +49,6 @@
   </tbody>
 </table>
 
+{{$payment->links()}}
 
 @endsection

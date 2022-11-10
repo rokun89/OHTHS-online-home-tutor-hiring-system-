@@ -33,7 +33,7 @@ public function frontend()
 
 public function parentsPage()
 {
-    $test=parents::paginate(6); //for query select * from categories; this the method
+    $test=parents::paginate(5); //for query select * from categories; this the method
 
     //dd($test);
 
@@ -45,7 +45,7 @@ public function parentsPage()
 
 public function studentsPage()
 {
-    $test2=students::all();
+    $test2=students::paginate(5);
 
     return view('backend.pages.students',compact('test2'));
     
@@ -55,7 +55,7 @@ public function studentsPage()
 
 public function tutorPage()
 {
-    $tutor=Tutors::all();
+    $tutor=Tutors::paginate(5);
 
 
     return view('backend.pages.tutor',compact('tutor'));
@@ -75,7 +75,7 @@ public function tutionPage()
 
 public function paymentsPage()
 {
-    $payment=Payments::all();
+    $payment=Payments::paginate(5);
 
     return view('backend.pages.payments',compact('payment'));
 }
