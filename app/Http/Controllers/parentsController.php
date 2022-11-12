@@ -22,9 +22,24 @@ public function store(Request $request)
   //dd($request->all());
   
   $request->validate(['name'=>'required']);
+  $request->validate(['images'=>'required']);
+  $request->validate(['email,'=>'required']);
+  $request->validate(['contact'=>'required']);
+  $request->validate(['n_id'=>'required']);
+  $request->validate(['address'=>'required']);
+
+
+  $parentsvarName=null;
+  if($request->hasFile('image'))
+      {
+          
+          $parentsvarName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+          $request->file('image')->storeAs('/uploads',$parentsvarName);
+      }
     
 
       parents::create([
+        'images'=>$parentsvarName,
         'name'=>$request->name,
         'email'=>$request->email,
         'login_pass'=>$request->password,

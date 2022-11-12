@@ -19,6 +19,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th scope="col">images</th>
       <th scope="col">id</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
@@ -35,6 +36,9 @@
 
     <tr>
       <th scope="row">{{$data->id}}</th>
+      <td>
+      <img width="40px" style="border-radius: 10px" src="{{url('/uploads/'.$data->images)}}" alt="Show-img">
+      </td>
       <td>{{$data->name}}</td>
       <td>{{$data->email}}</td>
       <td>{{$data->contact}}</td>

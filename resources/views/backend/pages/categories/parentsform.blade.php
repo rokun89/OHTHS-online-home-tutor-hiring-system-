@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{route('category.store')}}" method="post">
+<form action="{{route('category.store')}}" method="post" enctype="multipart/form-data">
 
 @if($errors->any())
   @foreach($errors->all() as $message)
@@ -14,8 +14,12 @@
   @csrf
 
 
-
 <div class="form-group">
+    <label for="inputAddress2">Images</label>
+    <input require name="images" type="file" class="form-control" id="inputAddress2" placeholder="Enter Your Name Here">
+  </div>
+
+  <div class="form-group">
     <label for="inputAddress2">Name</label>
     <input require name="name" type="text" class="form-control" id="inputAddress2" placeholder="Enter Your Name Here">
   </div>
