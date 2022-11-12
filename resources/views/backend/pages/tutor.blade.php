@@ -14,10 +14,12 @@
 
 <h1>Tutor Table</h1>
 
+
 <table class="table">
   <thead>
     <tr>
       <th scope="col">id</th>
+      <th scope="col">Images</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Contact</th>
@@ -33,6 +35,9 @@
 
     <tr>
       <th scope="row">{{$data->id}}</th>
+      <td>
+      <img width="50px" style="border-radius: 10px" src="{{url('/uploads/'.$data->images)}}" alt="click_image">
+      </td>
       <td>{{$data->name}}</td>
       <td>{{$data->email}}</td>
       <td>{{$data->contact}}</td>

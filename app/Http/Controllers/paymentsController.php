@@ -17,6 +17,12 @@ class paymentsController extends Controller
     {
         //dd($paymentsvar->all());
 
+        /*$paymentsvar->validate(['payment_date'=>'required']);
+        $paymentsvar->validate(['parent_student_name'=>'required']);
+        $paymentsvar->validate(['parent_student_contact'=>'required']);
+        $paymentsvar->validate(['payment_amount'=>'required']);*/
+
+
         Payments::create([
             'payment_date'=>$paymentsvar->date,
             'parent_student_name'=>$paymentsvar->name,

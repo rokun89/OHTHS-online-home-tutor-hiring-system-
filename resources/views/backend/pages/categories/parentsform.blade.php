@@ -32,15 +32,19 @@
       <label for="inputPassword4">Password</label>
       <input required name="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
     </div>
-    <div class="form-group">
+    <div class="form-group col-md-6">
     <label for="inputAddress2">Contact</label>
     <input required name="contact" type="text" class="form-control" id="inputAddress2" placeholder="Enter Your contact Here">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="inputAddress2">n-id</label>
+    <input required name="n_id" type="text" class="form-control" id="inputAddress2" placeholder="Enter Your n-id Here">
   </div>
   </div>
   
   <div class="form-group">
     <label for="inputAddress">Address</label>
-    <input require name="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    <input required name="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
   </div>
 
   <div>
@@ -51,12 +55,6 @@
   <div>
     <label for="">Occupation</label>
     <textarea  class="form-control" name="occupation" id="" cols="" rows="" placeholder="Enter Occupation"></textarea>
-  </div>
-
-  
-  <div class="form-group">
-    <label for="inputAddress2">n-id</label>
-    <input required name="n_id" type="text" class="form-control" id="inputAddress2" placeholder="Enter Your n-id Here">
   </div>
   
   <div class="form-row">

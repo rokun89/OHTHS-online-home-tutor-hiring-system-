@@ -17,8 +17,30 @@ class tutorsController extends Controller
     {
         //dd($tutorvar->all());
 
+        /*$tutorvar->validate(['name'=>'required']);
+        $tutorvar->validate(['images'=>'required']);
+        $tutorvar->validate(['email'=>'required']);
+        $tutorvar->validate(['contact'=>'required']);
+        $tutorvar->validate(['n_id'=>'required']);
+        $tutorvar->validate(['address'=>'required']);
+        $tutorvar->validate(['subject'=>'required']);
+        $tutorvar->validate(['salary'=>'required']); */
+
+
+
+            $tutorimgName=null;
+        if($tutorvar->hasFile('images'))
+        {
+           
+            $tutorimgName=date('Ymdhmi').'.'.$tutorvar->file('images')->getClientOriginalExtension();
+            $tutorvar->file('images')->storeAs('/uploads',$tutorimgName);
+        }
+
+
+
         Tutors::create([
             'name'=>$tutorvar->name,
+            'images'=>$tutorimgName,
             'email'=>$tutorvar->email,
             'contact'=>$tutorvar->phone,
             'n_id'=>$tutorvar->n_id,

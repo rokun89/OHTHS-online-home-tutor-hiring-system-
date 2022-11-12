@@ -21,7 +21,7 @@ public function store(Request $request)
 {
   //dd($request->all());
   
- $request->validate(['name'=>'required']);
+  $request->validate(['name'=>'required']);
   $request->validate(['images'=>'required']);
   $request->validate(['email'=>'required']);
   $request->validate(['contact'=>'required']);

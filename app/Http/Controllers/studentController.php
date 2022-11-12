@@ -17,6 +17,12 @@ public function std_store(Request $stdvar)
 {
     //dd($stdvar->all());
 
+  $stdvar->validate(['name'=>'required']);
+  $stdvar->validate(['images'=>'required']);
+  $stdvar->validate(['email'=>'required']);
+  $stdvar->validate(['contact'=>'required']);
+  $stdvar->validate(['address'=>'required']);
+
     $testName=null;
     if($stdvar->hasFile('image'))
         {
