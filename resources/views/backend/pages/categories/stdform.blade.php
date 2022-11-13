@@ -10,7 +10,7 @@
 
     <div class="form-group">
     <label for="inputImages">Images</label>
-    <input required name="image" type="file" class="form-control" id="" placeholder="">
+    <input required name="images" type="file" class="form-control" id="" placeholder="">
   </div>    
 
 <div class="form-group">

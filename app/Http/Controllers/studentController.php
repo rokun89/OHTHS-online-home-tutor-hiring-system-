@@ -17,18 +17,18 @@ public function std_store(Request $stdvar)
 {
     //dd($stdvar->all());
 
-  $stdvar->validate(['name'=>'required']);
+  /*$stdvar->validate(['name'=>'required']);
   $stdvar->validate(['images'=>'required']);
   $stdvar->validate(['email'=>'required']);
   $stdvar->validate(['contact'=>'required']);
-  $stdvar->validate(['address'=>'required']);
+  $stdvar->validate(['address'=>'required']);*/
 
     $testName=null;
-    if($stdvar->hasFile('image'))
+    if($stdvar->hasFile('images'))
         {
             
-            $testName=date('Ymdhmi').'.'.$stdvar->file('image')->getClientOriginalExtension();
-            $stdvar->file('image')->storeAs('/uploads',$testName);
+            $testName=date('Ymdhmi').'.'.$stdvar->file('images')->getClientOriginalExtension();
+            $stdvar->file('images')->storeAs('/uploads',$testName);
         }
 
 
