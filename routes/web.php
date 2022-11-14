@@ -5,6 +5,7 @@ use App\Http\Controllers\parentsController;
 use App\Http\Controllers\paymentsController;
 use App\Http\Controllers\studentController;
 use App\Http\Controllers\tutorsController;
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/frontend',[backendController::class,'frontend']);
 
 
+
+
+Route::get('/login',[userController::class,'login'])->name('login');
+Route::post('/do-login',[userController::class,'doLogin'])->name('do.login');
+
+
+//Route Group Given below==>>
+
+
+Route::group(['middleware'=>'auth'],function() {
+    Route::get('/logout',[userController::class,'logout'])->name('logout');
+    
 
 Route::get('/',[backendController::class,'home'])->name('base-url');
 Route::get('/parents',[backendController::class,'parentsPage'])->name('parents-url');
@@ -64,3 +77,8 @@ Route::post('/tutor-form-store',[tutorsController::class,'tutor_store'])->name('
 
 Route::get('/payments-form',[paymentsController::class,'payments_form_page'])->name('payments.form');
 Route::post('/payments-form-store',[paymentsController::class,'payments_store'])->name('payments.store.page');
+
+
+});
+
+
