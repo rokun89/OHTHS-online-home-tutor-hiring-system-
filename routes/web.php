@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\backendController;
+use App\Http\Controllers\frontend\websiteHomeController;
 use App\Http\Controllers\parentsController;
 use App\Http\Controllers\paymentsController;
 use App\Http\Controllers\studentController;
@@ -19,13 +20,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//( From here i'm using the Routing for Frontend ---->)
+
+Route::get('/f',[websiteHomeController::class,'webhome'])->name('web.home');
+
+
+
+
+
+
+
 
 //( From here i'm using the Routing for backend ---->)
-
-
-Route::get('/frontend',[backendController::class,'frontend']);
-
-
 
 
 Route::get('/login',[userController::class,'login'])->name('login');

@@ -23,7 +23,7 @@ class backendController extends Controller
 
 public function frontend()
     {
-        return view('frontend.frontend'); //simple frontend controller
+        return view('frontend.master'); //simple frontend controller
     }
         
 
