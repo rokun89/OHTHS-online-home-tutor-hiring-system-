@@ -25,6 +25,7 @@
                   Tutor
                 </a>
               </li>
+              
               <li class="nav-item">
                 <a class="nav-link" href="{{route('tution-url')}}">
                   <span data-feather="bar-chart-2"></span>
@@ -32,9 +33,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route('payment-url')}}">
+                <a class="nav-link" href="{{route('subject-url')}}">
                   <span data-feather="layers"></span>
-                  Payment
+                  Subject
                 </a>
               </li>
               <li class="nav-item">

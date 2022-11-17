@@ -73,7 +73,7 @@ public function tutionPage()
 
 
 
-public function paymentsPage()
+public function subjectPage()
 {
     $payment=Payments::paginate(5);
 

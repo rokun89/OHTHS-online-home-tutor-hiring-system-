@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 //( From here i'm using the Routing for Frontend ---->)
 
-Route::get('/f',[websiteHomeController::class,'webhome'])->name('web.home');
+Route::get('/',[websiteHomeController::class,'webhome'])->name('web.home');
 
 
 
@@ -41,7 +41,7 @@ Route::post('/do-login',[userController::class,'doLogin'])->name('do.login');
 //Route Group Given below==>>
 
 
-Route::group(['middleware'=>'auth'],function() {
+Route::group(['middleware'=>'auth','prefix'=>'admin'],function() {
     Route::get('/logout',[userController::class,'logout'])->name('logout');
     
 
@@ -50,7 +50,7 @@ Route::get('/parents',[backendController::class,'parentsPage'])->name('parents-u
 Route::get('/students',[backendController::class,'studentsPage'])->name('students-url');
 Route::get('/tutor',[backendController::class,'tutorPage'])->name('tutor-url');
 Route::get('/tution',[backendController::class,'tutionPage'])->name('tution-url');
-Route::get('/payments',[backendController::class,'paymentsPage'])->name('payment-url');
+Route::get('/subject',[backendController::class,'subjectPage'])->name('subject-url');
 Route::get('/service',[backendController::class,'servicePage'])->name('service-url');
 Route::get('/contact',[backendController::class,'contactPage'])->name('contact-url');
 Route::get('/about',[backendController::class,'aboutPage'])->name('about-url');

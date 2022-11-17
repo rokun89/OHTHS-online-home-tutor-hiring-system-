@@ -31,41 +31,19 @@
 		<div class="loader"></div>
 	</div>
 
-	<!-- Header section -->
-	<header class="header-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-3">
-					<div class="site-logo">
-						<img src="img/logo.png" alt="">
-					</div>
-					<div class="nav-switch">
-						<i class="fa fa-bars"></i>
-					</div>
-				</div>
-				<div class="col-lg-9 col-md-9">
-					<a href="" class="site-btn header-btn">Login</a>
-					<nav class="main-menu">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="#">Parents/Students</a></li>
-							<li><a href="{{url('/frontend/courses.html')}}">Tutor</a></li>
-							<li><a href="blog.html">News</a></li>
-							<li><a href="contact.html">Contact</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- Header section end -->
+	
+
+
+	@include('frontend.fixed.header')
+
+
 
 
 	<!-- Hero section -->
 	<section class="hero-section set-bg" data-setbg="{{url('/frontend/images/bg.jpg')}}">
 		<div class="container">
 			<div class="hero-text text-white">
-				<h2>Get The Best Home Tutor</h2>
+				<h2>Hire The Best Home Tutor.</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla <br> dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
 			</div>
 			<div class="row">
@@ -93,66 +71,66 @@
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/1.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="{{url('/frontend/images/math.jpg')}}"></div>
 						<div class="ci-text">
-							<h5>IT Development</h5>
+							<h5>Math</h5>
 							<p>Lorem ipsum dolor sit amet, consectetur</p>
-							<span>120 Courses</span>
+							<span>10 Courses</span>
 						</div>
 					</div>
 				</div>
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/2.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="{{url('/frontend/images/physics.jpg')}}"></div>
 						<div class="ci-text">
-							<h5>Web Design</h5>
+							<h5>Physics</h5>
 							<p>Lorem ipsum dolor sit amet, consectetur</p>
-							<span>70 Courses</span>
+							<span>10 Courses</span>
 						</div>
 					</div>
 				</div>
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/3.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="{{url('/frontend/images/chm.jpg')}}"></div>
 						<div class="ci-text">
-							<h5>Illustration & Drawing</h5>
+							<h5>Chemistry</h5>
 							<p>Lorem ipsum dolor sit amet, consectetur</p>
-							<span>55 Courses</span>
+							<span>10 Courses</span>
 						</div>
 					</div>
 				</div>
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/4.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="{{url('/frontend/images/biology.jpg')}}"></div>
 						<div class="ci-text">
-							<h5>Social Media</h5>
+							<h5>Biology</h5>
 							<p>Lorem ipsum dolor sit amet, consectetur</p>
-							<span>40 Courses</span>
+							<span>15 Courses</span>
 						</div>
 					</div>
 				</div>
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/5.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="{{url('/frontend/images/eng.jpg')}}"></div>
 						<div class="ci-text">
-							<h5>Photoshop</h5>
+							<h5>English</h5>
 							<p>Lorem ipsum dolor sit amet, consectetur</p>
-							<span>220 Courses</span>
+							<span>20 Courses</span>
 						</div>
 					</div>
 				</div>
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="img/categories/6.jpg"></div>
+						<div class="ci-thumb set-bg" data-setbg="{{url('/frontend/images/ict.jpg')}}"></div>
 						<div class="ci-text">
-							<h5>Cryptocurrencies</h5>
+							<h5>ICT</h5>
 							<p>Lorem ipsum dolor sit amet, consectetur</p>
-							<span>25 Courses</span>
+							<span>15 Courses</span>
 						</div>
 					</div>
 				</div>
@@ -196,27 +174,27 @@
 		<div class="course-warp">
 			<ul class="course-filter controls">
 				<li class="control active" data-filter="all">All</li>
-				<li class="control" data-filter=".finance">Finance</li>
-				<li class="control" data-filter=".design">Design</li>
-				<li class="control" data-filter=".web">Web Development</li>
-				<li class="control" data-filter=".photo">Photography</li>
+				<li class="control" data-filter=".finance">Math</li>
+				<li class="control" data-filter=".design">Physics</li>
+				<li class="control" data-filter=".web">Chemistry</li>
+				<li class="control" data-filter=".photo">ICT</li>
 			</ul>                                       
 			<div class="row course-items-area">
 				<!-- course -->
 				<div class="mix col-lg-3 col-md-4 col-sm-6 finance">
 					<div class="course-item">
-						<div class="course-thumb set-bg" data-setbg="img/courses/1.jpg">
-							<div class="price">Price: $15</div>
+						<div class="course-thumb set-bg" data-setbg="{{url('/frontend/images/math1.jpg')}}">
+							<div class="price">Salary: 10k</div>
 						</div>
 						<div class="course-info">
 							<div class="course-text">
-								<h5>Art & Crafts</h5>
+								<h5>Math 1</h5>
 								<p>Lorem ipsum dolor sit amet, consectetur</p>
-								<div class="students">120 Students</div>
+								<div class="students">50 Students</div>
 							</div>
 							<div class="course-author">
 								<div class="ca-pic set-bg" data-setbg="img/authors/1.jpg"></div>
-								<p>William Parker, <span>Developer</span></p>
+								<p>William | <span>Mathematician</span></p>
 							</div>
 						</div>
 					</div>
@@ -224,18 +202,18 @@
 				<!-- course -->
 				<div class="mix col-lg-3 col-md-4 col-sm-6 design">
 					<div class="course-item">
-						<div class="course-thumb set-bg" data-setbg="img/courses/2.jpg">
-							<div class="price">Price: $15</div>
+						<div class="course-thumb set-bg" data-setbg="{{url('/frontend/images/physics1.jpg')}}">
+							<div class="price">Salary: 15k</div>
 						</div>
 						<div class="course-info">
 							<div class="course-text">
-								<h5>IT Development</h5>
+								<h5>Physics 1</h5>
 								<p>Lorem ipsum dolor sit amet, consectetur</p>
-								<div class="students">120 Students</div>
+								<div class="students">50 Students</div>
 							</div>
 							<div class="course-author">
 								<div class="ca-pic set-bg" data-setbg="img/authors/2.jpg"></div>
-								<p>William Parker, <span>Developer</span></p>
+								<p>Parker | <span>Physics</span></p>
 							</div>
 						</div>
 					</div>
@@ -243,18 +221,18 @@
 				<!-- course -->
 				<div class="mix col-lg-3 col-md-4 col-sm-6 web">
 					<div class="course-item">
-						<div class="course-thumb set-bg" data-setbg="img/courses/3.jpg">
-							<div class="price">Price: $15</div>
+						<div class="course-thumb set-bg" data-setbg="{{url('/frontend/images/chm1.jpg')}}">
+							<div class="price">Salary: 15k</div>
 						</div>
 						<div class="course-info">
 							<div class="course-text">
-								<h5>Graphic Design</h5>
+								<h5>Chemistry 1</h5>
 								<p>Lorem ipsum dolor sit amet, consectetur</p>
-								<div class="students">120 Students</div>
+								<div class="students">50 Students</div>
 							</div>
 							<div class="course-author">
-								<div class="ca-pic set-bg" data-setbg="img/authors/3.jpg"></div>
-								<p>William Parker, <span>Developer</span></p>
+								<div class="ca-pic set-bg" data-setbg="{{url('/frontend/images/chm 1.jpg')}}"></div>
+								<p>William | <span>Chemistry</span></p>
 							</div>
 						</div>
 					</div>
@@ -262,18 +240,18 @@
 				<!-- course -->
 				<div class="mix col-lg-3 col-md-4 col-sm-6 photo">
 					<div class="course-item">
-						<div class="course-thumb set-bg" data-setbg="img/courses/4.jpg">
-							<div class="price">Price: $15</div>
+						<div class="course-thumb set-bg" data-setbg="{{url('/frontend/images/ict1.jpg')}}">
+							<div class="price">Salary: 15k</div>
 						</div>
 						<div class="course-info">
 							<div class="course-text">
-								<h5>IT Development</h5>
+								<h5>ICT 1</h5>
 								<p>Lorem ipsum dolor sit amet, consectetur</p>
-								<div class="students">120 Students</div>
+								<div class="students">40 Students</div>
 							</div>
 							<div class="course-author">
 								<div class="ca-pic set-bg" data-setbg="img/authors/4.jpg"></div>
-								<p>William Parker, <span>Developer</span></p>
+								<p>Parker | <span>ICT</span></p>
 							</div>
 						</div>
 					</div>
@@ -281,18 +259,18 @@
 				<!-- course -->
 				<div class="mix col-lg-3 col-md-4 col-sm-6 finance">
 					<div class="course-item">
-						<div class="course-thumb set-bg" data-setbg="img/courses/5.jpg">
-							<div class="price">Price: $15</div>
+						<div class="course-thumb set-bg" data-setbg="{{url('/frontend/images/math2.jpg')}}">
+							<div class="price">Salary: 15k</div>
 						</div>
 						<div class="course-info">
 							<div class="course-text">
-								<h5>IT Development</h5>
+								<h5>Math 2</h5>
 								<p>Lorem ipsum dolor sit amet, consectetur</p>
-								<div class="students">120 Students</div>
+								<div class="students">50 Students</div>
 							</div>
 							<div class="course-author">
 								<div class="ca-pic set-bg" data-setbg="img/authors/5.jpg"></div>
-								<p>William Parker, <span>Developer</span></p>
+								<p>Parker | <span>Mathematician</span></p>
 							</div>
 						</div>
 					</div>
@@ -300,18 +278,18 @@
 				<!-- course -->
 				<div class="mix col-lg-3 col-md-4 col-sm-6 design">
 					<div class="course-item">
-						<div class="course-thumb set-bg" data-setbg="img/courses/6.jpg">
-							<div class="price">Price: $15</div>
+						<div class="course-thumb set-bg" data-setbg="{{url('/frontend/images/physics2.jpg')}}">
+							<div class="price">Salary: 10k</div>
 						</div>
 						<div class="course-info">
 							<div class="course-text">
-								<h5>Socia Media</h5>
+								<h5>Physics 2</h5>
 								<p>Lorem ipsum dolor sit amet, consectetur</p>
-								<div class="students">120 Students</div>
+								<div class="students">40 Students</div>
 							</div>
 							<div class="course-author">
 								<div class="ca-pic set-bg" data-setbg="img/authors/6.jpg"></div>
-								<p>William Parker, <span>Developer</span></p>
+								<p>William | <span>Physics</span></p>
 							</div>
 						</div>
 					</div>
@@ -319,18 +297,18 @@
 				<!-- course -->
 				<div class="mix col-lg-3 col-md-4 col-sm-6 web">
 					<div class="course-item">
-						<div class="course-thumb set-bg" data-setbg="img/courses/7.jpg">
-							<div class="price">Price: $15</div>
+						<div class="course-thumb set-bg" data-setbg="{{url('/frontend/images/chm2.jpg')}}">
+							<div class="price">Salary: 10k</div>
 						</div>
 						<div class="course-info">
 							<div class="course-text">
-								<h5>IT Development</h5>
+								<h5>Chemistry 2</h5>
 								<p>Lorem ipsum dolor sit amet, consectetur</p>
 								<div class="students">120 Students</div>
 							</div>
 							<div class="course-author">
 								<div class="ca-pic set-bg" data-setbg="img/authors/7.jpg"></div>
-								<p>William Parker, <span>Developer</span></p>
+								<p>Parker | <span>Chemistry</span></p>
 							</div>
 						</div>
 					</div>
@@ -338,18 +316,18 @@
 				<!-- course -->
 				<div class="mix col-lg-3 col-md-4 col-sm-6 photo">
 					<div class="course-item">
-						<div class="course-thumb set-bg" data-setbg="img/courses/8.jpg">
-							<div class="price">Price: $15</div>
+						<div class="course-thumb set-bg" data-setbg="{{url('/frontend/images/ict2.jpg')}}">
+							<div class="price">Salary: 15k</div>
 						</div>
 						<div class="course-info">
 							<div class="course-text">
-								<h5>HTML 5</h5>
+								<h5>ICT 2</h5>
 								<p>Lorem ipsum dolor sit amet, consectetur</p>
-								<div class="students">120 Students</div>
+								<div class="students">50 Students</div>
 							</div>
 							<div class="course-author">
 								<div class="ca-pic set-bg" data-setbg="img/authors/8.jpg"></div>
-								<p>William Parker, <span>Developer</span></p>
+								<p>William | <span>ICT</span></p>
 							</div>
 						</div>
 					</div>
@@ -388,89 +366,13 @@
 	<!-- signup section end -->
 
 
-	<!-- banner section -->
-	<section class="banner-section spad">
-		<div class="container">
-			<div class="section-title mb-0 pb-2">
-				<h2>Join Our Community Now!</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
-			</div>
-			<div class="text-center pt-5">
-				<a href="#" class="site-btn">Register Now</a>
-			</div>
-		</div>
-	</section>
-	<!-- banner section end -->
+
+	
+
+	@include('frontend.fixed.footer')
 
 
-	<!-- footer section -->
-	<footer class="footer-section spad pb-0">
-		<div class="footer-top">
-			<div class="footer-warp">
-				<div class="row">
-					<div class="widget-item">
-						<h4>Contact Info</h4>
-						<ul class="contact-list">
-							<li>1481 Creekside Lane <br>Avila Beach, CA 931</li>
-							<li>+53 345 7953 32453</li>
-							<li>yourmail@gmail.com</li>
-						</ul>
-					</div>
-					<div class="widget-item">
-						<h4>Engeneering</h4>
-						<ul>
-							<li><a href="">Applied Studies</a></li>
-							<li><a href="">Computer Engeneering</a></li>
-							<li><a href="">Software Engeneering</a></li>
-							<li><a href="">Informational Engeneering</a></li>
-							<li><a href="">System Engeneering</a></li>
-						</ul>
-					</div>
-					<div class="widget-item">
-						<h4>Graphic Design</h4>
-						<ul>
-							<li><a href="">Applied Studies</a></li>
-							<li><a href="">Computer Engeneering</a></li>
-							<li><a href="">Software Engeneering</a></li>
-							<li><a href="">Informational Engeneering</a></li>
-							<li><a href="">System Engeneering</a></li>
-						</ul>
-					</div>
-					<div class="widget-item">
-						<h4>Development</h4>
-						<ul>
-							<li><a href="">Applied Studies</a></li>
-							<li><a href="">Computer Engeneering</a></li>
-							<li><a href="">Software Engeneering</a></li>
-							<li><a href="">Informational Engeneering</a></li>
-							<li><a href="">System Engeneering</a></li>
-						</ul>
-					</div>
-					<div class="widget-item">
-						<h4>Newsletter</h4>
-						<form class="footer-newslatter">
-							<input type="email" placeholder="E-mail">
-							<button class="site-btn">Subscribe</button>
-							<p>*We don’t spam</p>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="footer-warp">
-				<ul class="footer-menu">
-					<li><a href="#">Terms & Conditions</a></li>
-					<li><a href="#">Register</a></li>
-					<li><a href="#">Privacy</a></li>
-				</ul>
-				<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-			</div>
-		</div>
-	</footer> 
-	<!-- footer section end -->
+
 
 
 	<!--====== Javascripts & Jquery ======-->
