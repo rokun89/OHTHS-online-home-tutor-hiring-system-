@@ -71,6 +71,8 @@ Route::get('/createstdpage',[studentController::class,'stdPage'])->name('stdpage
 
 ROute::post('/std_form_fillup',[studentController::class,'std_store'])->name('std_storepage');
 
+//students data view delete route
+
 
 
 //tutor form route
