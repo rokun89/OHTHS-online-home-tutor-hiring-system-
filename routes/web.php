@@ -25,6 +25,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[websiteHomeController::class,'webhome'])->name('web.home');
 
 
+Route::get('/modal',[websiteHomeController::class,'modalTest'])->name('modal-url');
+
+
 
 
 
@@ -71,8 +74,6 @@ Route::get('/createstdpage',[studentController::class,'stdPage'])->name('stdpage
 
 ROute::post('/std_form_fillup',[studentController::class,'std_store'])->name('std_storepage');
 
-//students data view delete route
-
 
 
 //tutor form route
@@ -85,6 +86,12 @@ Route::post('/tutor-form-store',[tutorsController::class,'tutor_store'])->name('
 
 Route::get('/payments-form',[paymentsController::class,'payments_form_page'])->name('payments.form');
 Route::post('/payments-form-store',[paymentsController::class,'payments_store'])->name('payments.store.page');
+
+
+
+//students data view delete route
+Route::get('/stdinfo/delete/{stdInfo}',[studentController::class,'deleteStdInfo'])->name('stdInfo.delete');
+Route::get('/stdinfo/view/{viewstdInfo}',[studentController::class,'viewStdInfo'])->name('stdInfo.view');
 
 
 });

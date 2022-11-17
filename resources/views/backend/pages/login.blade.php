@@ -95,11 +95,17 @@ body {
  
 
 <body>
+	
     <div class="container">
         <div class="header">    
     <span class="material-icons-sharp">person</span>
     <h2>Sign in</h2>                   
     </div>
+	
+	@if(Session()->has('message'))
+ <p class="alert alert-success">{{session()->get('message')}}</p> 
+
+@endif
         <form id="form" class="form" action="{{route('do.login')}}" method="post">
 
 		@csrf

@@ -11,4 +11,9 @@ class websiteHomeController extends Controller
     {
         return view('frontend.master');
     }
+    public function modalTest()
+    {
+        return view('frontend.pages.registrationForm');
+
+    }
 }

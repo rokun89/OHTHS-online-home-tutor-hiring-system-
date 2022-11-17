@@ -5,6 +5,25 @@
 <a href="{{route('stdpage')}}">
     <span class="btn btn-success">+Create New Form</span>
 </a>
+
+
+@if(session()->has('message'))
+
+<p class="alert alert-success" {{session()->get('message')}}></p>
+
+@endif
+
+
+<!--@if(session()->has('errormsg'))
+
+<p class="alert alert-danger" {{session()->get('errormsg')}}></p>
+
+@endif -->
+
+
+
+
+
 <h1>Student Table</h1>
 
 @if(Session('message'))
@@ -42,9 +61,12 @@
       <td>{{$data->address}}</td>
       <td>{{$data->login_pass}}</td>
       <td>{{$data->status}}</td>
+
       <td>
-        <a href="" class="btn btn-primary">view</a>
-        <a href="" class="btn btn-danger">delete</a>
+        <a href="{{route('stdInfo.view',$data->id)}}" class="btn btn-primary">view</a>
+
+        <a href="{{route('stdInfo.delete',$data->id)}}" class="btn btn-danger">delete</a>
+
         <a href="" class="btn btn-warning">edit</a>
 
     </tr>

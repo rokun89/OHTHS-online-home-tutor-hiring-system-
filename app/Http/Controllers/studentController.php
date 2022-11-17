@@ -46,5 +46,29 @@ public function std_store(Request $stdvar)
 
 
 }
+   
+    public function deleteStdInfo( $stdInfo)
+    {
+        $deletestdTest=students::find($stdInfo);
+        //dd($stdInfo);
+        if($deletestdTest){
+
+            $deletestdTest-> delete();
+            return redirect()->back()->with('message','Delete Succesfully!');
+        }
+        else{
+
+            return redirect()->back()->with('errormsg','Request Not Found');
+
+        }
+
+    }
+    public function viewStdInfo($viewstdInfo)
+    {
+      $viewstdTest=students::find($viewstdInfo); 
+      //dd($viewstdTest);
+      return view('backend.pages.viewdatabase',compact('viewstdTest'));
+        
+    }
 
 }
