@@ -25,9 +25,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[websiteHomeController::class,'webhome'])->name('web.home');
 
 
-Route::get('/modal',[websiteHomeController::class,'modalTest'])->name('modal-url');
+Route::get('/registration',[websiteHomeController::class,'registration'])->name('registration-url');
 
 
+Route::get('/userlogin',[websiteHomeController::class,'userlogin'])->name('userlogin-url');
+
+
+
+
+Route::get('/about',[websiteHomeController::class,'about'])->name('about.url');
 
 
 

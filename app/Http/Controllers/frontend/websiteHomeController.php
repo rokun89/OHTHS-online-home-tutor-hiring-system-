@@ -11,9 +11,23 @@ class websiteHomeController extends Controller
     {
         return view('frontend.master');
     }
-    public function modalTest()
+
+
+    public function registration()
     {
         return view('frontend.pages.registrationForm');
 
     }
+
+    public function userlogin()
+    {
+        return view('frontend.pages.loginform');
+    }
+
+    public function about()
+    {
+        return view('frontend.pages.about');
+    }
+
+
 }
