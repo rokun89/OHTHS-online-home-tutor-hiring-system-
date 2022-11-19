@@ -7,9 +7,9 @@
 </a>
 
 
-@if(session()->has('message'))
+@if(session()->has('messages'))
 
-<p class="alert alert-success" {{session()->get('message')}}></p>
+<p class="alert alert-success" {{session()->get('messages')}}></p>
 
 @endif
 

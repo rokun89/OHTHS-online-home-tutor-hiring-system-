@@ -53,11 +53,31 @@ public function store(Request $request)
 
       return redirect(route('parents-url'))->with('message','Submitted Successfully!');
 
-
-      
-
 }
 
+    public function deleteparentsInfo($deleteparentsInfo)
+    {
+        $deleteparentsTest= parents::find($deleteparentsInfo);
+
+        if($deleteparentsTest){
+
+            $deleteparentsTest-> delete();
+            return redirect()->back()->with('messages','Delete Succesfully!');
+        }
+        else{
+
+            return redirect()->back()->with('errormsg','Request Not Found');
+
+        }
+    }
+
+    public function viewparentsInfo($viewparentsInfo)
+    {
+        $viewparentsTest=parents::find($viewparentsInfo);
+
+        return view('backend.pages.parentsDataView',compact('viewparentsTest'));
+
+    }
 
 
 

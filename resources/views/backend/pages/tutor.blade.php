@@ -6,9 +6,9 @@
     <span class="btn btn-success">+Create New Form</span>
 </a>
 
-@if(Session('message'))
+@if(Session('messages'))
 
- <div class="alert alert-success">{{session('message')}}</div>
+ <div class="alert alert-success">{{session('messages')}}</div>
 
  @endif
 
@@ -46,8 +46,8 @@
       <td>{{$data->salary}}</td>
       <td>{{$data->status}}</td>
       <td>
-        <a href="" class="btn btn-primary">view</a>
-        <a href="" class="btn btn-danger">delete</a>
+        <a href="{{route('view.tutorInfo',$data->id)}}" class="btn btn-primary">view</a>
+        <a href="{{route('delete.tutorInfo',$data->id)}}" class="btn btn-danger">delete</a>
         <a href="" class="btn btn-warning">edit</a>
 
     </tr>

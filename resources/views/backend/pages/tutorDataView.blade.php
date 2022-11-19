@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <style>
           .product_view .modal-dialog{max-width: 800px; width: 100%;}
         .pre-cost{text-decoration: line-through; color: #a5a5a5;}
@@ -19,35 +20,45 @@
               <div class="thumbnail" style="background-color: aliceblue";>
               <div class="caption">
                   
-                  <h4><a href="#"><u>Students Table Data</u> </a></h4>
+                  <h4><a href="#"><u>Tutors Table Data</u> </a></h4>
                   <p> <label for="file">Images:</label>
-                   "{{$viewstdTest->images}}"</p>
+                   "{{$viewtutorTest->images}}"</p>
 
-                <!--<img src="{{$viewstdTest->images}}" alt="£" class="img-responsive"> -->
+                <!--<img src="{{$viewtutorTest->images}}" alt="£" class="img-responsive"> -->
                
                   <p> <label for="Name">Name:</label>
-                  <input value="{{$viewstdTest->name}}"></p>
+                  <input value="{{$viewtutorTest->name}}"></p>
 
                   <p> <label for="Name">Email:</label>
-                  <input value="{{$viewstdTest->email}}"></p>
+                  <input value="{{$viewtutorTest->email}}"></p>
 
                   <p> <label for="Name">Contact:</label>
-                  <input value="{{$viewstdTest->contact}}"></p>
+                  <input value="{{$viewtutorTest->contact}}"></p>
+
+                  <p> <label for="Name">N-ID:</label>
+                  <input value="{{$viewtutorTest->n_id}}"></p>
+
+                  <p> <label for="Name">Subject:</label>
+                  <input value="{{$viewtutorTest->subject}}"></p>
+
+                  <p> <label for="Name">Salary:</label>
+                  <input value="{{$viewtutorTest->salary}}"></p>
 
                   <p> <label for="Name">Address:</label>
-                  <input value="{{$viewstdTest->address}}"></p>
+                  <input value="{{$viewtutorTest->address}}"></p>
 
                   <p> <label for="Name">Status:</label>
-                  <input value="{{$viewstdTest->status}}"></p>
+                  <input value="{{$viewtutorTest->status}}"></p>
 
 
                 </div>
                 <div class="space-ten"></div>
                 <div class="btn-ground text-center">
-                <a href="{{route('students-url')}}">
+
+                    <a href="{{route('tutor-url')}}">
                         <span class="btn btn-primary"> Go to Back</span>
                     </a>
-                    
+
                 </div>
                 <div class="space-ten"></div>
                   
@@ -55,7 +66,9 @@
                 
               </div>
             </div>
-            
+
+
+
 
 
 @endsection

@@ -7,14 +7,22 @@
     <span class="btn btn-success">+Create New Form</span>
 </a>
 
-@if(Session('message'))
- <div class="alert alert-success">{{session('message')}}</div> 
+@if(session()->has('messages'))
+
+<p class="alert alert-success" {{session()->get('messages')}}></p>
 
 @endif
+
+
+
 
 <h1>Parents Table</h1>
 
 
+@if(Session('message'))
+ <div class="alert alert-success">{{session('message')}}</div> 
+
+@endif
 
 <table class="table">
   <thead>
@@ -47,8 +55,8 @@
       <td>{{$data->login_pass}}</td>
       <td>{{$data->status}}</td>
       <td>
-        <a href="" class="btn btn-primary">view</a>
-        <a href="" class="btn btn-danger">delete</a>
+        <a href="{{route('parentsInfo.view',$data->id)}}" class="btn btn-primary">view</a>
+        <a href="{{route('parentsInfo.delete',$data->id)}}" class="btn btn-danger">delete</a>
         <a href="" class="btn btn-warning">edit</a>
 
     </tr>

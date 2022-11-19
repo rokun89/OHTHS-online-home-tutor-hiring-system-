@@ -100,6 +100,21 @@ Route::get('/stdinfo/delete/{stdInfo}',[studentController::class,'deleteStdInfo'
 Route::get('/stdinfo/view/{viewstdInfo}',[studentController::class,'viewStdInfo'])->name('stdInfo.view');
 
 
+//parents data view delete route
+Route::get('/parentsinfo/delete/{parentsInfo}',[parentsController::class,'deleteparentsInfo'])->name('parentsInfo.delete');
+
+Route::get('/parentsinfo/view/{parentsInfo}',[parentsController::class,'viewparentsInfo'])->name('parentsInfo.view');
+
+
+
+
+//tutor data view and delete route
+Route::get('/tutorinfo/delete/{tutorInfo}',[tutorsController::class,'deleteTutorInfo'])->name('delete.tutorInfo');
+Route::get('/tutorinfo/view/{tutorInfo}',[tutorsController::class,'viewtutorInfo'])->name('view.tutorInfo');
+
+
+
+
 });
 
 

@@ -57,6 +57,32 @@ class tutorsController extends Controller
         return redirect(route('tutor-url'))->with('message','Submitted Successfully!');
 
     }
+
+
+    public function deleteTutorInfo($deleteTutor)
+    {
+        $deletetutorTest=Tutors::find($deleteTutor);
+
+        if($deletetutorTest)
+        {
+            $deletetutorTest-> delete();
+            return redirect()->back()->with('messages','Deleted Succesfully!');
+
+        }
+        else{
+            return redirect()->back()->with('errormsg','Request Not Found');
+        }
+
+
+    }
+
+    public function viewtutorInfo($viewtutor)
+    {
+        $viewtutorTest=Tutors::find($viewtutor);
+
+        return view('backend.pages.tutorDataView',compact('viewtutorTest'));
+    }
+
     
 
 

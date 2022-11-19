@@ -54,7 +54,7 @@ public function std_store(Request $stdvar)
         if($deletestdTest){
 
             $deletestdTest-> delete();
-            return redirect()->back()->with('message','Delete Succesfully!');
+            return redirect()->back()->with('messages','Delete Succesfully!');
         }
         else{
 
