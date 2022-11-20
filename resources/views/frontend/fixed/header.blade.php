@@ -17,10 +17,10 @@
 					<nav class="main-menu">
 						<ul>
 							<li><a href="{{route('web.home')}}">Home</a></li>
-							<li><a href="{{route('about.url')}}">About</a></li>
-							<li><a href="">Course</a></li>
-							<li><a href="">News</a></li>
-							<li><a href="">Contact</a></li>
+							<li><a href="{{route('tutor.url')}}">Tutor</a></li>
+							<li><a href="#">Course</a></li>
+							<li><a href="#">News</a></li>
+							<li><a href="#">Contact</a></li>
 							
 						</ul>
 					</nav>

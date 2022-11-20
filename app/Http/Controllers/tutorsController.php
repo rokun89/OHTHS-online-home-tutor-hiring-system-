@@ -17,14 +17,17 @@ class tutorsController extends Controller
     {
         //dd($tutorvar->all());
 
-        /*$tutorvar->validate(['name'=>'required']);
-        $tutorvar->validate(['images'=>'required']);
-        $tutorvar->validate(['email'=>'required']);
-        $tutorvar->validate(['contact'=>'required']);
-        $tutorvar->validate(['n_id'=>'required']);
-        $tutorvar->validate(['address'=>'required']);
-        $tutorvar->validate(['subject'=>'required']);
-        $tutorvar->validate(['salary'=>'required']); */
+        $tutorvar->validate([
+            'name'=>'required',
+            'images'=>'required',
+            'email'=>'required',
+            'contact'=>'required',
+            'n_id'=>'required',
+            'address'=>'required',
+            'subject'=>'required',
+            'salary'=>'required',
+        
+        ]);
 
 
 

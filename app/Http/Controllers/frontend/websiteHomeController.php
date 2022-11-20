@@ -24,9 +24,9 @@ class websiteHomeController extends Controller
         return view('frontend.pages.loginform');
     }
 
-    public function about()
+    public function tutor()
     {
-        return view('frontend.pages.about');
+        return view('frontend.pages.tutor');
     }
 
 

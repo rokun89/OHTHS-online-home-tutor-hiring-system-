@@ -33,7 +33,7 @@ Route::get('/userlogin',[websiteHomeController::class,'userlogin'])->name('userl
 
 
 
-Route::get('/about',[websiteHomeController::class,'about'])->name('about.url');
+Route::get('/tutor',[websiteHomeController::class,'tutor'])->name('tutor.url');
 
 
 

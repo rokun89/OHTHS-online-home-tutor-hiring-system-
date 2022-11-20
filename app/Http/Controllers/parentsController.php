@@ -21,12 +21,15 @@ public function store(Request $request)
 {
   //dd($request->all());
   
-  /*$request->validate(['name'=>'required']);
-  $request->validate(['images'=>'required']);
-  $request->validate(['email'=>'required']);
-  $request->validate(['contact'=>'required']);
-  $request->validate(['n_id'=>'required']);
-  $request->validate(['address'=>'required']);*/
+  $request->validate([
+    'name'=>'required',
+    'images'=>'required',
+    'email'=>'required',
+    'contact'=>'required',
+    'n_id'=>'required',
+    'address'=>'required'
+
+    ]);
 
 
   $parentsvarName=null;

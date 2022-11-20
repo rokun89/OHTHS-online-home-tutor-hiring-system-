@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+	<link rel="icon" href="{{url('logo.png')}}">
 	<title>Online Home Tutor Hiring System</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="WebUni Education Template">
@@ -35,7 +37,14 @@
 	
 
 
+
+
 	@include('frontend.fixed.header')
+
+
+
+
+
 
 
 	<!-- Hero section -->
@@ -55,13 +64,24 @@
 
 
 
-	@include('frontend.fixed.body')
+
 
 	
+	
+
+	@yield('content')
+
+
+
+
+
 
 	
 
 	@include('frontend.fixed.footer')
+
+
+
 
 
 
