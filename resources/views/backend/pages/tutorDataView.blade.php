@@ -21,8 +21,8 @@
               <div class="caption">
                   
                   <h4><a href="#"><u>Tutors Table Data</u> </a></h4>
-                  <p> <label for="file">Images:</label>
-                   "{{$viewtutorTest->images}}"</p>
+                  <p> <img width="60px" src="{{url('/uploads/'.$viewtutorTest->images)}}" alt="">
+                </p>
 
                 <!--<img src="{{$viewtutorTest->images}}" alt="£" class="img-responsive"> -->
                

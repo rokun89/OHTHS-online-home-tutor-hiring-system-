@@ -22,11 +22,10 @@ return new class extends Migration
             $table->string('contact');
             $table->text('address');
             $table->text('n_id');
+            $table->text('login_pass');
             $table->string('occupation')->nullable();
             $table->text('description')->nullable();
-            $table->text('login_pass')->nullable();
             $table->string('status')->default('active');
-
             $table->timestamps();
         });
     }

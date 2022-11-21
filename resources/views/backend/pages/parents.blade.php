@@ -57,7 +57,7 @@
       <td>
         <a href="{{route('parentsInfo.view',$data->id)}}" class="btn btn-primary">view</a>
         <a href="{{route('parentsInfo.delete',$data->id)}}" class="btn btn-danger">delete</a>
-        <a href="" class="btn btn-warning">edit</a>
+        <a href="{{route('parents.edit',$data->id)}}" class="btn btn-warning">edit</a>
 
     </tr>
 

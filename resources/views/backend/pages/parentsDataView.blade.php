@@ -21,8 +21,8 @@
               <div class="caption">
                   
                   <h4><a href="#"><u>Parents Table Data</u> </a></h4>
-                  <p> <label for="file">Images:</label>
-                   "{{$viewparentsTest->images}}"</p>
+                  <p> <img width="60px" src="{{url('/uploads/'.$viewparentsTest->images)}}" alt="">
+                   </p>
 
                 <!--<img src="{{$viewparentsTest->images}}" alt="£" class="img-responsive"> -->
                

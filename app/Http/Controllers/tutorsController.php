@@ -88,5 +88,45 @@ class tutorsController extends Controller
 
     
 
+    public function edit($edit)
+    {
+        $editTest=Tutors::find($edit);
+        $tutor=Tutors::all();
+        return view('backend.pages.categories.tutorEdit',compact('editTest','tutor'));
+    }
+
+
+    public function update(Request $request1,$edit)
+    {
+        $editTest=Tutors::find($edit);
+
+        $tutorupdate=$editTest->images;
+
+    if($request1->hasFile('images'))
+        {
+            
+            $tutorupdate=date('Ymdhmi').'.'.$request1->file('images')->getClientOriginalExtension();
+            $request1->file('images')->storeAs('/uploads',$tutorupdate);
+        }
+
+
+        $editTest->update([
+            'name'=>$request1->name,
+            'images'=>$tutorupdate,
+            'email'=>$request1->email,
+            'contact'=>$request1->phone,
+            'n_id'=>$request1->n_id,
+            'address'=>$request1->address,
+            'subject'=>$request1->subject,
+            'salary'=>$request1->salary,
+            
+            'description'=>$request1->description,
+            'login_pass'=>$request1->password,
+            'status'=>$request1->status,
+        ]);
+
+        return redirect()->route('tutor-url')->with('message','Updated Successfully!!');
+
+    }
 
 }

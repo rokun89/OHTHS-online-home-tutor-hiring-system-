@@ -3,7 +3,14 @@
 	<link rel="stylesheet" href="{{url('/frontend/css/owl.carousel.css')}}">
 	<link rel="stylesheet" href="{{url('/frontend/css/style.css')}}">
 
-    
+        <style>
+            .space-ten{padding: 20px 0;}
+        </style>
+
+
+
+
+    <h3 style="display:flex; justify-content:center"><u>Registration Form</u></h3>
         <form class="signup-form" >
 
 <div class="form-row">
@@ -46,7 +53,12 @@
 </div>
 
 <div>
-<button type="submit" class="site-btn">Submit</button>
+<button type="submit" class="site-btn space-ten">Submit</button>
+</div>
+<div class="space-ten"></div>
+                  
+<div>
+<a href="{{route('userlogin-url')}}">Already Registered</a>
 </div>
 
 		

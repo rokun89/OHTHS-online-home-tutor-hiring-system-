@@ -20,10 +20,10 @@
               <div class="caption">
                   
                   <h4><a href="#"><u>Students Table Data</u> </a></h4>
-                  <p> <label for="file">Images:</label>
-                   "{{$viewstdTest->images}}"</p>
+                  <p> <img width="60px" src="{{url('/uploads/'.$viewstdTest->images)}}" alt="">
+                   </p>
 
-                <!--<img src="{{$viewstdTest->images}}" alt="£" class="img-responsive"> -->
+                
                
                   <p> <label for="Name">Name:</label>
                   <input value="{{$viewstdTest->name}}"></p>

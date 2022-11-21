@@ -74,4 +74,47 @@ public function std_store(Request $stdvar)
         
     }
 
+
+
+    public function edit($edit)
+    {
+        $editTest=students::find($edit);
+
+        $test2=students::all();
+
+        return view('backend.pages.categories.studentsEdit',compact('test2','editTest'));
+
+    }
+
+
+    public function update(Request $request1,$edit)
+    {
+        $editTest=students::find($edit);
+
+        $studentsupdate=$editTest->images;
+
+    if($request1->hasFile('images'))
+        {
+            
+            $studentsupdate=date('Ymdhmi').'.'.$request1->file('images')->getClientOriginalExtension();
+            $request1->file('images')->storeAs('/uploads',$studentsupdate);
+        }
+
+        $editTest->update([
+            'name'=>$request1->name,
+            'images'=>$studentsupdate,
+            'email'=>$request1->email,
+            'contact'=>$request1->contact,
+            'login_pass'=>$request1->password,
+            'address'=>$request1->address,
+            'status'=>$request1->status,
+        ]);
+    
+        return redirect()->route('students-url')->with('message','Updated Successfully!!');
+
+
+    }
+
+
+
 }

@@ -99,11 +99,20 @@ Route::post('/payments-form-store',[paymentsController::class,'payments_store'])
 Route::get('/stdinfo/delete/{stdInfo}',[studentController::class,'deleteStdInfo'])->name('stdInfo.delete');
 Route::get('/stdinfo/view/{viewstdInfo}',[studentController::class,'viewStdInfo'])->name('stdInfo.view');
 
+Route::get('/stdinfo/edit/{editstdInfo}',[studentController::class,'edit'])->name('students.edit');
+Route::put('/stdinfo/update/{updateInfo}',[studentController::class,'update'])->name('students.update');
 
-//parents data view delete route
+
+
+
+//parents data view delete update route
 Route::get('/parentsinfo/delete/{parentsInfo}',[parentsController::class,'deleteparentsInfo'])->name('parentsInfo.delete');
 
 Route::get('/parentsinfo/view/{parentsInfo}',[parentsController::class,'viewparentsInfo'])->name('parentsInfo.view');
+
+Route::get('/parentsinfo/edit/{parentsInfo}',[parentsController::class,'edit'])->name('parents.edit');
+Route::put('/parentsinfo/update/{parentsInfo}',[parentsController::class,'update'])->name('parents.update');
+
 
 
 
@@ -111,6 +120,8 @@ Route::get('/parentsinfo/view/{parentsInfo}',[parentsController::class,'viewpare
 //tutor data view and delete route
 Route::get('/tutorinfo/delete/{tutorInfo}',[tutorsController::class,'deleteTutorInfo'])->name('delete.tutorInfo');
 Route::get('/tutorinfo/view/{tutorInfo}',[tutorsController::class,'viewtutorInfo'])->name('view.tutorInfo');
+Route::get('/tutorinfo/edit/{tutorInfo}',[tutorsController::class,'edit'])->name('tutor.edit');
+Route::put('/tutorinfo/update/{tutorInfo}',[tutorsController::class,'update'])->name('tutor.update');
 
 
 

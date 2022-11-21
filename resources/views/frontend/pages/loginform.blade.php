@@ -6,6 +6,7 @@
 
 
     <style>
+        .space-ten{padding: 20px 0;}
         .body{
     background-color: azure;
 	display: flex;
@@ -20,7 +21,7 @@
 	border-radius: 5px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 	overflow: hidden;
-	width: 700px;
+	width: 650px;
 	max-width: 100%;
 }
     </style>
@@ -45,6 +46,15 @@
 <div>
 <button type="submit" class="site-btn">Submit</button>
 </div>
+
+
+<div class="space-ten"></div>
+                <div class="btn-ground text-center">
+                <a href="{{route('web.home')}}">
+                        <span class="btn btn-primary"> Go to Back</span>
+                    </a>
+                    
+                </div>
 
 		
 </form>

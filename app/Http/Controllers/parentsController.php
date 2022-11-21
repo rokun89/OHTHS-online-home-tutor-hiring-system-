@@ -82,6 +82,48 @@ public function store(Request $request)
 
     }
 
+public function edit($edit)
+{
+
+    $editTest=parents::find($edit);
+
+    $test=parents::all();
+
+    return view('backend.pages.categories.parentsEdit',compact('test','editTest'));
+
+
+}
+
+public function update(Request $request1,$edit)
+{
+    $editTest=parents::find($edit);
+
+    $parentsupdate=$editTest->images;
+
+  if($request1->hasFile('images'))
+      {
+          
+          $parentsupdate=date('Ymdhmi').'.'.$request1->file('images')->getClientOriginalExtension();
+          $request1->file('images')->storeAs('/uploads',$parentsupdate);
+      }
+
+
+      $editTest->update([
+        'images'=>$parentsupdate,
+        'name'=>$request1->name,
+        'email'=>$request1->email,
+        'login_pass'=>$request1->password,
+        'address'=>$request1->address,
+        'status'=>$request1->status,
+        'contact'=>$request1->contact,
+        'n_id'=>$request1->n_id,
+        'description'=>$request1->description,
+        'occupation'=>$request1->occupation,
+      ]); 
+
+      return redirect()->route('parents-url')->with('message','Update Successfully!!');
+
+}
 
 
 }

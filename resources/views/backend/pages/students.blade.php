@@ -67,7 +67,7 @@
 
         <a href="{{route('stdInfo.delete',$data->id)}}" class="btn btn-danger">delete</a>
 
-        <a href="" class="btn btn-warning">edit</a>
+        <a href="{{route('students.edit',$data->id)}}" class="btn btn-warning">edit</a>
 
     </tr>
 
