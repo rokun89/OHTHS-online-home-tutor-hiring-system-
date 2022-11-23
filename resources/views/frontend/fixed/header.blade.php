@@ -13,15 +13,29 @@
 					</div>
 				</div>
 				<div class="col-lg-9 col-md-9">
-					<a href="{{route('userlogin-url')}}" class="site-btn header-btn" data-toggle="modal" data-target="#exampleModalCenter">Login</a>
-					<nav class="main-menu">
-						<ul>
-							<li><a href="{{route('web.home')}}">Home</a></li>
-							<li><a href="{{route('tutor.url')}}">Tutor</a></li>
-							<li><a href="#">Course</a></li>
-							<li><a href="#">News</a></li>
-							<li><a href="#">Contact</a></li>
+					
+	<nav class="main-menu">
+		<ul>
+			<li><a href="{{route('web.home')}}">Home</a></li>
+			<li><a href="{{route('tutor.url')}}">Tutor</a></li>
+			<li><a href="#">Course</a></li>
+			<li><a href="#">News</a></li>
+			<li><a href="#">Contact</a></li>
+			<li style="padding-left: 130px;" class="btn-group" role="group" aria-label="Basic example">
+
+@auth
+<li >
+<a href="{{route('user.logout')}}">{{auth()->user()->name}} | Logout</a></li>
+@else
+
+<a href="http://" target="_blank" rel="noopener noreferrer"></a><button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="btn btn-secondary">Log in</button>
+
+  <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">Registration</button>
+
+  </li>
+  @endauth
 							
+
 						</ul>
 					</nav>
 				</div>
@@ -34,7 +48,17 @@
 
 
 
-<!-- Modal -->
+
+
+
+
+
+
+
+
+
+
+<!-- Modal for login -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -55,52 +79,106 @@
 
     
 
-
-
-    <style>
-        .space-ten{padding: 10px 0;}
-        
-    </style>
-
-   <body class="body">
+    <div>
     
+    <form class="signup-form" action="{{route('userlogin')}}" method="post" >
 
-    <div class="container">
-    
-    <form class="signup-form" >
+	@csrf
 
 <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group">
 <label for="Name"><b>Email/Username:</b></label>
-<input required name="email" type="email" placeholder="email/username">
+<input required name="email" type="email" class="form-control" id="inputEmail/Username" placeholder="email/username">
     </div>
 
 </div>
-<div class="form-group col-md-6">
+<div class="form-group">
       <label for="inputPassword4"><b>Password:</b> </label>
       <input required name="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
     </div>
 
-
-<div class="space-ten"></div>
                 <div class="btn-ground text-center">
-                <a href="{{route('web.home')}}">
-                        <span class="btn btn-primary"> Go to Back</span>
-                    </a>
+                <p style="color: blue;">Not-yet Registered,Go to Registration</p>
                     
                 </div>
-
+				<div>
+        <button type="submit" class="site-btn">Submit</button>
+      </div>
 		
 </form>
     </div>
-        </body>
 	 
       </div>
-      <div class="modal-footer">
-        <button type="submit" class="site-btn">Submit</button>
-      </div>
+      
     </div>
   </div>
 </div>
 
 
+
+<!-- Modal for registration start -->
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      
+	<link rel="stylesheet" href="{{url('/frontend/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{url('/frontend/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" href="{{url('/frontend/css/owl.carousel.css')}}">
+	<link rel="stylesheet" href="{{url('/frontend/css/style.css')}}">
+
+        <style>
+            .space-ten{padding: 20px 0;}
+        </style>
+
+
+
+
+    <h2 style="display:flex; justify-content:center"><u><i> Parents Registration Form</u></i></h2>
+
+
+        <form class="signup-form" action="{{route('registration')}}" method="post" enctype="multipart/form-data">
+
+		@csrf
+
+<div class="form-row">
+    <div class="form-group col-md-6">
+<label for="Name"><b>Name:</b></label>
+<input required name="name" type="text" placeholder="Enter Your Name">
+    </div>
+
+    <div class="form-group col-md-6" >
+<label for="Email"> <b>E-mail:</b></label>
+<input required name="email" type="email" placeholder=" E-mail">
+    </div>
+
+	<div class="form-group col-md-6">
+<label for="inputPassword4"><b>Password:</b> </label>
+<input required name="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
+</div>
+
+<div class="form-group col-md-6">
+<label for="Contact"><b>Contact:</b></label>
+<input type="text" placeholder="Contact">
+    </div>
+</div>
+
+<div>
+<button type="submit" class="site-btn space-ten">Submit</button>
+</div>
+<div class="space-ten"></div>
+                  
+<div>
+<a href="{{route('web.home')}}">Already Registered</a>
+</div>
+
+		
+</form>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal for registration end -->

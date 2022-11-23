@@ -1,3 +1,8 @@
+@extends('frontend.master')
+
+@section('content')
+
+
 
 
 
@@ -285,3 +290,8 @@
 		</div>
 	</section> -->
 	<!-- signup section end -->
+
+
+
+
+@endsection

@@ -26,10 +26,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[websiteHomeController::class,'webhome'])->name('web.home');
 
 
-Route::get('/registration',[websiteHomeController::class,'registration'])->name('registration-url');
+Route::post('/registration',[websiteHomeController::class,'registration'])->name('registration');
 
 
-Route::get('/userlogin',[websiteHomeController::class,'userlogin'])->name('userlogin-url');
+Route::post('/userlogin',[websiteHomeController::class,'userlogin'])->name('userlogin');
+
+Route::group(['middleware'=>'auth'],function() {
+
+    Route::get('/userlogout',[websiteHomeController::class,'userlogout'])->name('user.logout');
+});
+
+
 
 
 
