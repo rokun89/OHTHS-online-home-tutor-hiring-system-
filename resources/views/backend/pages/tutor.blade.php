@@ -46,9 +46,9 @@
       <td>{{$data->salary}}</td>
       <td>{{$data->status}}</td>
       <td>
-        <a href="{{route('view.tutorInfo',$data->id)}}" class="btn btn-primary">view</a>
-        <a href="{{route('delete.tutorInfo',$data->id)}}" class="btn btn-danger">delete</a>
-        <a href="{{route('tutor.edit',$data->id)}}" class="btn btn-warning">edit</a>
+      <a href="{{route('view.tutorInfo',$data->id)}}" class="btn btn-primary">view</a>
+      <a href="{{route('delete.tutorInfo',$data->id)}}" class="btn btn-danger">delete</a>
+      <a href="{{route('tutor.edit',$data->id)}}" class="btn btn-warning">edit</a>
 
     </tr>
 

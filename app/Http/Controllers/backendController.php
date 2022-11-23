@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\parents;
 use App\Models\Payments;
 use App\Models\students;
+use App\Models\Subject;
+use App\Models\Subjects;
 use App\Models\Tutors;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
@@ -75,9 +77,9 @@ public function tutionPage()
 
 public function subjectPage()
 {
-    $payment=Payments::paginate(5);
+    $subject=Subjects::all();
 
-    return view('backend.pages.payments',compact('payment'));
+    return view('backend.pages.subject',compact('subject'));
 }
 
 

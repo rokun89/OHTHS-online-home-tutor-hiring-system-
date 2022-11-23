@@ -5,6 +5,7 @@ use App\Http\Controllers\frontend\websiteHomeController;
 use App\Http\Controllers\parentsController;
 use App\Http\Controllers\paymentsController;
 use App\Http\Controllers\studentController;
+use App\Http\Controllers\subjectController;
 use App\Http\Controllers\tutorsController;
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
@@ -53,7 +54,6 @@ Route::post('/do-login',[userController::class,'doLogin'])->name('do.login');
 Route::group(['middleware'=>'auth','prefix'=>'admin'],function() {
     Route::get('/logout',[userController::class,'logout'])->name('logout');
     
-
 Route::get('/',[backendController::class,'home'])->name('base-url');
 Route::get('/parents',[backendController::class,'parentsPage'])->name('parents-url');
 Route::get('/students',[backendController::class,'studentsPage'])->name('students-url');
@@ -63,6 +63,7 @@ Route::get('/subject',[backendController::class,'subjectPage'])->name('subject-u
 Route::get('/service',[backendController::class,'servicePage'])->name('service-url');
 Route::get('/contact',[backendController::class,'contactPage'])->name('contact-url');
 Route::get('/about',[backendController::class,'aboutPage'])->name('about-url');
+
 
 
 
@@ -88,10 +89,23 @@ Route::get('/tutor-form',[tutorsController::class,'tutorForm'])->name('tutor.for
 Route::post('/tutor-form-store',[tutorsController::class,'tutor_store'])->name('tutor.store.page');
 
 
+
+//Subject form route
+Route::get('/subject-form',[subjectController::class,'subjectForm'])->name('subject.form.page');
+Route::post('/subject-form-store',[subjectController::class,'subject_store'])->name('subject.store.page');
+
+
+
+
+
+
+
 //Payments form route
 
 Route::get('/payments-form',[paymentsController::class,'payments_form_page'])->name('payments.form');
 Route::post('/payments-form-store',[paymentsController::class,'payments_store'])->name('payments.store.page');
+
+
 
 
 

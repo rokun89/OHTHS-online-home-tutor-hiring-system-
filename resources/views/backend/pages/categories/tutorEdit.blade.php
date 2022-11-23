@@ -15,17 +15,17 @@
 
     <div class="form-group">
     <label for="inputImages">Images</label>
-    <input required name="images" type="file" class="form-control" id="" placeholder="Upload Your Images">
+    <input name="images" type="file" class="form-control" id="" placeholder="Upload Your Images" value="{{$editTest->images}}">
   </div>
 
 <div class="form-group">
     <label for="inputName">Name</label>
-    <input required name="name" type="text" class="form-control" id="inputName" placeholder="Enter Your Name Here" value="{{$editTest->name}}">
+    <input name="name" type="text" class="form-control" id="inputName" placeholder="Enter Your Name Here" value="{{$editTest->name}}">
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
-      <input required name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email" value="{{$editTest->email}}">
+      <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email" value="{{$editTest->email}}">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Password</label>
@@ -33,24 +33,24 @@
     </div>
     <div class="form-group col-md-6">
     <label for="inputAddress2">Contact</label>
-    <input required name="phone" type="number" class="form-control" id="inputAddress2" placeholder="Enter Your Contact Info" value="{{$editTest->contact}}">
+    <input name="phone" type="number" class="form-control" id="inputAddress2" placeholder="Enter Your Contact Info" value="{{$editTest->contact}}">
   </div>
   <div class="form-group col-md-6">
     <label for="inputAddress2">N-ID</label>
-    <input required name="n_id" type="number" class="form-control" id="inputAddress2" placeholder="Your n-id" value="{{$editTest->n_id}}">
+    <input name="n_id" type="number" class="form-control" id="inputAddress2" placeholder="Your n-id" value="{{$editTest->n_id}}">
   </div>
   <div class="form-group col-md-6">
     <label for="inputAddress2">Subject</label>
-    <input required name="subject" type="text" class="form-control" id="inputAddress2" placeholder="Enter your subject" value="{{$editTest->subject}}">
+    <input name="subject" type="text" class="form-control" id="inputAddress2" placeholder="Enter your subject" value="{{$editTest->subject}}">
   </div>
   <div class="form-group col-md-6">
     <label for="inputAddress2">Salary</label>
-    <input required name="salary" type="number" class="form-control" id="inputAddress2" placeholder="$" value="{{$editTest->salary}}">
+    <input name="salary" type="number" class="form-control" id="inputAddress2" placeholder="$" value="{{$editTest->salary}}">
   </div>
   </div>
   <div class="form-group">
     <label for="inputAddress">Address</label>
-    <input required name="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" value="{{$editTest->address}}">
+    <input name="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" value="{{$editTest->address}}">
   </div>
 
   <div>

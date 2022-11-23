@@ -125,7 +125,7 @@ class tutorsController extends Controller
             'status'=>$request1->status,
         ]);
 
-        return redirect()->route('tutor-url')->with('message','Updated Successfully!!');
+        return redirect()->route('tutor-url')->with('messages','Updated Successfully!!');
 
     }
 

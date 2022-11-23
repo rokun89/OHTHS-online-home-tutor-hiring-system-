@@ -121,7 +121,7 @@ public function update(Request $request1,$edit)
         'occupation'=>$request1->occupation,
       ]); 
 
-      return redirect()->route('parents-url')->with('message','Update Successfully!!');
+      return redirect()->route('parents-url')->with('messages','Update Successfully!!');
 
 }
 

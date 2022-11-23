@@ -110,7 +110,7 @@ public function std_store(Request $stdvar)
             'status'=>$request1->status,
         ]);
     
-        return redirect()->route('students-url')->with('message','Updated Successfully!!');
+        return redirect()->route('students-url')->with('messages','Updated Successfully!!');
 
 
     }
