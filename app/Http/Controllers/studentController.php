@@ -44,9 +44,8 @@ public function std_store(Request $stdvar)
         'address'=>$stdvar->address,
         'status'=>$stdvar->status,
     ]);
-
-    return redirect(route('students-url'))->with('message','Submitted Successfully!');
-
+    notify()->success('Submitted Successfully');
+    return redirect(route('students-url'));
 
 }
    
@@ -57,11 +56,12 @@ public function std_store(Request $stdvar)
         if($deletestdTest){
 
             $deletestdTest-> delete();
-            return redirect()->back()->with('messages','Delete Succesfully!');
+            notify()->success('Delete Successfull');
+            return redirect()->back();
         }
         else{
-
-            return redirect()->back()->with('errormsg','Request Not Found');
+            notify()->error('Request Not Found');
+            return redirect()->back();
 
         }
 
@@ -109,8 +109,10 @@ public function std_store(Request $stdvar)
             'address'=>$request1->address,
             'status'=>$request1->status,
         ]);
-    
-        return redirect()->route('students-url')->with('messages','Updated Successfully!!');
+
+        notify()->success('Update Successfull');
+        
+        return redirect()->route('students-url');
 
 
     }

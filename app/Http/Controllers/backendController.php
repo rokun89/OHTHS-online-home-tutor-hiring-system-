@@ -21,12 +21,6 @@ class backendController extends Controller
 
       return view('backend.pages.dashboard'); 
     }
-
-
-public function frontend()
-    {
-        return view('frontend.master'); //simple frontend controller
-    }
         
 
 
@@ -77,9 +71,9 @@ public function tutionPage()
 
 public function subjectPage()
 {
-    $subject=Subjects::all();
+    $sub=Subjects::paginate(5);
 
-    return view('backend.pages.subject',compact('subject'));
+    return view('backend.pages.subject',compact('sub'));
 }
 
 

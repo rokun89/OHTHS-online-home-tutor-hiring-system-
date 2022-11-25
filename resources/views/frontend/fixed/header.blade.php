@@ -25,7 +25,7 @@
 
 @auth
 <li >
-<a href="{{route('user.logout')}}">{{auth()->user()->name}} | Logout</a></li>
+<a href="{{route('user.logout')}}">{{auth()->user()->name}} <span type="button" class="btn btn-outline-danger"> Logout</span></a></li>
 @else
 
 <a href="http://" target="_blank" rel="noopener noreferrer"></a><button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="btn btn-secondary">Log in</button>

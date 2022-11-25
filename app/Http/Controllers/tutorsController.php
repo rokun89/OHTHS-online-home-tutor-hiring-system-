@@ -57,7 +57,8 @@ class tutorsController extends Controller
 
         ]);
 
-        return redirect(route('tutor-url'))->with('message','Submitted Successfully!');
+        notify()->success('Submitted Successfully');
+        return redirect(route('tutor-url'));
 
     }
 
@@ -69,10 +70,12 @@ class tutorsController extends Controller
         if($deletetutorTest)
         {
             $deletetutorTest-> delete();
-            return redirect()->back()->with('messages','Deleted Succesfully!');
+            notify()->success('Delete Successfull');
+            return redirect()->back();
 
         }
         else{
+            notify()->error('Request Not Found');
             return redirect()->back()->with('errormsg','Request Not Found');
         }
 
@@ -124,9 +127,8 @@ class tutorsController extends Controller
             'login_pass'=>$request1->password,
             'status'=>$request1->status,
         ]);
-
-        return redirect()->route('tutor-url')->with('messages','Updated Successfully!!');
-
+        notify()->success('Update Successfull');
+        return redirect()->route('tutor-url');
     }
 
 }

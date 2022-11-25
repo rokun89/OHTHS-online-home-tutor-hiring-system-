@@ -13,7 +13,7 @@
  
  @endif 
 
-<h1>Subject Table</h1>
+<h1>Payments Table</h1>
 
 <table class="table">
   <thead>

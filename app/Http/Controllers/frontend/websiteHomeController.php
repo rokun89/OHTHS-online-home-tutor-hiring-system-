@@ -28,7 +28,7 @@ class websiteHomeController extends Controller
 
       ]);  
 
-      //notify()->success('Registration Successfull !');
+      notify()->success('Registration Successfull !');
       return redirect()->back();
 
     }
@@ -46,13 +46,13 @@ class websiteHomeController extends Controller
         $credentials=$loginRequest->only('email','password');
         if(auth()->attempt($credentials))
         {
-             //notify()->success('Login Successfull !');
+             notify()->success('Login Successfull !');
 
              return redirect()->back();
         }
         else{
 
-             //notify()->error('Invalid User !');
+             notify()->error('Invalid User !');
              return redirect()->back();
         }
         
@@ -62,7 +62,7 @@ class websiteHomeController extends Controller
     {
         auth()->Logout();
 
-        //notify()->success('Logout Successfull');
+        notify()->success('Logout Successfull');
 
         return redirect()->back();
     }

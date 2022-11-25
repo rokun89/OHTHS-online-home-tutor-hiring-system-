@@ -23,18 +23,20 @@ class userController extends Controller
 
         if(Auth::attempt($credentials))
         {
+            notify()->success('Welcome to dashboard');
             return redirect()->route('base-url');
         }
 
-        return redirect()-> back()->with('messages','Invalid Cresedentials');
+        notify()->error('Invalid User');
+        return redirect();
 
     }
 
     public function logout()
     {
         Auth::logout();
-        
-        return redirect()->back()->with('message','Logout Successfully');
+        notify()->success('Logout Successfully');
+        return redirect()->back();
     }
     
 

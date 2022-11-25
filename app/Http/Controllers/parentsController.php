@@ -53,8 +53,8 @@ public function store(Request $request)
         'description'=>$request->description,
         'occupation'=>$request->occupation,
       ]); 
-
-      return redirect(route('parents-url'))->with('message','Submitted Successfully!');
+      notify()->success('Submitted Successfully!');
+      return redirect(route('parents-url'));
 
 }
 
@@ -65,11 +65,13 @@ public function store(Request $request)
         if($deleteparentsTest){
 
             $deleteparentsTest-> delete();
-            return redirect()->back()->with('messages','Delete Succesfully!');
+            notify()->success('Delete Successfull');
+            return redirect()->back();
         }
         else{
 
-            return redirect()->back()->with('errormsg','Request Not Found');
+            notify()->error('Request Not Found');
+            return redirect()->back();
 
         }
     }
@@ -120,8 +122,9 @@ public function update(Request $request1,$edit)
         'description'=>$request1->description,
         'occupation'=>$request1->occupation,
       ]); 
-
-      return redirect()->route('parents-url')->with('messages','Update Successfully!!');
+      
+      notify()->success('Update Successfull');
+      return redirect()->route('parents-url');
 
 }
 

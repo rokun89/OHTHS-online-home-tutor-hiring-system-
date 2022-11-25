@@ -18,6 +18,13 @@
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.0/examples/dashboard/dashboard.css" rel="stylesheet">
    
+
+    @notifyCss
+
+    <style type="text/css">.notify{z-index:1000000;margin: top 5%;} </style>
+
+
+
   </head>
 
   <body>
@@ -27,6 +34,12 @@
 
   @include('backend.partial.header')
 
+  
+
+
+
+
+
 
 
     <div class="container-fluid">
@@ -34,7 +47,12 @@
 
 
 
+
+
+
         @include('backend.partial.sidebar')
+
+
 
 
         
@@ -46,6 +64,7 @@
 
 
         @yield('content') 
+        <x:notify-messages />
         
 
 
@@ -82,5 +101,8 @@
     <!-- Graphs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.1/dist/Chart.min.js"></script>
     
+    @notifyJs
+
+
   </body>
 </html>
