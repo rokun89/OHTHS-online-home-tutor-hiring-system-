@@ -5,32 +5,32 @@
     
 
 <style>
-        * {
-	box-sizing: border-box;
-}
-
+      
 body {
-	background-color: white;
+	background: linear-gradient(to right, #b92b27, #1565c0);
 	
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
+	margin: 0px;
 	
 }
 
 
 .container {
-	background-color:whitesmoke;
-	border-radius: 5px;
+	background-color: ghostwhite;
+	border-radius: 10px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 	overflow: hidden;
-	width: 520px;
-	max-width: 100%;
+	width: 500px;
+	max-width: 150%;
+	height: 60%;
+	
 }
 .header {
-	border-bottom: 1px solid #f0f0f0;
-	background-color: #f7f7f7;
+	
+	height: 40px;
 	padding: 10px 40px;
     display: flex;
     justify-content: center;
@@ -55,7 +55,7 @@ body {
 .form-control input {
 	border: 2px solid #f0f0f0;
 	border-radius: 4px;
-	display: block;
+	
 	font-family: inherit;
 	font-size: 14px;
 	padding: 10px;
@@ -83,10 +83,10 @@ body {
 	font-family: inherit;
 	font-size: 16px;
 	padding: 8px;
-	margin-top: 20px;
-	width: 50%;
-    display: flex;
-    justify-content: center;
+	margin-top: 50px;
+	margin-left: 120px;
+	width: 40%;
+    
 }
 
 
@@ -99,13 +99,10 @@ body {
     <div class="container">
         <div class="header">    
     <span class="material-icons-sharp">person</span>
-    <h2>Sign in</h2>                   
+    <h2>LOGIN</h2>                   
     </div>
 	
-	@if(Session()->has('message'))
- <p class="alert alert-success">{{session()->get('message')}}</p> 
-
-@endif
+ 
         <form id="form" class="form" action="{{route('do.login')}}" method="post">
 
 		@csrf

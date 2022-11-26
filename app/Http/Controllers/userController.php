@@ -28,7 +28,8 @@ class userController extends Controller
         }
 
         notify()->error('Invalid User');
-        return redirect();
+        
+        return redirect()->back();
 
     }
 

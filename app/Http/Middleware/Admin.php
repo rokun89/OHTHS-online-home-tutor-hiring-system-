@@ -21,7 +21,7 @@ class Admin
             return $next($request);
         }
 
-      //  notify()->error('Your are not Admin');
+        notify()->error('Your are not Admin');
 
       return redirect()->route('web.home');
         
