@@ -3,7 +3,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
       rel="stylesheet">
     
-
+	  @notifyCss
 <style>
       
 body {
@@ -95,7 +95,8 @@ body {
  
 
 <body>
-	
+<x:notify-messages />	
+
     <div class="container">
         <div class="header">    
     <span class="material-icons-sharp">person</span>
@@ -125,6 +126,7 @@ body {
         </form>
     </div>
 
+	@notifyJs
     
 </body>
    

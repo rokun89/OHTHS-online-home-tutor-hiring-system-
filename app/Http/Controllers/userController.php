@@ -27,7 +27,7 @@ class userController extends Controller
             return redirect()->route('base-url');
         }
 
-        notify()->error('Invalid User');
+        notify()->error('Sorry!!You Are Not Admin.');
         
         return redirect()->back();
 

@@ -17,17 +17,17 @@ class tutorsController extends Controller
     {
         //dd($tutorvar->all());
 
-        $tutorvar->validate([
-            'name'=>'required',
-            'images'=>'required',
-            'email'=>'required',
-            'contact'=>'required',
-            'n_id'=>'required',
-            'address'=>'required',
-            'subject'=>'required',
-            'salary'=>'required',
+        // $tutorvar->validate([
+        //     'name'=>'required',
+        //     'images'=>'required',
+        //     'email'=>'required',
+        //     'contact'=>'required',
+        //     'n_id'=>'required',
+        //     'address'=>'required',
+        //     'subject'=>'required',
+        //     'salary'=>'required',
         
-        ]);
+        // ]);
 
 
 
@@ -122,7 +122,6 @@ class tutorsController extends Controller
             'address'=>$request1->address,
             'subject'=>$request1->subject,
             'salary'=>$request1->salary,
-            
             'description'=>$request1->description,
             'login_pass'=>$request1->password,
             'status'=>$request1->status,

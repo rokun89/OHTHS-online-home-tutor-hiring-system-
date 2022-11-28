@@ -1,7 +1,7 @@
 
 
 <!-- Header section -->
-<header class="header-section">
+<header class="header-section" style="background-color:#282A35 ;padding: 5px 0;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-3">
@@ -16,16 +16,18 @@
 					
 	<nav class="main-menu">
 		<ul>
+    
 			<li><a href="{{route('web.home')}}">Home</a></li>
 			<li><a href="{{route('tutor.url')}}">Tutor</a></li>
 			<li><a href="#">Course</a></li>
 			<li><a href="#">News</a></li>
 			<li><a href="#">Contact</a></li>
-			<li style="padding-left: 130px;" class="btn-group" role="group" aria-label="Basic example">
+			<li style="padding-left: 132px;" class="btn-group" role="group" aria-label="Basic example">
 
 @auth
-<li >
-<a href="{{route('user.logout')}}">{{auth()->user()->name}} <span type="button" class="btn btn-outline-danger"> Logout</span></a></li>
+<li class="btn-group" role="group" aria-label="Basic example">
+  <a href="#">{{auth()->user()->name}} </a>
+<a href="{{route('user.logout')}}" style="margin-left: 2px;"><span type="button" class="btn btn-outline-danger"> Logout</span></a></li>
 @else
 
 <a href="http://" target="_blank" rel="noopener noreferrer"></a><button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="btn btn-secondary">Log in</button>

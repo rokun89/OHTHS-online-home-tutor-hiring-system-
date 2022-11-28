@@ -1,7 +1,8 @@
 
+@extends('frontend.master')
+@section('content')
 
-
-
+@auth
 
 
 	<!-- categories section -->
@@ -290,5 +291,6 @@
 	<!-- signup section end -->
 
 
+@endauth
 
-
+@endsection

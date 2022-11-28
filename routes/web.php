@@ -31,7 +31,7 @@ Route::post('/userlogin',[websiteHomeController::class,'userlogin'])->name('user
 
 
 Route::group(['middleware'=>'auth'],function() {
-
+    
     Route::get('/userlogout',[websiteHomeController::class,'userlogout'])->name('user.logout');
     Route::get('/tutor',[websiteHomeController::class,'tutor'])->name('tutor.url');
 

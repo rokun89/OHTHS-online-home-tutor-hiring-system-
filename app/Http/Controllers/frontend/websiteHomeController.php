@@ -9,9 +9,10 @@ use Illuminate\Http\Request;
 
 class websiteHomeController extends Controller
 {
+
     public function webhome()
     {
-        return view('frontend.master');
+        return view('frontend.pages.body');
     }
 
 
