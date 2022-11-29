@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Event\ViewEvent;
 
 class websiteHomeController extends Controller
 {
@@ -53,7 +54,7 @@ class websiteHomeController extends Controller
         }
         else{
 
-             notify()->error('Invalid User !');
+             notify()->error('Username & password is not correct!');
              return redirect()->back();
         }
         
@@ -67,6 +68,30 @@ class websiteHomeController extends Controller
 
         return redirect()->back();
     }
+
+
+
+    public function userProfile()
+    {
+        return view('frontend.pages.profile');
+
+    }
+
+    public function UserUpdate (Request $request)
+    {
+        $userupdate=User::find(auth()->user()->id);
+
+        $userupdate->update([
+            'name'=>$request->user_name,
+            'contact'=>$request->phone,
+            'password'=>$request->password
+    
+        ]);
+
+        notify('success','Profile Updated Successfully');
+        return redirect()->route('web.home');
+    }
+
 
 
 

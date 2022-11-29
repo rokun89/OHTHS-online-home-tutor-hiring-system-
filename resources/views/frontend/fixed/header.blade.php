@@ -1,18 +1,14 @@
 
 
 <!-- Header section -->
-<header class="header-section" style="background-color:#282A35 ;padding: 5px 0;">
+<header class="header-section" style="background-color:#282A35 ;padding: 2px 0;">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3 col-md-3">
-					<div class="site-logo">
-						<img src="" alt="">
-					</div>
 					<div class="nav-switch">
 						<i class="fa fa-bars"></i>
 					</div>
-				</div>
-				<div class="col-lg-9 col-md-9">
+				
+				<div class="col-lg-12 col-md-12">
 					
 	<nav class="main-menu">
 		<ul>
@@ -22,12 +18,15 @@
 			<li><a href="#">Course</a></li>
 			<li><a href="#">News</a></li>
 			<li><a href="#">Contact</a></li>
-			<li style="padding-left: 132px;" class="btn-group" role="group" aria-label="Basic example">
+      <li><a href="£"><div class="btn-group" role="group" aria-label="Third group">
+                Be a tutor</div></a></li>
+			<li style="padding-left: 250px;" class="btn-group" role="group" aria-label="Basic example">
 
 @auth
 <li class="btn-group" role="group" aria-label="Basic example">
-  <a href="#">{{auth()->user()->name}} </a>
-<a href="{{route('user.logout')}}" style="margin-left: 2px;"><span type="button" class="btn btn-outline-danger"> Logout</span></a></li>
+  <a href="{{route('user.profile')}}">{{auth()->user()->name}} </a>
+<a href="{{route('user.logout')}}" style="margin-left: 2px;"><span type="button"> |
+  Logout</span></a></li>
 @else
 
 <a href="http://" target="_blank" rel="noopener noreferrer"></a><button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="btn btn-secondary">Log in</button>
@@ -45,15 +44,6 @@
 		</div>
 	</header>
 	<!-- Header section end -->
-
-
-
-
-
-
-
-
-
 
 
 
@@ -116,6 +106,7 @@
     </div>
   </div>
 </div>
+
 
 
 

@@ -32,6 +32,8 @@ Route::post('/userlogin',[websiteHomeController::class,'userlogin'])->name('user
 
 Route::group(['middleware'=>'auth'],function() {
     
+    Route::get('/userProfile',[websiteHomeController::class,'userProfile'])->name('user.profile');
+    Route::put('/usereupdate',[websiteHomeController::class,'UserUpdate'])->name('user.update');
     Route::get('/userlogout',[websiteHomeController::class,'userlogout'])->name('user.logout');
     Route::get('/tutor',[websiteHomeController::class,'tutor'])->name('tutor.url');
 

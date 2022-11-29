@@ -110,14 +110,14 @@ body {
        
             <div class="form-control">
                 <label for="username">Email / Username</label>
-                <input name="email" type="email" placeholder="Enter email address / Username" id="email" />
+                <input required name="email" type="email" placeholder="Enter email address / Username" id="email" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
 
             </div>
             <div class="form-control">
                 <label for="username">Password</label>
-                <input name="password" type="password" placeholder="Enter Password" id="password"/>
+                <input required name="password" type="password" placeholder="Enter Password" id="password"/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
             </div>
