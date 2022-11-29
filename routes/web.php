@@ -30,12 +30,17 @@ Route::post('/registration',[websiteHomeController::class,'registration'])->name
 Route::post('/userlogin',[websiteHomeController::class,'userlogin'])->name('userlogin');
 
 
+
+//tutor route:
+Route::get('/tutor',[websiteHomeController::class,'tutor'])->name('tutor.url');
+
+
 Route::group(['middleware'=>'auth'],function() {
     
     Route::get('/userProfile',[websiteHomeController::class,'userProfile'])->name('user.profile');
     Route::put('/usereupdate',[websiteHomeController::class,'UserUpdate'])->name('user.update');
     Route::get('/userlogout',[websiteHomeController::class,'userlogout'])->name('user.logout');
-    Route::get('/tutor',[websiteHomeController::class,'tutor'])->name('tutor.url');
+    
 
 
 
@@ -60,9 +65,9 @@ Route::get('/login',[userController::class,'login'])->name('login');
 Route::post('/do-login',[userController::class,'doLogin'])->name('do.login');
 
 
+
+
 //Route Group Given below==>>
-
-
 Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
 
     Route::get('/logout',[userController::class,'logout'])->name('logout');
@@ -107,8 +112,8 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
     Route::post('/subject-form-store',[subjectController::class,'subjectStore'])->name('subject.store.page');
 
 
-    //Payments form route
 
+    //Payments form route
     Route::get('/payments-form',[paymentsController::class,'payments_form_page'])->name('payments.form');
     Route::post('/payments-form-store',[paymentsController::class,'payments_store'])->name('payments.store.page');
 

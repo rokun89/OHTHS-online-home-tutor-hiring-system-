@@ -14,19 +14,20 @@
 		<ul>
     
 			<li><a href="{{route('web.home')}}">Home</a></li>
-			<li><a href="{{route('tutor.url')}}">Tutor</a></li>
+			<li><a href="#">Tutor</a></li>
 			<li><a href="#">Course</a></li>
 			<li><a href="#">News</a></li>
 			<li><a href="#">Contact</a></li>
-      <li><a href="£"><div class="btn-group" role="group" aria-label="Third group">
-                Be a tutor</div></a></li>
+      <li><a href="{{route('tutor.url')}}">Be a tutor</a></li>
 			<li style="padding-left: 250px;" class="btn-group" role="group" aria-label="Basic example">
 
 @auth
+
 <li class="btn-group" role="group" aria-label="Basic example">
   <a href="{{route('user.profile')}}">{{auth()->user()->name}} </a>
 <a href="{{route('user.logout')}}" style="margin-left: 2px;"><span type="button"> |
   Logout</span></a></li>
+
 @else
 
 <a href="http://" target="_blank" rel="noopener noreferrer"></a><button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="btn btn-secondary">Log in</button>
@@ -34,6 +35,7 @@
   <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">Registration</button>
 
   </li>
+  
   @endauth
 							
 
