@@ -6,11 +6,6 @@
     <span class="btn btn-success">+Create New Form</span>
 </a>
 
-@if(Session('messages'))
-
- <div class="alert alert-success">{{session('messages')}}</div>
-
- @endif
 
 <h1>Tutor Table</h1>
 

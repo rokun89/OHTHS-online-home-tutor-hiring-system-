@@ -30,9 +30,17 @@ Route::post('/registration',[websiteHomeController::class,'registration'])->name
 Route::post('/userlogin',[websiteHomeController::class,'userlogin'])->name('userlogin');
 
 
+Route::get('/tutor',[websiteHomeController::class,'tutor'])->name('tutor.url');
+
 
 //tutor route:
-Route::get('/tutor',[websiteHomeController::class,'tutor'])->name('tutor.url');
+
+Route::post('/tutor/reg/submit',[websiteHomeController::class,'tutorReg'])->name('tutor.reg');
+Route::post('/tutor/login',[websiteHomeController::class,'tutorlogin'])->name('tutor.login');
+Route::get('aftertutorlog',[websiteHomeController::class,'tutorweb'])->name('tutor.webpage');
+Route::get('/tutor/create/profile',[websiteHomeController::class,'tutorprofile'])->name('tutor.profile');
+Route::post('/tutor/form/post',[websiteHomeController::class,'tutorProfileStore'])->name('tutor.profile.store');
+
 
 
 Route::group(['middleware'=>'auth'],function() {
@@ -40,6 +48,9 @@ Route::group(['middleware'=>'auth'],function() {
     Route::get('/userProfile',[websiteHomeController::class,'userProfile'])->name('user.profile');
     Route::put('/usereupdate',[websiteHomeController::class,'UserUpdate'])->name('user.update');
     Route::get('/userlogout',[websiteHomeController::class,'userlogout'])->name('user.logout');
+
+
+    Route::get('/tutorpage',[websiteHomeController::class,'tutorpage'])->name('tutor.page');
     
 
 

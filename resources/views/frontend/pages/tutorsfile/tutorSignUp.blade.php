@@ -3,17 +3,18 @@
 @section('content')
 
 <!-- signup section -->
-<div style="padding-top:60px ;">
+<div style="margin: 130px;">
 
 
 <section class="signup-section spad">
-		<div class="signup-bg set-bg" data-setbg="{{url('/frontend/images/Teacher.jpg')}}"></div>
+		<div class="signup-bg set-bg" data-setbg="{{url('/frontend/images/Teach.jpg')}}"></div>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="signup-warp">
 						<div class="section-title text-white text-left">
 							<h2>Sign up to became a teacher</h2>
+
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
                             <p>
                          <button data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary btn-lg">LOGIN</button>
@@ -28,7 +29,6 @@
 			</div>
 		</div>
 	</section>
-
     </div>
 	<!-- signup section end -->
 
@@ -61,17 +61,19 @@
 	<link rel="stylesheet" href="{{url('/frontend/css/style.css')}}">
 
     
-        <form class="signup-form" >
+    <form  action="{{route('tutor.reg')}}" method="post" enctype="multipart/form-data">
+
+    @csrf
 
 <div class="form-row">
     <div class="form-group col-md-6">
 <label for="Name"><b>Name:</b></label>
-<input type="text" placeholder="Enter Your Name">
+<input name="name" type="text" placeholder="Enter Your Name">
     </div>
 
     <div class="form-group col-md-6" >
 <label for="Email"> <b>E-mail:</b></label>
-<input type="email" placeholder=" E-mail">
+<input name="email" type="email" placeholder=" E-mail">
     </div>
 </div>
 
@@ -83,35 +85,45 @@
 
 <div class="form-group col-md-6">
 <label for="contact"><b> Contact:</b></label>
-<input type="text" placeholder=" Contact">
+<input name="phone" type="text" placeholder=" Contact">
 </div>
 
 <div class="form-group col-md-6">
 <label for="nid"><b> N-ID:</b></label>
-<input type="text" placeholder="n-id">
+<input name="n_id" type="text" placeholder="n-id">
     </div>
 
     <div class="form-group col-md-6">
 <label for="nid"><b> Subject:</b></label>
-<input type="text" placeholder="subject">
+<input name="subject" type="text" placeholder="subject">
     </div>    
 
     <div class="form-group col-md-6">
-<label for="nid"><b> Salary:</b></label>
-<input type="text" placeholder="$$$">
+<label for="salary"><b> Salary:</b></label>
+<input name="salary" type="text" placeholder="$$$">
     </div>
+    
+    <div class="form-group col-md-6">
+<label for="nid"><b> Status</b></label>
+<select name="status" id="" class="form-control">
+  <option value="active">Active</option>
+ <option value="inactive">Inactive</option>
+    </select>
+    </div>
+    
+    <div class="form-group col-md-6">
+<label for="images"><b> Images</b></label>
+<input name="images" type="file" placeholder="upload images">
+    </div>
+
 
         </div>
 
 <div>
 <label for="nid"><b> Address:</b></label>
-<input type="text" placeholder="123/Avila,CA 931">
+<input name="address" type="text" placeholder="123/Avila,CA 931">
 </div>
 
-<div>
-<label for="v-upload" class="file-up-btn">Upload your Images</label>
-<input type="file" id="v-upload">
-</div>
 
 <div>
 <button type="submit" class="btn btn-success">Submit</button>
@@ -156,7 +168,7 @@
 
     <div>
     
-    <form class="signup-form" action="" method="post" >
+    <form class="signup-form" action="{{route('tutor.login')}}" method="post" >
 
 	@csrf
 

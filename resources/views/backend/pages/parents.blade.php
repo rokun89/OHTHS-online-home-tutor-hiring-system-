@@ -34,7 +34,7 @@
       <th scope="col">Contact</th>
       <th scope="col">Address</th>
       <th scope="col">N-ID</th>
-      <th scope="col">Login-Pass</th>
+      
       <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
@@ -52,7 +52,7 @@
       <td>{{$data->contact}}</td>
       <td>{{$data->address}}</td>
       <td>{{$data->n_id}}</td>
-      <td>{{$data->login_pass}}</td>
+      
       <td>{{$data->status}}</td>
       <td>
         <a href="{{route('parentsInfo.view',$data->id)}}" class="btn btn-primary">view</a>

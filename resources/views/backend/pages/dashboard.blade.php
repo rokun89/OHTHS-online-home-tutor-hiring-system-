@@ -3,6 +3,8 @@
 @section('content')
 
 
+<h1><u> User Table:</u></h1>
+
 
 
 

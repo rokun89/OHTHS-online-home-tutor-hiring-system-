@@ -7,29 +7,10 @@
 </a>
 
 
-@if(session()->has('messages'))
-
-<p class="alert alert-success" {{session()->get('messages')}}></p>
-
-@endif
-
-
-<!--@if(session()->has('errormsg'))
-
-<p class="alert alert-danger" {{session()->get('errormsg')}}></p>
-
-@endif -->
-
-
-
 
 
 <h1>Student Table</h1>
 
-@if(Session('message'))
-<div> <div class="alert alert-success">{{session('message')}}</div> </div>
-
-@endif
 
 <table class="table">
   <thead>
