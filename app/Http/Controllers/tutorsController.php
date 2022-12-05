@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tutors;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class tutorsController extends Controller
@@ -41,19 +42,16 @@ class tutorsController extends Controller
 
 
 
-        Tutors::create([
+        User::create([
             'name'=>$tutorvar->name,
-            'images'=>$tutorimgName,
             'email'=>$tutorvar->email,
+            'password'=>bcrypt($tutorvar->password),
             'contact'=>$tutorvar->phone,
-            'n_id'=>$tutorvar->n_id,
             'address'=>$tutorvar->address,
             'subject'=>$tutorvar->subject,
             'salary'=>$tutorvar->salary,
-            'occupation'=>$tutorvar->occupation,
-            'description'=>$tutorvar->description,
-            'login_pass'=>$tutorvar->password,
-            'status'=>$tutorvar->status,
+            'images'=>$tutorimgName,
+            'role'=>'tutor'
 
         ]);
 
@@ -65,7 +63,7 @@ class tutorsController extends Controller
 
     public function deleteTutorInfo($deleteTutor)
     {
-        $deletetutorTest=Tutors::find($deleteTutor);
+        $deletetutorTest=User::find($deleteTutor);
 
         if($deletetutorTest)
         {
@@ -84,7 +82,7 @@ class tutorsController extends Controller
 
     public function viewtutorInfo($viewtutor)
     {
-        $viewtutorTest=Tutors::find($viewtutor);
+        $viewtutorTest=User::find($viewtutor);
 
         return view('backend.pages.tutorDataView',compact('viewtutorTest'));
     }
@@ -93,15 +91,15 @@ class tutorsController extends Controller
 
     public function edit($edit)
     {
-        $editTest=Tutors::find($edit);
-        $tutor=Tutors::all();
+        $editTest=User::find($edit);
+        $tutor=User::all();
         return view('backend.pages.categories.tutorEdit',compact('editTest','tutor'));
     }
 
 
     public function update(Request $request1,$edit)
     {
-        $editTest=Tutors::find($edit);
+        $editTest=User::find($edit);
 
         $tutorupdate=$editTest->images;
 
@@ -115,16 +113,14 @@ class tutorsController extends Controller
 
         $editTest->update([
             'name'=>$request1->name,
-            'images'=>$tutorupdate,
             'email'=>$request1->email,
+            'password'=>bcrypt($request1->password),
             'contact'=>$request1->phone,
-            'n_id'=>$request1->n_id,
             'address'=>$request1->address,
             'subject'=>$request1->subject,
             'salary'=>$request1->salary,
-            'description'=>$request1->description,
-            'login_pass'=>$request1->password,
-            'status'=>$request1->status,
+            'images'=>$tutorupdate,
+            'role'=>'tutor'
         ]);
         notify()->success('Update Successfull');
         return redirect()->route('tutor-url');

@@ -21,15 +21,14 @@
       <th scope="col">Address</th>
       <th scope="col">Subject</th>
       <th scope="col">Salary</th>
-      <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-    @foreach($tutor as $data)
+    @foreach($tutor as $key=>$data)
 
     <tr>
-      <th scope="row">{{$data->id}}</th>
+      <th scope="row">{{$key + 1}}</th>
       <td>
       <img width="50px" style="border-radius: 10px" src="{{url('/uploads/'.$data->images)}}" alt="click_image">
       </td>
@@ -39,7 +38,7 @@
       <td>{{$data->address}}</td>
       <td>{{$data->subject}}</td>
       <td>{{$data->salary}}</td>
-      <td>{{$data->status}}</td>
+      
       <td>
       <a href="{{route('view.tutorInfo',$data->id)}}" class="btn btn-primary">view</a>
       <a href="{{route('delete.tutorInfo',$data->id)}}" class="btn btn-danger">delete</a>

@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col-md-4 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                    <img class="rounded-circle mt-5" src="" width="90">
+                    <img class="rounded-circle mt-5" src="{{auth()->user()->images}}" width="90">
                     <span class="font-weight-bold">{{auth()->user()->name}}</span>
                     <span class="text-black-50">{{auth()->user()->email}}</span>
                 </div>
@@ -61,7 +61,7 @@
                     </div>
 
 
-                <form action="{{route('user.update')}}" method="post">
+                <form action="{{route('user.update')}}" method="post" enctype="multipart/form-data">
                 @method('put')   
                 @csrf 
                     
@@ -91,13 +91,13 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-6">
-                            <input name="address" type="text" class="form-control" placeholder="address" value="">
+                            <input name="address" type="text" class="form-control" placeholder="address" value="{{auth()->user()->address}}">
                         </div>
                         
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-6">
-                            <input type="file" class="form-control" placeholder="images" value="">
+                            <input name="images" type="file" class="form-control" placeholder="images" >
                         </div>
                         
                     </div>

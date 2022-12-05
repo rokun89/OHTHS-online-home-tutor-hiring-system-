@@ -13,12 +13,12 @@
                   Parents
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="{{route('students-url')}}">
                   <span data-feather="users"></span>
                   Students
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="{{route('tutor-url')}}">
                   <span data-feather="users"></span>

@@ -37,9 +37,7 @@ Route::get('/tutor',[websiteHomeController::class,'tutor'])->name('tutor.url');
 
 Route::post('/tutor/reg/submit',[websiteHomeController::class,'tutorReg'])->name('tutor.reg');
 Route::post('/tutor/login',[websiteHomeController::class,'tutorlogin'])->name('tutor.login');
-Route::get('aftertutorlog',[websiteHomeController::class,'tutorweb'])->name('tutor.webpage');
-Route::get('/tutor/create/profile',[websiteHomeController::class,'tutorprofile'])->name('tutor.profile');
-Route::post('/tutor/form/post',[websiteHomeController::class,'tutorProfileStore'])->name('tutor.profile.store');
+Route::get('tutor/webpage',[websiteHomeController::class,'tutorweb'])->name('tutor.webpage');
 
 
 
@@ -48,8 +46,6 @@ Route::group(['middleware'=>'auth'],function() {
     Route::get('/userProfile',[websiteHomeController::class,'userProfile'])->name('user.profile');
     Route::put('/usereupdate',[websiteHomeController::class,'UserUpdate'])->name('user.update');
     Route::get('/userlogout',[websiteHomeController::class,'userlogout'])->name('user.logout');
-
-
     Route::get('/tutorpage',[websiteHomeController::class,'tutorpage'])->name('tutor.page');
     
 
@@ -75,14 +71,10 @@ Route::group(['middleware'=>'auth'],function() {
 Route::get('/login',[userController::class,'login'])->name('login');
 Route::post('/do-login',[userController::class,'doLogin'])->name('do.login');
 
-
-
-
 //Route Group Given below==>>
 Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
 
     Route::get('/logout',[userController::class,'logout'])->name('logout');
-    
     
     Route::get('/',[backendController::class,'home'])->name('base-url');
     Route::get('/parents',[backendController::class,'parentsPage'])->name('parents-url');
@@ -94,35 +86,21 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
     Route::get('/contact',[backendController::class,'contactPage'])->name('contact-url');
     Route::get('/about',[backendController::class,'aboutPage'])->name('about-url');
 
-
-
-
     //parents form controller route
-
     Route::get('/createpage',[parentsController::class,'createPage'])->name('create.page');
     Route::post('/create/form',[parentsController::class,'store'])->name('category.store');
 
-
-
     //students form route
-
     Route::get('/createstdpage',[studentController::class,'stdPage'])->name('stdpage');
     ROute::post('/std_form_fillup',[studentController::class,'std_store'])->name('std_storepage');
 
-
-
     //tutor form route
-
     Route::get('/tutor-form',[tutorsController::class,'tutorForm'])->name('tutor.form.page');
     Route::post('/tutor-form-store',[tutorsController::class,'tutor_store'])->name('tutor.store.page');
-
-
 
     //Subject form route
     Route::get('/subject-form',[subjectController::class,'subjectForm'])->name('subject.form.page');
     Route::post('/subject-form-store',[subjectController::class,'subjectStore'])->name('subject.store.page');
-
-
 
     //Payments form route
     Route::get('/payments-form',[paymentsController::class,'payments_form_page'])->name('payments.form');
@@ -139,15 +117,11 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
     Route::put('/stdinfo/update/{updateInfo}',[studentController::class,'update'])->name('students.update');
 
 
-
-
     //parents data view delete update route
     Route::get('/parentsinfo/delete/{parentsInfo}',[parentsController::class,'deleteparentsInfo'])->name('parentsInfo.delete');
     Route::get('/parentsinfo/view/{parentsInfo}',[parentsController::class,'viewparentsInfo'])->name('parentsInfo.view');
     Route::get('/parentsinfo/edit/{parentsInfo}',[parentsController::class,'edit'])->name('parents.edit');
     Route::put('/parentsinfo/update/{parentsInfo}',[parentsController::class,'update'])->name('parents.update');
-
-
 
 
 

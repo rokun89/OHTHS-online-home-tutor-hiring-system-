@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\category;
 use App\Models\parents;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class parentsController extends Controller
@@ -41,17 +42,14 @@ public function store(Request $request)
       }
     
 
-      parents::create([
+      User::create([
         'images'=>$parentsvarName,
         'name'=>$request->name,
         'email'=>$request->email,
-        'login_pass'=>$request->password,
-        'address'=>$request->address,
-        'status'=>$request->status,
+        'password'=>$request->password,
         'contact'=>$request->contact,
-        'n_id'=>$request->n_id,
-        'description'=>$request->description,
-        'occupation'=>$request->occupation,
+        'address'=>$request->address,
+        'role'=>'parents',
       ]); 
       notify()->success('Submitted Successfully!');
       return redirect(route('parents-url'));
@@ -60,7 +58,7 @@ public function store(Request $request)
 
     public function deleteparentsInfo($deleteparentsInfo)
     {
-        $deleteparentsTest= parents::find($deleteparentsInfo);
+        $deleteparentsTest= User::find($deleteparentsInfo);
 
         if($deleteparentsTest){
 
@@ -78,7 +76,7 @@ public function store(Request $request)
 
     public function viewparentsInfo($viewparentsInfo)
     {
-        $viewparentsTest=parents::find($viewparentsInfo);
+        $viewparentsTest=User::find($viewparentsInfo);
 
         return view('backend.pages.parentsDataView',compact('viewparentsTest'));
 
@@ -87,9 +85,9 @@ public function store(Request $request)
 public function edit($edit)
 {
 
-    $editTest=parents::find($edit);
+    $editTest=User::find($edit);
 
-    $test=parents::all();
+    $test=User::where('role','parents');
 
     return view('backend.pages.categories.parentsEdit',compact('test','editTest'));
 
@@ -98,7 +96,7 @@ public function edit($edit)
 
 public function update(Request $request1,$edit)
 {
-    $editTest=parents::find($edit);
+    $editTest=User::find($edit);
 
     $parentsupdate=$editTest->images;
 
@@ -114,13 +112,10 @@ public function update(Request $request1,$edit)
         'images'=>$parentsupdate,
         'name'=>$request1->name,
         'email'=>$request1->email,
-        'login_pass'=>$request1->password,
-        'address'=>$request1->address,
-        'status'=>$request1->status,
+        'password'=>$request1->password,
         'contact'=>$request1->contact,
-        'n_id'=>$request1->n_id,
-        'description'=>$request1->description,
-        'occupation'=>$request1->occupation,
+        'address'=>$request1->address,
+        'role'=>'parents',
       ]); 
       
       notify()->success('Update Successfull');

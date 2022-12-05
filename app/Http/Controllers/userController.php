@@ -39,6 +39,9 @@ class userController extends Controller
         notify()->success('Logout Successfully');
         return redirect()->back();
     }
+
+
+    
     
 
 

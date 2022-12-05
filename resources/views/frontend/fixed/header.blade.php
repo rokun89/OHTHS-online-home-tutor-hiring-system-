@@ -158,6 +158,7 @@
 <label for="Contact"><b>Contact:</b></label>
 <input type="text" placeholder="Contact">
     </div>
+  
 </div>
 
 <div>

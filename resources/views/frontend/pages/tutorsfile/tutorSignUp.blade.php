@@ -42,110 +42,6 @@
 
 
 
-<!-- Modal For Registration-->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       
-
-      <link rel="stylesheet" href="{{url('/frontend/css/bootstrap.min.css')}}">
-	<link rel="stylesheet" href="{{url('/frontend/css/font-awesome.min.css')}}">
-	<link rel="stylesheet" href="{{url('/frontend/css/owl.carousel.css')}}">
-	<link rel="stylesheet" href="{{url('/frontend/css/style.css')}}">
-
-    
-    <form  action="{{route('tutor.reg')}}" method="post" enctype="multipart/form-data">
-
-    @csrf
-
-<div class="form-row">
-    <div class="form-group col-md-6">
-<label for="Name"><b>Name:</b></label>
-<input name="name" type="text" placeholder="Enter Your Name">
-    </div>
-
-    <div class="form-group col-md-6" >
-<label for="Email"> <b>E-mail:</b></label>
-<input name="email" type="email" placeholder=" E-mail">
-    </div>
-</div>
-
-<div class="form-row">
-<div class="form-group col-md-6">
-<label for="inputPassword4"><b>Password:</b> </label>
-<input required name="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
-</div>
-
-<div class="form-group col-md-6">
-<label for="contact"><b> Contact:</b></label>
-<input name="phone" type="text" placeholder=" Contact">
-</div>
-
-<div class="form-group col-md-6">
-<label for="nid"><b> N-ID:</b></label>
-<input name="n_id" type="text" placeholder="n-id">
-    </div>
-
-    <div class="form-group col-md-6">
-<label for="nid"><b> Subject:</b></label>
-<input name="subject" type="text" placeholder="subject">
-    </div>    
-
-    <div class="form-group col-md-6">
-<label for="salary"><b> Salary:</b></label>
-<input name="salary" type="text" placeholder="$$$">
-    </div>
-    
-    <div class="form-group col-md-6">
-<label for="nid"><b> Status</b></label>
-<select name="status" id="" class="form-control">
-  <option value="active">Active</option>
- <option value="inactive">Inactive</option>
-    </select>
-    </div>
-    
-    <div class="form-group col-md-6">
-<label for="images"><b> Images</b></label>
-<input name="images" type="file" placeholder="upload images">
-    </div>
-
-
-        </div>
-
-<div>
-<label for="nid"><b> Address:</b></label>
-<input name="address" type="text" placeholder="123/Avila,CA 931">
-</div>
-
-
-<div>
-<button type="submit" class="btn btn-success">Submit</button>
-</div>
-
-		
-</form>
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
 <!-- Modal for LOGIN -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -189,18 +85,112 @@
                     
                 </div>
 				<div>
-        <button type="submit" class="btn btn-Success">Submit</button>
+        
       </div>
 		
-</form>
+
     </div>
 
 
       </div>
       <div class="modal-footer">
+      <button type="submit" class="btn btn-Success">Submit</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       
       </div>
+                 </form>
+
+
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+<!-- Modal For Registration-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+
+      <link rel="stylesheet" href="{{url('/frontend/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{url('/frontend/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" href="{{url('/frontend/css/owl.carousel.css')}}">
+	<link rel="stylesheet" href="{{url('/frontend/css/style.css')}}">
+
+    
+    <form  action="{{route('tutor.reg')}}" method="post" enctype="multipart/form-data">
+
+    @csrf
+
+<div class="form-row">
+    <div class="form-group col-md-6">
+<input name="name" type="text" class="form-control" id="inputName" placeholder="Enter Your Name">
+    </div>
+
+    <div class="form-group col-md-6" >
+<input name="email" type="email" class="form-control" placeholder=" E-mail">
+    </div>
+</div>
+
+<div class="form-row">
+<div class="form-group col-md-6">
+<input required name="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
+</div>
+
+<div class="form-group col-md-6">
+<input name="phone" type="text" class="form-control" placeholder=" Contact">
+</div>
+
+    <div class="form-group col-md-6">
+<input name="subject" type="text" class="form-control" placeholder="subject">
+    </div>    
+
+    <div class="form-group col-md-6">
+<input name="salary" type="text" class="form-control" placeholder="$$$">
+    </div>
+    <div>
+
+<input name="address" type="text" class="form-control" placeholder="123/Avila,CA 931">
+</div>
+    <div class="form-group col-md-6">
+
+<input name="images" type="file" class="form-control" placeholder="upload images">
+    </div>
+</div>
+
+
+
+		
+
+      </div>
+      <div class="modal-footer">
+      <button type="submit" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+
+  </form>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+

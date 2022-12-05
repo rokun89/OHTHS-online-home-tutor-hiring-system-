@@ -10,6 +10,8 @@ use Illuminate\Auth\Events\Logout;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
 
+use function GuzzleHttp\Promise\all;
+
 class websiteHomeController extends Controller
 {
 
@@ -29,7 +31,8 @@ class websiteHomeController extends Controller
         'email'=>$regiRequest->email,
         'password'=>bcrypt( $regiRequest->password),
         'contact'=>$regiRequest->contact,
-        'role'=>'user'
+        'address'=>$regiRequest->address,
+        'role'=>'parents'
 
       ]);  
 
@@ -49,6 +52,7 @@ class websiteHomeController extends Controller
      ]);  
 
         $credentials=$loginRequest->only('email','password');
+         
         if(auth()->attempt($credentials))
         {
              notify()->success('Login Successfull !');
@@ -82,14 +86,26 @@ class websiteHomeController extends Controller
 
     public function UserUpdate (Request $request)
     {
+       // dd($request->all());
         $userupdate=User::find(auth()->user()->id);
+
+        $userimgUpdate=null;
+        if($request->hasFile('images'))
+        {
+           
+            $userimgUpdate=date('Ymdhmi').'.'.$request->file('images')->getClientOriginalExtension();
+            $request->file('images')->storeAs('/uploads',$userimgUpdate);
+        }
 
         $userupdate->update([
             'name'=>$request->user_name,
             'contact'=>$request->phone,
-            'password'=>$request->password
-    
-        ]);
+            'password'=>$request->password,
+            'address'=>$request->address,
+            'images'=>$userimgUpdate
+            
+            
+            ]);
 
         notify('success','Profile Updated Successfully');
         return redirect()->route('web.home');
@@ -115,14 +131,14 @@ class websiteHomeController extends Controller
 
     public function tutorReg(Request $tutorvar)
     {
-        // $tutorimgName=null;
-        // if($tutorvar->hasFile('images'))
-        // {
+        $tutorimg=null;
+        if($tutorvar->hasFile('images'))
+        {
            
-        //     $tutorimgName=date('Ymdhmi').'.'.$tutorvar->file('images')->getClientOriginalExtension();
-        //     $tutorvar->file('images')->storeAs('/uploads',$tutorimgName);
-        // }
-
+            $tutorimg=date('Ymdhmi').'.'.$tutorvar->file('images')->getClientOriginalExtension();
+            $tutorvar->file('images')->storeAs('/uploads',$tutorimg);
+        
+        }
 
 
         User::create([
@@ -130,6 +146,10 @@ class websiteHomeController extends Controller
             'email'=>$tutorvar->email,
             'password'=>bcrypt($tutorvar->password),
             'contact'=>$tutorvar->phone,
+            'address'=>$tutorvar->address,
+            'subject'=>$tutorvar->subject,
+            'salary'=>$tutorvar->salary,
+            'images'=>$tutorimg,
             'role'=>'tutor'
 
         ]);
@@ -165,47 +185,11 @@ class websiteHomeController extends Controller
 
     public function tutorweb()
     {
-        $tutorList=Tutors::paginate(6);
+        $tutorList=User:: where('role','tutor')->get();
+
         return view('frontend.pages.tutorsfile.tutorprofileList',compact('tutorList'));
     }
 
-    public function tutorprofile()
-    {
-        return view('frontend.pages.tutorsfile.tutorCreateProfile');
-    }
-
-    public function tutorProfileStore(Request $tutorvar)
-    {
-        $tutorimgName=null;
-        if($tutorvar->hasFile('images'))
-        {
-           
-            $tutorimgName=date('Ymdhmi').'.'.$tutorvar->file('images')->getClientOriginalExtension();
-            $tutorvar->file('images')->storeAs('/uploads',$tutorimgName);
-        }
-
-
-
-        Tutors::create([
-            'name'=>$tutorvar->name,
-            'images'=>$tutorimgName,
-            'email'=>$tutorvar->email,
-            'contact'=>$tutorvar->phone,
-            'n_id'=>$tutorvar->n_id,
-            'address'=>$tutorvar->address,
-            'subject'=>$tutorvar->subject,
-            'salary'=>$tutorvar->salary,
-            
-            'description'=>$tutorvar->description,
-            'login_pass'=>$tutorvar->password,
-            'status'=>$tutorvar->status,
-
-        ]);
-
-        notify()->success('Profile Created Successfully');
-        return redirect(route('tutor.webpage'));
-
-    }  
     
 
 

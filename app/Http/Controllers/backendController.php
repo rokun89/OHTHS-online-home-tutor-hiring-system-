@@ -8,6 +8,7 @@ use App\Models\students;
 use App\Models\Subject;
 use App\Models\Subjects;
 use App\Models\Tutors;
+use App\Models\User;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,9 @@ class backendController extends Controller
 
 public function parentsPage()
 {
-    $test=parents::paginate(5); //for query select * from categories; this the method
+    $test=User::where('role','parents')->paginate(5);
+
+    //paginate(5); //for query select * from categories; this the method
 
     //dd($test);
 
@@ -51,7 +54,7 @@ public function studentsPage()
 
 public function tutorPage()
 {
-    $tutor=Tutors::paginate(5);
+    $tutor=User::where('role','tutor')->paginate(5);
 
 
     return view('backend.pages.tutor',compact('tutor'));
