@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Classes;
 use App\Models\students;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
 
 class studentController extends Controller
 {
@@ -125,7 +126,7 @@ public function std_store(Request $stdvar)
 
 
 
-    
+
 
 
     public function clsPage()
@@ -142,6 +143,24 @@ public function std_store(Request $stdvar)
         notify()->success('Submitted Successfully');
         return redirect(route('class-url'));
     }
+
+    public function cls_delete($delete)
+    {
+        $clsdelete=Classes::find($delete);
+
+        if($clsdelete)
+        {
+            $clsdelete->delete();
+            notify()->success('Deleted Successfully');
+            return redirect()->back();
+        }
+        else{
+            notify()->error('Request Not Found');
+            return redirect()->back();
+        }
+
+    }
+
 
 
 

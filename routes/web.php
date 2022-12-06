@@ -6,6 +6,7 @@ use App\Http\Controllers\parentsController;
 use App\Http\Controllers\paymentsController;
 use App\Http\Controllers\studentController;
 use App\Http\Controllers\subjectController;
+use App\Http\Controllers\tutionController;
 use App\Http\Controllers\tutorsController;
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
@@ -102,6 +103,9 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
     Route::get('/tutor-form',[tutorsController::class,'tutorForm'])->name('tutor.form.page');
     Route::post('/tutor-form-store',[tutorsController::class,'tutor_store'])->name('tutor.store.page');
 
+    //Tution form route
+    Route::get('/tutor/form',[tutionController::class,'tutionForm'])->name('tution.form');
+
     //Subject form route
     Route::get('/subject-form',[subjectController::class,'subjectForm'])->name('subject.form.page');
     Route::post('/subject-form-store',[subjectController::class,'subjectStore'])->name('subject.store.page');
@@ -147,7 +151,8 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
     //students form route
     Route::get('/createClsPage',[studentController::class,'clsPage'])->name('cls.page');
     Route::post('/cls_form_fillup',[studentController::class,'cls_store'])->name('cls_storepage');
-    
+    Route::get('/cls/info/delete/{clsInfo}',[studentController::class,'cls_delete'])->name('cls.delete');
+
 
 
 
