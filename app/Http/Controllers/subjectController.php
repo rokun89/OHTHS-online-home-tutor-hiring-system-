@@ -30,11 +30,10 @@ class subjectController extends Controller
 
         Subjects::create([
 
-            'tutor_name'=>$subjectVar->name,
-            'subject'=>$subjectVar->subject,
+            'name'=>$subjectVar->name,
+            
             'class'=>$subjectVar->class,
-            'day'=>$subjectVar->day,
-            'time'=>$subjectVar->time,
+            
 
         ]);
 
@@ -80,11 +79,10 @@ class subjectController extends Controller
 
 
             $editTest->update([
-                'tutor_name'=>$request1->name,
-                'subject'=>$request1->subject,
+                'name'=>$request1->name,
+                
                 'class'=>$request1->class,
-                'day'=>$request1->day,
-                'time'=>$request1->time,
+                
                 
               ]); 
 

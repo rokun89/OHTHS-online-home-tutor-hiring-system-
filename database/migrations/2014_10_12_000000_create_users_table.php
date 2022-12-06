@@ -23,10 +23,8 @@ return new class extends Migration
 
             $table->string('contact')->nullable();
             $table->string('address')->nullable();
-            $table->string('subject')->nullable();
-            $table->string('salary')->nullable();
             $table->string('images')->nullable();
-
+            
             $table->rememberToken();
             $table->timestamps();
         });

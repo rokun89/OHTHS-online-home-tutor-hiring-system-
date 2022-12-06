@@ -125,8 +125,9 @@ class websiteHomeController extends Controller
 
     public function tutorpage()
     {
-        $tutorlist=Tutors:: paginate(6);
+        $tutorlist=User::where('role','tutor')->paginate(6);
         return view('frontend.pages.tutors',compact('tutorlist'));
+
     }
 
     public function tutorReg(Request $tutorvar)
@@ -147,8 +148,6 @@ class websiteHomeController extends Controller
             'password'=>bcrypt($tutorvar->password),
             'contact'=>$tutorvar->phone,
             'address'=>$tutorvar->address,
-            'subject'=>$tutorvar->subject,
-            'salary'=>$tutorvar->salary,
             'images'=>$tutorimg,
             'role'=>'tutor'
 
@@ -190,7 +189,24 @@ class websiteHomeController extends Controller
         return view('frontend.pages.tutorsfile.tutorprofileList',compact('tutorList'));
     }
 
+
+    public function tutorDetails()
+    {
+        return view('frontend.pages.tutorDetails');
+    }
     
 
+
+
+
+
+
+
+
+
+    public function TutionPage()
+    {
+        return view('frontend.pages.tution');
+    }
 
 }

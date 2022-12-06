@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classes;
 use App\Models\parents;
 use App\Models\Payments;
 use App\Models\students;
@@ -80,6 +81,12 @@ public function subjectPage()
 }
 
 
+
+public function classpage()
+{
+    $cls=Classes::all();
+    return view('backend.pages.class',compact('cls'));
+}
 
 
 public function servicePage()

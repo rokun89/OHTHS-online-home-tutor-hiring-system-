@@ -3,12 +3,8 @@
 @section('content')
 
 
-<div class=" form-row">
+<h1>Tution List:</h1>
 
-<div class="form-group col-md-2">
-<a href="#">
-    <span class="btn btn-success">+Create New Form</span>
-</a>
 
 
 @endsection

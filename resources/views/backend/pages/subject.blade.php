@@ -13,24 +13,22 @@
   <thead>
     <tr>
       <th scope="col">id</th>
-      <th scope="col">Tutors-name</th>
-      <th scope="col">Subject</th>
+      <th scope="col">Name</th>
+      
       <th scope="col">Class</th>
-      <th scope="col">Day</th>
-      <th scope="col">Time</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-    @foreach($sub as $data)
+    @foreach($sub as $key=> $data)
 
     <tr>
-      <th scope="row">{{$data->id}}</th>
-      <td>{{$data->tutor_name}}</td>
-      <td>{{$data->subject}}</td>
+      <th scope="row">{{$key + 1}}</th>
+      <td>{{$data->name}}</td>
+      
       <td>{{$data->class}}</td>
-      <td>{{$data->day}}</td>
-      <td>{{$data->time}}</td>
+      
+      
       
       <td>
         <a href="{{route('view.info',$data->id)}}" class="btn btn-primary">view</a>

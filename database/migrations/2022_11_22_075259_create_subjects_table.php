@@ -15,11 +15,10 @@ return new class extends Migration
     {
         Schema::create('subjects', function (Blueprint $table) {
             $table->id();
-            $table->string('tutor_name');
-            $table->string('subject');
+            
+            $table->string('name');
             $table->string('class');
-            $table->string('day');
-            $table->string('time');
+        
             $table->timestamps();
         });
     }

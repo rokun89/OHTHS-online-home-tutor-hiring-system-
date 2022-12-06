@@ -343,7 +343,8 @@ ol {
 
 .categorie-item {
 	margin-bottom: 34px;
-	background: #edf4f6;
+	box-shadow: #646464;
+	background: gainsboro;
 	-webkit-transition: all 0.4s;
 	-o-transition: all 0.4s;
 	transition: all 0.4s;

@@ -24,12 +24,17 @@
 
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="{{url('/uploads/'.$list->images)}}"></div>
+						<div class="ci-thumb set-bg" data-setbg="{{url('/uploads/'.$list->image)}}"></div>
 						<div class="ci-text">
 							<h5><b>Name:</b>  {{$list->name}}</h5>
 							<p>Contact: {{$list->contact}}</p>
-							<span><b>email: </b>{{$list->email}}</span>
+							<span><b>Subjecct: </b>{{$list->subject}}</span>
+							<a href="#">
+							<p>View-Details</p>
+							</a>
 						</div>
+							
+						
 					</div> 
 				</div>
                 @endforeach

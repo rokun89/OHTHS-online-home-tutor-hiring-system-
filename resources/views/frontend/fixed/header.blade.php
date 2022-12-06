@@ -15,8 +15,8 @@
     
 			<li><a href="{{route('web.home')}}">Home</a></li>
 			<li><a href="{{route('tutor.page')}}">Tutor</a></li>
-			<li><a href="#">Course</a></li>
-			<li><a href="#">News</a></li>
+			<li><a href="{{route('tution.list')}}">Tution</a></li>
+			<li><a href="#">Service</a></li>
 			<li><a href="#">Contact</a></li>
       <li><a href="{{route('tutor.url')}}">Become a tutor</a></li>
 			<li style="padding-left: 250px;" class="btn-group" role="group" aria-label="Basic example">

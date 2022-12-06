@@ -19,8 +19,6 @@
       <th scope="col">Email</th>
       <th scope="col">Contact</th>
       <th scope="col">Address</th>
-      <th scope="col">Subject</th>
-      <th scope="col">Salary</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -36,8 +34,6 @@
       <td>{{$data->email}}</td>
       <td>{{$data->contact}}</td>
       <td>{{$data->address}}</td>
-      <td>{{$data->subject}}</td>
-      <td>{{$data->salary}}</td>
       
       <td>
       <a href="{{route('view.tutorInfo',$data->id)}}" class="btn btn-primary">view</a>

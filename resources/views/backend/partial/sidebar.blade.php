@@ -39,6 +39,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="{{route('class-url')}}">
+                  <span data-feather="layers"></span>
+                  Class
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="{{route('service-url')}}">
                   <span data-feather="layers"></span>
                   Services

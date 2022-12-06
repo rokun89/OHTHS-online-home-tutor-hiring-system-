@@ -46,15 +46,18 @@ Route::group(['middleware'=>'auth'],function() {
     Route::get('/userProfile',[websiteHomeController::class,'userProfile'])->name('user.profile');
     Route::put('/usereupdate',[websiteHomeController::class,'UserUpdate'])->name('user.update');
     Route::get('/userlogout',[websiteHomeController::class,'userlogout'])->name('user.logout');
+
+
     Route::get('/tutorpage',[websiteHomeController::class,'tutorpage'])->name('tutor.page');
-    
+    Route::get('/tutorDetails',[websiteHomeController::class,'tutorDetails'])->name('tutor.details');
+
+
+    //Tution Route
+    Route::get('/tutionpage',[websiteHomeController::class,'TutionPage'])->name('tution.list');
 
 
 
 });
-
-
-
 
 
 
@@ -82,6 +85,7 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
     Route::get('/tutor',[backendController::class,'tutorPage'])->name('tutor-url');
     Route::get('/tution',[backendController::class,'tutionPage'])->name('tution-url');
     Route::get('/subject',[backendController::class,'subjectPage'])->name('subject-url');
+    Route::get('/class',[backendController::class,'classpage'])->name('class-url');
     Route::get('/service',[backendController::class,'servicePage'])->name('service-url');
     Route::get('/contact',[backendController::class,'contactPage'])->name('contact-url');
     Route::get('/about',[backendController::class,'aboutPage'])->name('about-url');
@@ -138,6 +142,12 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
     Route::get('/subjectinfo/view/{subjectInfo}',[subjectController::class,'view'])->name('view.info');
     Route::get('/subjectinfo/edit/{subjectInfo}',[subjectController::class,'edit'])->name('edit.info');
     Route::put('/subjectinfo/update/{subjectInfo}',[subjectController::class,'update'])->name('update.info');
+
+
+    //students form route
+    Route::get('/createClsPage',[studentController::class,'clsPage'])->name('cls.page');
+    Route::post('/cls_form_fillup',[studentController::class,'cls_store'])->name('cls_storepage');
+    
 
 
 

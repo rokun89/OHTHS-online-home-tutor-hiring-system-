@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classes;
 use App\Models\students;
 use Illuminate\Http\Request;
 
@@ -114,7 +115,32 @@ public function std_store(Request $stdvar)
         
         return redirect()->route('students-url');
 
+    }
 
+
+
+
+
+
+
+
+
+    
+
+
+    public function clsPage()
+    {
+        return view('backend.pages.categories.clsform');
+    }
+
+    public function cls_store(Request $request)
+    {
+        Classes::create([
+            'name'=>$request->name,
+        ]);
+
+        notify()->success('Submitted Successfully');
+        return redirect(route('class-url'));
     }
 
 
