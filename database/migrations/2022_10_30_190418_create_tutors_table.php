@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('contact');
             $table->text('address');
-    //        $table->integer('tutor_id');
+            $table->integer('tutor_id');
             
             $table->timestamps();
         });

@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             
             $table->string('title');
-            $table->integer('tutor-id');
-            $table->integer('class_id');
-            $table->integer('subject_id');
+            $table->foreignId('tutor_id');
+            $table->foreignId('class_id');
+            $table->foreignId('subject_id');
             $table->integer('salary');
             $table->integer('weekend_days');
 

@@ -105,6 +105,7 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
 
     //Tution form route
     Route::get('/tutor/form',[tutionController::class,'tutionForm'])->name('tution.form');
+    Route::post('/tutor/form/store',[tutionController::class,'tution_form_store'])->name('tution.form.store');
 
     //Subject form route
     Route::get('/subject-form',[subjectController::class,'subjectForm'])->name('subject.form.page');
@@ -148,7 +149,7 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
     Route::put('/subjectinfo/update/{subjectInfo}',[subjectController::class,'update'])->name('update.info');
 
 
-    //students form route
+    //class form route
     Route::get('/createClsPage',[studentController::class,'clsPage'])->name('cls.page');
     Route::post('/cls_form_fillup',[studentController::class,'cls_store'])->name('cls_storepage');
     Route::get('/cls/info/delete/{clsInfo}',[studentController::class,'cls_delete'])->name('cls.delete');

@@ -12,7 +12,6 @@ class students extends Model
 
     protected $guarded=[];
 
-
    // protected $fillable=['name','email','contact','address','login_pass','status'];
 
 

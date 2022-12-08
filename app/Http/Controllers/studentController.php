@@ -131,6 +131,7 @@ public function std_store(Request $stdvar)
 
     public function clsPage()
     {
+        
         return view('backend.pages.categories.clsform');
     }
 

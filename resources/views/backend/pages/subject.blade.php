@@ -26,7 +26,7 @@
       <th scope="row">{{$key + 1}}</th>
       <td>{{$data->name}}</td>
       
-      <td>{{$data->class}}</td>
+      <td>{{$data->class_id}}</td>
       
       
       

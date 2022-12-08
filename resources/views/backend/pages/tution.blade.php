@@ -16,7 +16,7 @@
       <th scope="col">id</th>
       
       <th scope="col">Title</th>
-      <th scope="col">Tuto_Id</th>
+      <th scope="col">Tutor_Id</th>
       <th scope="col">Class_Id</th>
       <th scope="col">Subject_Id</th>
       <th scope="col">Salary</th>
@@ -26,14 +26,17 @@
   </thead>
   <tbody>
 
+  @foreach($tution as $key=>$data)
+
+
     <tr>
-      <th></th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <th scope="row">{{$key + 1}}</th>
+      <td>{{$data->title}}</td>
+      <td>{{$data->tutor->name}}</td>
+      <td>{{$data->class->name}}</td>
+      <td>{{$data->subject->name}}</td>
+      <td>{{$data->salary}}</td>
+      <td>{{$data->weekend_days}}</td>
       <td>
       <a href="#" class="btn btn-primary">view</a>
       <a href="#" class="btn btn-danger">delete</a>
@@ -42,7 +45,7 @@
     </tr>
 
     
-    
+    @endforeach
 
   </tbody>
   

@@ -8,6 +8,7 @@ use App\Models\Payments;
 use App\Models\students;
 use App\Models\Subject;
 use App\Models\Subjects;
+use App\Models\Tutions;
 use App\Models\Tutors;
 use App\Models\User;
 use GuzzleHttp\Promise\Create;
@@ -67,7 +68,10 @@ public function tutorPage()
 
 public function tutionPage()
 {
-    return view('backend.pages.tution');
+    $tution=Tutions::with('class','subject','tutor')->get();
+    // dd($tution);
+
+    return view('backend.pages.tution',compact('tution'));
 }
 
 

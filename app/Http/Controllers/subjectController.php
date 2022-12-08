@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Classes;
 use App\Models\Subjects;
 use Illuminate\Http\Request;
 
@@ -10,7 +10,8 @@ class subjectController extends Controller
 {
     public function subjectForm()
     {
-        return view('backend.pages.categories.subjectform');
+        $cls=Classes::all();
+        return view('backend.pages.categories.subjectform',compact('cls'));
 
     }
 
@@ -32,7 +33,7 @@ class subjectController extends Controller
 
             'name'=>$subjectVar->name,
             
-            'class'=>$subjectVar->class,
+            'class_id'=>$subjectVar->class,
             
 
         ]);
@@ -81,7 +82,7 @@ class subjectController extends Controller
             $editTest->update([
                 'name'=>$request1->name,
                 
-                'class'=>$request1->class,
+                'class_id'=>$request1->class,
                 
                 
               ]); 
