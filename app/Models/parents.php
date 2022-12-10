@@ -15,7 +15,7 @@ class parents extends Model
 
 
 
-protected $guarded=[];
+    protected $guarded=[];
     //**In guarded amra je attribute er ktha blbo segula badh e sob value gula nibe...kono kicu nah bole dile sob nibe..
 
 

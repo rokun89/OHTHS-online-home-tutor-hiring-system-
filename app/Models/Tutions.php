@@ -14,12 +14,16 @@ class Tutions extends Model
     use HasFactory;
 
     protected $guarded=[];
+
+
     public function class(){
         return $this->belongsTo(Classes::class,'class_id','id');
     }
+
     public function subject(){
         return $this->belongsTo(Subjects::class,'subject_id','id');
     }
+    
     public function tutor(){
         return $this->belongsTo(User::class,'tutor_id','id');
     }

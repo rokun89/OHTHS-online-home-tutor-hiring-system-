@@ -16,9 +16,9 @@
       <th scope="col">id</th>
       
       <th scope="col">Title</th>
-      <th scope="col">Tutor_Id</th>
-      <th scope="col">Class_Id</th>
-      <th scope="col">Subject_Id</th>
+      <th scope="col">Tutor</th>
+      <th scope="col">Class</th>
+      <th scope="col">Subject</th>
       <th scope="col">Salary</th>
       <th scope="col">weekend_Days</th>
       <th scope="col">Action</th>
@@ -38,9 +38,9 @@
       <td>{{$data->salary}}</td>
       <td>{{$data->weekend_days}}</td>
       <td>
-      <a href="#" class="btn btn-primary">view</a>
-      <a href="#" class="btn btn-danger">delete</a>
-      <a href="#" class="btn btn-warning">edit</a>
+      <a href="{{route('tution.view',$data->id)}}" class="btn btn-primary">view</a>
+      <a href="{{route('tution.delete',$data->id)}}" class="btn btn-danger">delete</a>
+      <a href="{{route('tution.edit',$data->id)}}" class="btn btn-warning">edit</a>
 
     </tr>
 

@@ -108,7 +108,7 @@
 		</div>
 			
 		</div>
-	</section> 
+</section> 
 	<!-- Hero section end -->
 
 
@@ -403,6 +403,6 @@
 	<!-- signup section end -->
 
 
-@endauth
+ @endauth
 
 @endsection

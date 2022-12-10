@@ -7,7 +7,7 @@
 
     @csrf
 
-<div class="form-group">
+ <div class="form-group">
     <input required type="text"  class="form-control" name="title" id="" cols="" rows="" placeholder="Enter Your Title Here"></textarea>
   </div>
   <div class="form-row">
@@ -34,7 +34,7 @@
 
     <label for="subject">Subject</label>
 
-<select name="subject" id="class" class="form-control">
+ <select name="subject" id="class" class="form-control">
   @foreach($sub as $data)
           <option value="{{$data->id}}">{{$data->name}}</option>
           @endforeach

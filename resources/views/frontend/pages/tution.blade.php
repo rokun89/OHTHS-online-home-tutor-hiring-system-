@@ -1,29 +1,61 @@
 @extends('frontend.master')
 
 @section('content')
-<div style="padding-top: 60px;">
+<div>
 
-<div class="mix col-lg-3 col-md-4 col-sm-6 finance">
-    
+<style>
+	.space-ten{padding: 30px 0;}
+</style>
+
+<!-- course section -->
+<section class="course-section spad">
+		<div class="container">
+			<div class="section-title mb-0">
+				<h2>Featured Courses</h2>
+				
+				<div class="space-ten"></div>
+
+			</div>
+		</div>
+		<div class="course-warp">
+			                                       
+			<div class="row course-items-area">
+				<!-- course -->
+
+			@foreach($tutionlist as $list)	
+
+				<div class="mix col-lg-3 col-md-4 col-sm-6 finance">
 					<div class="course-item">
-						<div class="course-thumb set-bg" data-setbg="{{url('/frontend/images/math1.jpg')}}">
-							<div class="price">Salary: 10k</div>
+						<div>
+							
 						</div>
 						<div class="course-info">
+						<div class="site-btn">Name: {{$list->tutor->name}}</div>
 							<div class="course-text">
-								<h5>Math 1</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur</p>
-								<div class="students">50 Students</div>
+								<h5><b>Subject: </b>{{$list->subject->name}} </h5>
+								<p>Title: {{$list->title}}</p>
+								<p> Weekend-Days:{{$list->weekend_days}}</p>
+								<div class="students"><b>Salary: </b> {{$list->salary}}</div>
 							</div>
 							<div class="course-author">
-								<div class="ca-pic set-bg" data-setbg="img/authors/1.jpg"></div>
-								<p>William | <span>Mathematician</span></p>
+								
+						<p> <a href="{{route('tution.details',$list->id)}}"> <span>View-Details</span></a> </p> 
 							</div>
 						</div>
 					</div>
 				</div>
+			@endforeach	
+				<!-- course -->
+				
+				
+			</div>
+		</div>
+	</section>
+	<!-- course section end -->
+
 
 
 
 </div>
+{{$tutionlist->links()}}
 @endsection

@@ -39,6 +39,54 @@ class tutionController extends Controller
         return redirect()->route('tution-url');
     }
 
+    public function delete($delete)
+    {
+        $deleteTution=Tutions::find($delete);
+
+        if($deleteTution)
+        {
+            $deleteTution->delete();
+            notify()->success('Deleted Successful');
+            return redirect()->back();
+
+        }
+        else{
+            notify()->error('Request Not Found');
+            return redirect()->back();
+        }
+    }
+
+    public function view($view)
+    {
+        $viewTution=Tutions::find($view);
+
+        return view('backend.pages.tutionDataView',compact('viewTution'));
+    }
+
+    public function edit($edit)
+    {
+        $editTution=Tutions::find($edit);
+
+        return view('backend.pages.categories.tutionEdit',compact('editTution'));
+    }
+
+    public function update(Request $request,$edit)
+    {
+        $editTution=Tutions::find($edit);
+
+        $editTution->update([
+            'title'=>$request->title,
+            'tutor_id'=>$request->tutor,
+            'class_id'=>$request->class,
+            'subject_id'=>$request->subject,
+            'salary'=>$request->salary,
+            'weekend_days'=>$request->days,
+
+        ]);
+        notify()->success('Update Successfull');
+        return redirect()->route('tution-url');
+
+    }
     
 
 }

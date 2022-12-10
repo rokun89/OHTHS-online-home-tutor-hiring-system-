@@ -31,15 +31,10 @@ Route::post('/registration',[websiteHomeController::class,'registration'])->name
 Route::post('/userlogin',[websiteHomeController::class,'userlogin'])->name('userlogin');
 
 
+//Become a tutor route:
 Route::get('/tutor',[websiteHomeController::class,'tutor'])->name('tutor.url');
-
-
-//tutor route:
-
 Route::post('/tutor/reg/submit',[websiteHomeController::class,'tutorReg'])->name('tutor.reg');
 Route::post('/tutor/login',[websiteHomeController::class,'tutorlogin'])->name('tutor.login');
-Route::get('tutor/webpage',[websiteHomeController::class,'tutorweb'])->name('tutor.webpage');
-
 
 
 Route::group(['middleware'=>'auth'],function() {
@@ -47,20 +42,33 @@ Route::group(['middleware'=>'auth'],function() {
     Route::get('/userProfile',[websiteHomeController::class,'userProfile'])->name('user.profile');
     Route::put('/usereupdate',[websiteHomeController::class,'UserUpdate'])->name('user.update');
     Route::get('/userlogout',[websiteHomeController::class,'userlogout'])->name('user.logout');
-
-
+    //Tutor route
     Route::get('/tutorpage',[websiteHomeController::class,'tutorpage'])->name('tutor.page');
     Route::get('/tutorDetails',[websiteHomeController::class,'tutorDetails'])->name('tutor.details');
 
 
     //Tution Route
     Route::get('/tutionpage',[websiteHomeController::class,'TutionPage'])->name('tution.list');
+    Route::get('/tution/details/page/{details}',[websiteHomeController::class,'tution_details'])->name('tution.details');
+
+    Route::get('/tution/view/hire/page/{id}',[websiteHomeController::class,'Tution_hire'])->name('tution.hire');
+    Route::post('/tution/studentInfoForm/{id}',[websiteHomeController::class,'stdInfoForm'])->name('tution.stdinfoForm');
+
+    Route::get('/tutorHireReq/delete/{id}',[websiteHomeController::class,'hire_delete'])->name('tutor.hire.delete');
 
 
 
 });
 
 
+
+
+//Tutor Group and middleware
+Route::group(['middleware'=>'tutor'],function(){
+
+    Route::get('tutor/webpage',[websiteHomeController::class,'tutorweb'])->name('tutor.webpage');
+    
+});
 
 
 
@@ -141,12 +149,19 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
     Route::put('/tutorinfo/update/{tutorInfo}',[tutorsController::class,'update'])->name('tutor.update');
 
 
-
     //subject data view and delete and update
     Route::get('/subjectinfo/delete/{subjectInfo}',[subjectController::class,'delete'])->name('delete.info');
     Route::get('/subjectinfo/view/{subjectInfo}',[subjectController::class,'view'])->name('view.info');
     Route::get('/subjectinfo/edit/{subjectInfo}',[subjectController::class,'edit'])->name('edit.info');
     Route::put('/subjectinfo/update/{subjectInfo}',[subjectController::class,'update'])->name('update.info');
+
+
+    //Tution data view and delete and update
+    Route::get('/tutioninfo/delete{tutionInfo}',[tutionController::class,'delete'])->name('tution.delete');
+    Route::get('/tutioninfo/view/{tutionInfo}',[tutionController::class,'view'])->name('tution.view');
+    Route::get('/tutioninfo/edit/{tutionInfo}',[tutionController::class,'edit'])->name('tution.edit');
+    Route::put('/tutioninfo/update/{tutionInfo}',[tutionController::class,'update'])->name('tution.update');
+
 
 
     //class form route

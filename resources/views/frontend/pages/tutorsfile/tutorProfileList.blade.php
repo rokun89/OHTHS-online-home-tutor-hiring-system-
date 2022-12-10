@@ -6,7 +6,7 @@
 
 <div>
 
-
+ @if(auth()->user()->role=='tutor')
 
 
 	<!-- categories section -->
@@ -49,6 +49,6 @@
 	</section>
 	<!-- categories section end -->
 
-	
+ @endif
 
 @endsection

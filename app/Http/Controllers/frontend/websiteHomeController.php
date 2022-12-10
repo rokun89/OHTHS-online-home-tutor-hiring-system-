@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Hiretutors;
+use App\Models\Tutions;
 use App\Models\Tutors;
 use App\Models\User;
 use Database\Seeders\UserTableSeeder;
@@ -206,7 +208,59 @@ class websiteHomeController extends Controller
 
     public function TutionPage()
     {
-        return view('frontend.pages.tution');
+        $tutionlist=Tutions::paginate(4);
+        return view('frontend.pages.tution',compact('tutionlist'));
     }
+
+    public function Tution_hire($id)
+    {
+        $tution = Tutions::find($id);
+        return view('frontend.pages.tutionfile.tutionHire',compact('tution'));
+    }
+
+    public function stdInfoForm(Request $request,$id)
+    {
+        $tution = Tutions::find($id);
+        $tutor = User::where('id',$tution->tutor_id)->pluck('id');
+        //dd($tutor);
+        Hiretutors::create([
+            'tutor_id'=> $tutor[0],
+            'student_name'=>$request->name,
+            'class'=>$request->class,
+            'subject'=>$request->subject,
+            'parent_contact'=>$request->parents_contact,
+            'parent_email'=>$request->parents_email,
+            'address'=>$request->address,
+
+        ]);
+        notify()->success('Submitted Successfully');
+        return redirect()->route('tution.list');
+    }
+
+    public function tution_details($details)
+    {
+        $tutordetails=Tutions::find($details);
+        return view('frontend.pages.tutionfile.tutionDetails',compact('tutordetails'));
+    }
+
+    public function hire_delete($delete)
+    {
+        $hiredelete=Hiretutors::find($delete);
+
+        if($hiredelete)
+        {
+            $hiredelete-> delete();
+            notify()->success('Deleted Successful');
+            return redirect()->back();
+        }
+        else{
+            notify()->error('Request Not Found');
+            return redirect()->back();
+        }
+
+    }
+
+
+
 
 }

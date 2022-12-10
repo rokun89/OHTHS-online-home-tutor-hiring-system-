@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Classes;
+use App\Models\Hiretutors;
 use App\Models\parents;
 use App\Models\Payments;
 use App\Models\students;
@@ -22,7 +23,9 @@ class backendController extends Controller
      
       //return view('backend.master');   
 
-      return view('backend.pages.dashboard'); 
+      $stdinfo=Hiretutors::paginate(5);
+
+      return view('backend.pages.dashboard',compact('stdinfo')); 
     }
         
 
