@@ -67,6 +67,10 @@ Route::group(['middleware'=>'auth'],function() {
 Route::group(['middleware'=>'tutor'],function(){
 
     Route::get('tutor/webpage',[websiteHomeController::class,'tutorweb'])->name('tutor.webpage');
+    Route::get('/tutor/tuition/button',[websiteHomeController::class,'tuition_post'])->name('tuition.post');
+    Route::post('/tuition/post/store',[websiteHomeController::class,'tuition_store'])->name('tuition.post.store');
+    Route::get('/tuition/delete/{id}',[websiteHomeController::class,'tuitionDelete'])->name('tuition.delete');
+
     
 });
 

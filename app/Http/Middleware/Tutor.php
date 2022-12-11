@@ -16,12 +16,12 @@ class Tutor
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->role=='tutor')
+        if( auth()->user() && auth()->user()->role=='tutor')
         {
             return $next($request);
         }
 
-        notify()->error('Your are not Tutor');
+        notify()->success('logout successfull');
 
       return redirect()->route('web.home');
     }

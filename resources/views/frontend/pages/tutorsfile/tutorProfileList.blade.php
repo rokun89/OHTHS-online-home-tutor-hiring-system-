@@ -16,6 +16,11 @@
 				<h2>Our Tutor Categories</h2>
 
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+				<p>
+					<a href="{{route('tuition.post')}}">
+						<button class="site-btn"> Create Tuition</button>
+					</a>
+				</p>
 			</div>
 			<div class="row">
 				<!-- categorie -->

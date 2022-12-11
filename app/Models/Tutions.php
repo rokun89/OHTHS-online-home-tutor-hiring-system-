@@ -28,4 +28,6 @@ class Tutions extends Model
         return $this->belongsTo(User::class,'tutor_id','id');
     }
 
+    
+
 }

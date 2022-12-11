@@ -23,7 +23,7 @@ class backendController extends Controller
      
       //return view('backend.master');   
 
-      $stdinfo=Hiretutors::paginate(5);
+      $stdinfo=Hiretutors::with('parent')->get();
 
       return view('backend.pages.dashboard',compact('stdinfo')); 
     }

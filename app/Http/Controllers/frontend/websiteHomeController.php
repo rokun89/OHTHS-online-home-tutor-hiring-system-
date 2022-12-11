@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Classes;
 use App\Models\Hiretutors;
+use App\Models\Subjects;
 use App\Models\Tutions;
 use App\Models\Tutors;
 use App\Models\User;
@@ -82,8 +84,17 @@ class websiteHomeController extends Controller
 
     public function userProfile()
     {
-        return view('frontend.pages.profile');
+        if(auth()->user() && auth()->user()->role == 'tutor'){
 
+            $tuition = Hiretutors::where('tutor_id',auth()->user()->id)->get();
+            $tuitionPost=Tutions::where('tutor_id',auth()->user()->id)->get();
+            return view('frontend.pages.profile',compact('tuition','tuitionPost'));
+        }
+        else{
+            
+        $hirelist = Hiretutors::where('parents_id',auth()->user()->id)->get();
+        return view('frontend.pages.profile',compact('hirelist'));
+     }
     }
 
     public function UserUpdate (Request $request)
@@ -225,6 +236,7 @@ class websiteHomeController extends Controller
         //dd($tutor);
         Hiretutors::create([
             'tutor_id'=> $tutor[0],
+            'parents_id'=>auth()->user()->id,
             'student_name'=>$request->name,
             'class'=>$request->class,
             'subject'=>$request->subject,
@@ -260,6 +272,44 @@ class websiteHomeController extends Controller
 
     }
 
+    public function tuition_post()
+    {
+        $cls=Classes::all();
+        $sub=Subjects::all();
+        $tutorId=User::where('role','tutor')->get();
+        return view('frontend.pages.tutionfile.tuitionPost',compact('cls','sub','tutorId'));
+    }
+
+    public function tuition_store(Request $request)
+    {
+       Tutions::create([
+            'title'=>$request->title,
+            'tutor_id'=>$request->tutor,
+            'class_id'=>$request->class,
+            'subject_id'=>$request->subject,
+            'salary'=>$request->salary,
+            'weekend_days'=>$request->days,
+
+       ]);
+       notify()->success('Submitted Successful');
+       return redirect()->route('tutor.webpage');
+    }
+
+    public function tuitionDelete($delete)
+    {
+        $tuitiondelete=Hiretutors::find($delete);
+
+        if($tuitiondelete)
+        {
+            $tuitiondelete->delete();
+            notify()->success('Deleted Successfull');
+            return redirect()->back();
+        }
+        else{
+            notify()->error('Request Not Found');
+            return redirect()->back();
+        }
+    }
 
 
 

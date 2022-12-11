@@ -16,7 +16,7 @@
       <th scope="col">id</th>
       
       <th scope="col">Title</th>
-      <th scope="col">Tutor</th>
+      <th scope="col">Tutor-Name</th>
       <th scope="col">Class</th>
       <th scope="col">Subject</th>
       <th scope="col">Salary</th>

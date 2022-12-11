@@ -13,4 +13,8 @@ class Hiretutors extends Model
      public function tutor(){
         return $this->belongsTo(User::class,'tutor_id','id');
     }
+
+    public function parent(){
+        return $this->belongsTo(User::class,'parents_id','id');
+    }
 }
