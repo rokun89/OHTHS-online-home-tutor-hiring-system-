@@ -97,6 +97,63 @@ class websiteHomeController extends Controller
      }
     }
 
+    public function tutor_tuition_delete($delete)
+    {
+        $del=Tutions::find($delete);
+
+        if($del)
+        {
+            $del->delete();
+            notify()->success('Deleted Successfull');
+            return redirect()->back();
+        }
+        else{
+            notify()->error('Request Not Found');
+            return redirect()->back();
+        }
+    }
+
+    public function tutor_tuition_edit($edit)
+    {
+        $Tuitionedit=Tutions::find($edit);
+        return view('frontend.pages.tutionfile.tuitionEdit',compact('Tuitionedit'));
+    }
+
+    public function tutor_tuition_update(Request $request, $edit)
+    {
+        // dd($request->all());
+        $Tuitionedit=Tutions::find($edit);
+
+        $Tuitionedit->update([
+            'title'=>$request->title,
+            'tutor_id'=>$request->name,
+            'class_id'=>$request->class,
+            'subject_id'=>$request->subject,
+            'salary'=>$request->salary,
+            'weekend_days'=>$request->days,
+        ]);
+        notify()->success('Updated Seccessfull...!');
+        return redirect()->route('user.profile');
+    }
+
+
+    public function parents_tutor_hire_delete($delete)
+    {
+        $hireDelete=Hiretutors::find($delete);
+        if($hireDelete)
+        {
+            $hireDelete->delete();
+            notify()->success('Deleted Successfull');
+            return redirect()->back();
+        }
+        else{
+            notify()->error('Request Not Found');
+            return redirect()->back();
+        }
+    }
+
+
+
     public function UserUpdate (Request $request)
     {
        // dd($request->all());
@@ -219,7 +276,7 @@ class websiteHomeController extends Controller
 
     public function TutionPage()
     {
-        $tutionlist=Tutions::paginate(4);
+        $tutionlist=Tutions::paginate(8);
         return view('frontend.pages.tution',compact('tutionlist'));
     }
 

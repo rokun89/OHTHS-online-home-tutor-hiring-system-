@@ -45,13 +45,16 @@
     
     </style>
 
+                    <!-- USER Profile Update -->
+
+
 
 <div class="container-xl px-4 mt-4">
- <!-- Account page navigation-->
+ 
  <hr class="mt-0 mb-4">
     <div class="row">
      <div class="col-xl-8" style="padding-left:200px ;">
-         <!-- Account details card-->
+         
             <div class="card mb-4">
               <div class="card-header"><b><h3>User Info </h3></b></div>
                 <div class="card-body">
@@ -118,7 +121,8 @@
 
 
 
-    <!-- Tuition post edit blog -->
+                <!-- Tuition post edit blog For Tutor-->
+            
     @if(auth()->user()->role == 'tutor')
 
         <div style="padding-top: 80px;">
@@ -126,7 +130,7 @@
             <div class="container-xl px-4 mt-4">
                 <hr class="mt-0 mb-4">
                 <div class="row">
-                    <div class="col-xl-8" style="margin-left:10% ;">
+                    <div class="col-xl-8" style="margin-left:17% ;">
                         
                         <div class="card mb-4">
                          <div class="card-header"><b><h3>Tuition Info </h3></b></div>
@@ -162,8 +166,8 @@
                                 
                     
                                 <td>
-                                    <a href="#" class="btn btn-danger">delete</a>
-                                    <a href="#" class="btn btn-success">edit</a>
+                                    <a href="{{route('tutor.tuition.delete',$data->id)}}" class="btn btn-danger">delete</a>
+                                    <a href="{{route('tutor.tuition.edit',$data->id)}}" class="btn btn-success">edit</a>
                                 </td>
                     
                                 </tr>
@@ -191,7 +195,8 @@
 
 
    
-    <!-- Hiring Blog -->
+     <!-- Hiring Blog For Tutor-->
+
 @auth
     @if(auth()->user()->role == 'tutor')
      <div style="padding-top: 80px;">
@@ -266,14 +271,14 @@
 
 
 
-    <!-- Parents Hiring -->
+    <!-- Parents Hiring Info -->
+    @if(auth()->user()->role == 'parents')
+        <div style="padding-top: 80px;">
 
-    <div style="padding-top: 80px;">
-
-        <div class="container-xl px-4 mt-4">
-            <hr class="mt-0 mb-4">
-            <div class="row">
-                <div class="col-xl-12" style="margin-left:12px ;">
+            <div class="container-xl px-4 mt-4">
+                <hr class="mt-0 mb-4">
+                <div class="row">
+                    <div class="col-xl-12" style="margin-left:12px ;">
          
                     <div class="card mb-4">
                         <div class="card-header"><b><h3>Hiring Info </h3></b></div>
@@ -282,11 +287,11 @@
                         <div>
         
             
-                <table class="table">
+                    <table class="table">
                     <thead>
                     <tr>
                     <th scope="col">id</th>
-                    <th scope="col">Student-Name</th>
+                    <th scope="col">Student</th>
                     <th scope="col">Tutor</th>
                     <th scope="col">Class</th>
                     <th scope="col">Subject</th>
@@ -300,40 +305,38 @@
                     <tbody>
         
                     @foreach($hirelist as $key=>$list)
-                    <tr>
-                    <th scope="row">{{$key + 1}}</th>
-                    <td>{{$list->student_name}}</td>
-                    <td>{{$list->tutor->name}}</td>
-                    <td>{{$list->class}}</td>
-                    <td>{{$list->subject}}</td>
-                    <td>{{$list->parent->name}}</td>
-                    <td>{{$list->parent_contact}}</td>
-                    <td>{{$list->parent_email}}</td>
-                    <td>{{$list->address}}</td>
+                        <tr>
+                        <th scope="row">{{$key + 1}}</th>
+                        <td>{{$list->student_name}}</td>
+                        <td>{{$list->tutor->name}}</td>
+                        <td>{{$list->class}}</td>
+                        <td>{{$list->subject}}</td>
+                        <td>{{$list->parent->name}}</td>
+                        <td>{{$list->parent_contact}}</td>
+                        <td>{{$list->parent_email}}</td>
+                        <td>{{$list->address}}</td>
         
-                    <td>
-                        <a href="{{route('tuition.delete',$list->id)}}" class="btn btn-danger">delete</a>
-                    </td>
+                        <td>
+                        <a href="{{route('parents.tutor.hire.delete',$list->id)}}" class="btn btn-danger">delete</a>
+                        <a href="#" class="btn btn-success">edit</a>
+                        </td>
         
                         </tr>
         
                     @endforeach
-                    </tbody>
-                </table>
+                        </tbody>
+                        </table>
 
     
     
     
-                   </div>
+                        </div>
 
-                   </div>
-                   </div>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
-
-
-
-
-
-    </div>
+    @endif    

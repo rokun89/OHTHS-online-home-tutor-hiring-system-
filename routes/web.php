@@ -55,6 +55,7 @@ Route::group(['middleware'=>'auth'],function() {
     Route::post('/tution/studentInfoForm/{id}',[websiteHomeController::class,'stdInfoForm'])->name('tution.stdinfoForm');
 
     Route::get('/tutorHireReq/delete/{id}',[websiteHomeController::class,'hire_delete'])->name('tutor.hire.delete');
+    Route::get('/byparents/tutor/hiringInfo/delete/{id}',[websiteHomeController::class,'parents_tutor_hire_delete'])->name('parents.tutor.hire.delete');
 
 
 
@@ -69,7 +70,10 @@ Route::group(['middleware'=>'tutor'],function(){
     Route::get('tutor/webpage',[websiteHomeController::class,'tutorweb'])->name('tutor.webpage');
     Route::get('/tutor/tuition/button',[websiteHomeController::class,'tuition_post'])->name('tuition.post');
     Route::post('/tuition/post/store',[websiteHomeController::class,'tuition_store'])->name('tuition.post.store');
-    Route::get('/tuition/delete/{id}',[websiteHomeController::class,'tuitionDelete'])->name('tuition.delete');
+    Route::get('/tuition/hiringInfo/delete/{id}',[websiteHomeController::class,'tuitionDelete'])->name('tuition.delete');
+    Route::get('/tutor/tuitionInfo/delete/{id}',[websiteHomeController::class,'tutor_tuition_delete'])->name('tutor.tuition.delete');
+    Route::get('/tutor/tuitionInfo/edit/{id}',[websiteHomeController::class,'tutor_tuition_edit'])->name('tutor.tuition.edit');
+    Route::put('/tutor/tuitionInfo/update/{id}',[websiteHomeController::class,'tutor_tuition_update'])->name('tutor.tuition.update');
 
     
 });

@@ -9,7 +9,7 @@
 
 
 
-<h1>Parents Request Table</h1>
+<h1>Tutor Hiring Table</h1>
 
 
 
