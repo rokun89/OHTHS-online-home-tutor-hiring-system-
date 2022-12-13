@@ -51,20 +51,20 @@
         <label for="class">Class</label>
 
         <select name="class" id="class" class="form-control">
-        @foreach($cls as $data)
+            @foreach($cls as $data)
                 <option value="{{$data->id}}">{{$data->name}}</option>
-                @endforeach
-            </select>
+            @endforeach
+        </select>
     </div>
     <div class="form-group col-md-6">
 
     <label for="subject">Subject</label>
 
     <select name="subject" id="class" class="form-control">
-    @foreach($sub as $data)
+        @foreach($sub as $data)
             <option value="{{$data->id}}">{{$data->name}}</option>
-            @endforeach
-        </select>
+        @endforeach
+    </select>
     </div>
     <div class="form-group col-md-6">
         <label for="salary">Salary:</label>

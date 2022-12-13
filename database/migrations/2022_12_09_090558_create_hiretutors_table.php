@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('parent_contact');
             $table->string('parent_email');
             $table->string('address');
+            $table->string('status')->default('pending');
+
             $table->timestamps();
         });
     }

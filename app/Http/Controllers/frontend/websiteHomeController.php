@@ -116,12 +116,16 @@ class websiteHomeController extends Controller
     public function tutor_tuition_edit($edit)
     {
         $Tuitionedit=Tutions::find($edit);
-        return view('frontend.pages.tutionfile.tuitionEdit',compact('Tuitionedit'));
+        $cls=Classes::all();
+        $sub=Subjects::all();
+
+        return view('frontend.pages.tutionfile.tuitionEdit',compact('Tuitionedit','cls','sub'));
     }
 
     public function tutor_tuition_update(Request $request, $edit)
     {
         // dd($request->all());
+        
         $Tuitionedit=Tutions::find($edit);
 
         $Tuitionedit->update([
@@ -137,7 +141,7 @@ class websiteHomeController extends Controller
     }
 
 
-    public function parents_tutor_hire_delete($delete)
+    public function parents_tutorHire_delete($delete)
     {
         $hireDelete=Hiretutors::find($delete);
         if($hireDelete)
@@ -150,6 +154,30 @@ class websiteHomeController extends Controller
             notify()->error('Request Not Found');
             return redirect()->back();
         }
+    }
+    public function parents_tutorHire_edit($edit)
+    {
+        $hireEdit=Hiretutors::find($edit);
+        return view('frontend.pages.parentsHireEdit',compact('hireEdit'));
+    }
+    public function parents_tutorHire_update(Request $request,$edit)
+    {
+        // dd($request->all());
+        $hireEdit=Hiretutors::find($edit);
+
+        $hireEdit->update([
+
+            'student_name'=>$request->name,
+            'class'=>$request->class,
+            'subject'=>$request->subject,
+            'parent_contact'=>$request->parents_contact,
+            'parent_email'=>$request->parents_email,
+            'address'=>$request->address,    
+        
+        ]);
+        
+        notify()->success('Update Successful');
+        return redirect()->route('user.profile');      
     }
 
 
@@ -366,6 +394,14 @@ class websiteHomeController extends Controller
             notify()->error('Request Not Found');
             return redirect()->back();
         }
+    }
+
+    public function status_update($id)
+    {
+        $tution = Hiretutors::find($id)->update([
+            'status'=>'accepted'
+        ]);
+        return back();
     }
 
 

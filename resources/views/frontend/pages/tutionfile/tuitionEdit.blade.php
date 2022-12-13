@@ -5,10 +5,10 @@
         margin-left: 10%;
     }
     .card-header{
-        background-color: DarkSeaGreen;
+        background-color: whitesmoke;
     }
     .card-body{
-        background-color: DarkSeaGreen;
+        background-color: whitesmoke;
     }
 </style>
 
@@ -27,25 +27,33 @@
 
     <div class="form-group">
         <label for="title">Title:</label>
-     <input required type="text"  class="form-control" name="title" id="" cols="" rows="" placeholder="Enter Your Title Here" value="{{$Tuitionedit->title}}"></textarea>
+     <input type="text"  class="form-control" name="title" id="" cols="" rows="" placeholder="Enter Your Title Here" value="{{$Tuitionedit->title}}"></textarea>
     </div> 
 
     <div class="form-row">
      <div class="form-group col-md-6">
-     <label for="class">Tutor</label>
-     <input required type="text"  class="form-control" name="name" id="" cols="" rows="" placeholder="Enter Your name Here" value="{{$Tuitionedit->tutor->name}}">
+     <label for="class">Tutor Name: {{$Tuitionedit->tutor->name}}</label>
+     <input type="text" readonly class="form-control" name="name" id="" cols="" rows="" placeholder="Enter Your name Here" value="{{$Tuitionedit->tutor->id}}">
     </div>
 
     <div class="form-group col-md-6">
         <label for="class">Class</label>
-        <input required type="text"  class="form-control" name="class" id="" cols="" rows="" placeholder="class" value="{{$Tuitionedit->class->name}}">
+        <select name="class" id="class" class="form-control">
+            @foreach($cls as $data)
+                <option value="{{$data->id}}">{{$data->name}}</option>
+            @endforeach
+        </select>
     </div>
 
     <div class="form-group col-md-6">
 
      <label for="subject">Subject</label>
 
-     <input required type="text"  class="form-control" name="subject" id="" cols="" rows="" placeholder="Subject" value="{{$Tuitionedit->subject->name}}">
+     <select name="subject" id="class" class="form-control">
+        @foreach($sub as $data)
+            <option value="{{$data->id}}">{{$data->name}}</option>
+        @endforeach
+    </select>
     </div>
 
     <div class="form-group col-md-6">

@@ -109,7 +109,7 @@
                      <div class="mt-5 text-right"><button class="btn btn-primary profile-button" type="submit">Update Profile</button></div>
 
                     </form>
-
+                    <div><a href="{{route('tutor.webpage')}}"><span class="btn btn-danger">Go-to back</span></a></div>
                 </div>
             </div>
         </div>
@@ -204,7 +204,7 @@
         <div class="container-xl px-4 mt-4">
             <hr class="mt-0 mb-4">
             <div class="row">
-                <div class="col-xl-12" style="margin-left:12px ;">
+                <div class="col-xl-12">
          
                     <div class="card mb-4">
                         <div class="card-header"><b><h3>Hiring Info </h3></b></div>
@@ -225,7 +225,7 @@
                     <th scope="col">Parents-Contact</th>
                     <th scope="col">Parents-Email</th>
                     <th scope="col">Address</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Status</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -243,7 +243,7 @@
                     <td>{{$list->address}}</td>
         
                     <td>
-                        <a href="{{route('tuition.delete',$list->id)}}" class="btn btn-danger">delete</a>
+                        <a href="{{route('status.update',$list->id)}}" class="btn btn-primary">{{$list->status}}</a>
                     </td>
         
                         </tr>
@@ -278,7 +278,7 @@
             <div class="container-xl px-4 mt-4">
                 <hr class="mt-0 mb-4">
                 <div class="row">
-                    <div class="col-xl-12" style="margin-left:12px ;">
+                    <div class="col-xl-12">
          
                     <div class="card mb-4">
                         <div class="card-header"><b><h3>Hiring Info </h3></b></div>
@@ -299,6 +299,7 @@
                     <th scope="col">Parents-Contact</th>
                     <th scope="col">Parents-Email</th>
                     <th scope="col">Address</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Action</th>
                     </tr>
                     </thead>
@@ -315,10 +316,11 @@
                         <td>{{$list->parent_contact}}</td>
                         <td>{{$list->parent_email}}</td>
                         <td>{{$list->address}}</td>
-        
+                        <td>{{$list->status}}</td>
                         <td>
-                        <a href="{{route('parents.tutor.hire.delete',$list->id)}}" class="btn btn-danger">delete</a>
-                        <a href="#" class="btn btn-success">edit</a>
+                         <div><a href="{{route('parents.tutor.hire.delete',$list->id)}}" class="btn btn-danger">delete</a> </div>
+
+                        <div style="margin-top: 2px;"><a href="{{route('parents.hire.edit',$list->id)}}" class="btn btn-success">edit</a></div>
                         </td>
         
                         </tr>

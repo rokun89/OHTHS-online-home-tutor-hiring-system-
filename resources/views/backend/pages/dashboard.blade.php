@@ -25,7 +25,7 @@
       <th scope="col">parents-Contact</th>
       <th scope="col">parents-email</th>
       <th scope="col">Address</th>
-      <th scope="col">Action</th>
+      <th scope="col">Status</th>
     </tr>
   </thead>
   <tbody>
@@ -40,8 +40,7 @@
       <td>{{$list->parent_contact}}</td>
       <td>{{$list->parent_email}}</td>
       <td>{{$list->address}}</td>
-      <td>
-        <a href="{{route('tutor.hire.delete',$list->id)}}" class="btn btn-danger">reject</a>
+      <td>{{$list->status}}</td>
 
     </tr>
 
