@@ -24,13 +24,16 @@ class paymentsController extends Controller
 
 
         Payments::create([
-            'payment_date'=>$paymentsvar->date,
-            'parent_student_name'=>$paymentsvar->name,
-            'parent_student_contact'=>$paymentsvar->contact,
-            'payment_amount'=>$paymentsvar->amount,
+            'name'=>$paymentsvar->name,
+            'contact'=>$paymentsvar->contact,
+            'amount'=>$paymentsvar->amount,
+            'dew'=>$paymentsvar->dew,
+            'date'=>$paymentsvar->date,
+            'status'=>$paymentsvar->status,
         ]);
 
-        return redirect(route('payment-url'))->with('message','Submitted Successfully!');
+        notify()->success('Submitted Successfully');
+        return redirect()->route('payments-url');
 
     }
 

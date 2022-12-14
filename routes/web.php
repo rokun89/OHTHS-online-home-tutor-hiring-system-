@@ -108,7 +108,7 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
     Route::get('/tution',[backendController::class,'tutionPage'])->name('tution-url');
     Route::get('/subject',[backendController::class,'subjectPage'])->name('subject-url');
     Route::get('/class',[backendController::class,'classpage'])->name('class-url');
-    Route::get('/service',[backendController::class,'servicePage'])->name('service-url');
+    Route::get('/payments',[backendController::class,'paymentsPage'])->name('payments-url');
     Route::get('/contact',[backendController::class,'contactPage'])->name('contact-url');
     Route::get('/about',[backendController::class,'aboutPage'])->name('about-url');
 

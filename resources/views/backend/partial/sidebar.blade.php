@@ -45,9 +45,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route('service-url')}}">
+                <a class="nav-link" href="{{route('payments-url')}}">
                   <span data-feather="layers"></span>
-                  Services
+                  Payment
                 </a>
               </li>
               <li class="nav-item">

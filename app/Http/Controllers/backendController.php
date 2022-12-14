@@ -96,9 +96,10 @@ public function classpage()
 }
 
 
-public function servicePage()
+public function paymentsPage()
 {
-    return view('backend.pages.service');
+    $pay=Payments::all();
+    return view('backend.pages.payments',compact('pay'));
 }
 
 public function contactPage()

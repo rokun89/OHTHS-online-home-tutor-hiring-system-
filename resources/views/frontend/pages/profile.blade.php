@@ -80,7 +80,7 @@
 
                       <div>
                      <div class="col-md-6">
-                        <label for="password"><b>Pasaword: </b></label>
+                        <label for="password"><b>Password: </b></label>
                          <input name="password" type="password" class="form-control" placeholder="password" value="{{auth()->user()->password}}">
                      </div>
                      </div>
@@ -265,6 +265,66 @@
         </div>
 
     </div>
+
+
+
+    <!-- tutor payments Info -->
+    @if(auth()->user()->role == 'tutor')
+        <div style="padding-top: 80px;">
+
+            <div class="container-xl px-4 mt-4">
+                <hr class="mt-0 mb-4">
+                <div class="row">
+                    <div class="col-xl-8" style="margin-left:17% ;">
+         
+                    <div class="card mb-4">
+                        <div class="card-header"><b><h3>Payments Info </h3></b></div>
+                            <div class="card-body">
+
+                        <div>
+        
+            
+                    <table class="table">
+                    <thead>
+                    <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Parents-Name</th>
+                    <th scope="col">Parents-Contact</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Dew</th>
+                    <th scope="col">Payments-Status</th>
+                    
+                    </tr>
+                    </thead>
+                    <tbody>
+        
+                    
+                        <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+        
+                    
+                        </tbody>
+                        </table>
+
+    
+    
+    
+                        </div>
+
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    @endif 
     
    
     
@@ -299,7 +359,7 @@
                     <th scope="col">Parents-Contact</th>
                     <th scope="col">Parents-Email</th>
                     <th scope="col">Address</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Hiring-Status</th>
                     <th scope="col">Action</th>
                     </tr>
                     </thead>
@@ -342,3 +402,71 @@
 
         </div>
     @endif    
+
+
+
+
+
+
+    <!-- Parents payments Info -->
+    @if(auth()->user()->role == 'parents')
+        <div style="padding-top: 80px;">
+
+            <div class="container-xl px-4 mt-4">
+                <hr class="mt-0 mb-4">
+                <div class="row">
+                    <div class="col-xl-12">
+         
+                    <div class="card mb-4">
+                        <div class="card-header"><b><h3>Payments Info </h3></b></div>
+                            <div class="card-body">
+
+                        <div>
+        
+            
+                    <table class="table">
+                    <thead>
+                    <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Parents-Name</th>
+                    <th scope="col">Parents-Contact</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Dew</th>
+                    <th scope="col">Payments-Status</th>
+                    <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+        
+                    
+                        <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+
+                            <a href="#" class="btn btn-success">edit</a>
+                        </td>
+        
+                        </tr>
+        
+                    
+                        </tbody>
+                        </table>
+
+    
+    
+    
+                        </div>
+
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    @endif  

@@ -7,11 +7,7 @@
     <span class="btn btn-success">+Create New Form</span>
 </a>
 
-@if(Session('message'))
 
- <div class="alert alert-success">{{session('message')}}</div>
- 
- @endif 
 
 <h1>Payments Table</h1>
 
@@ -19,36 +15,40 @@
   <thead>
     <tr>
       <th scope="col">id</th>
-      <th scope="col">Payment-date</th>
-      <th scope="col">Parents/students-name</th>
-      <th scope="col">Parents/students-contact</th>
+      <th scope="col">Parents-name</th>
+      <th scope="col">Parents-contact</th>
       <th scope="col">Amount</th>
-      
+      <th scope="col">Dew</th>
+      <th scope="col">Payment-date</th>
+      <th scope="col">Status</th>
       <th scope="col">Action</th>
+
     </tr>
   </thead>
   <tbody>
-    @foreach($payment as $data)
-
-    <tr>
-      <th scope="row">{{$data->id}}</th>
-      <td>{{$data->payment_date}}</td>
-      <td>{{$data->parent_student_name}}</td>
-      <td>{{$data->parent_student_contact}}</td>
-      <td>{{$data->payment_amount}}</td>
-      
+    
+    @foreach($pay as $key=>$data)
+     <tr>
+      <th scope="row">{{$key + 1}}</th>
+      <td>{{$data->name}}</td>
+      <td>{{$data->contact}}</td>
+      <td>{{$data->amount}}</td>
+      <td>{{$data->dew}}</td>
+      <td>{{$data->date}}</td>
+      <td>{{$data->status}}</td>
       <td>
         <a href="" class="btn btn-primary">view</a>
         <a href="" class="btn btn-danger">delete</a>
         <a href="" class="btn btn-warning">edit</a>
 
-    </tr>
+     </tr>
+    @endforeach 
 
     
-    @endforeach
+    
   </tbody>
 </table>
 
-{{$payment->links()}}
+
 
 @endsection
