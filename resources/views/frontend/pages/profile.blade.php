@@ -1,62 +1,22 @@
+@extends('frontend.master')
 
-<div>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-    .col-xl-8{
-        margin-left: 10%;
-    }
-    .card-header{
-        background-color: aliceblue;
-    }
-    .card-body{
-        background-color: aliceblue;
-    }
-    .form-control:focus {
-    box-shadow: none;
-    border-color: aliceblue;
-    }
-
-
-    .profile-button {
-    background: #BA68C8;
-    box-shadow: none;
-    border: none;
-    }
-
-    .profile-button:hover {
-    background: #682773;
-    }
-
-    .profile-button:focus {
-    background: #682773;
-    box-shadow: none;
-    }
-
-    .profile-button:active {
-    background: #682773;
-    box-shadow: none;
-    }
-
-    .back:hover {
-    color: #682773;
-    cursor: pointer;
-    }
-    
-    </style>
+@section('content')
+<section class="signup-section spad">
+		<div class="container-fluid">
+			
+				<div class="col-lg-12">
+					
+						<div class="section-title text-white text-left">
+							
+                        
 
                     <!-- USER Profile Update -->
 
-
-
-<div class="container-xl px-4 mt-4">
- 
- <hr class="mt-0 mb-4">
-    <div class="row">
-     <div class="col-xl-8" style="padding-left:200px ;">
+    
+     <div class="col-xl-8" style="margin-left:190px ;">
          
             <div class="card mb-4">
-              <div class="card-header"><b><h3>User Info </h3></b></div>
+            <div class="card-header"><b><h3 style="color: black;">Tuition Info </h3></b></div>
                 <div class="card-body">
 
                     <form action="{{route('user.update')}}" method="post"  enctype="multipart/form-data">
@@ -66,40 +26,40 @@
 
                      <div>
                      <div class="col-md-6">
-                        <label for="name"><b> Name: </b></label>
+                        <label for="name"><b style="color:black ;"> Name: </b></label>
                          <input name="user_name" type="text" class="form-control" placeholder=" name" value="{{auth()->user()->name}}">
                      </div>
                      
                      </div>
                      <div>
                      <div class="col-md-6">
-                        <label for="email"> <b>Email:</b></label>
+                        <label for="email"> <b style="color:black ;">Email:</b></label>
                          <input readonly type="email" class="form-control" placeholder="Email" value="{{auth()->user()->email}}">
                      </div>
                      </div>
 
                       <div>
                      <div class="col-md-6">
-                        <label for="password"><b>Password: </b></label>
+                        <label for="password"><b style="color:black ;">Password: </b></label>
                          <input name="password" type="password" class="form-control" placeholder="password" value="{{auth()->user()->password}}">
                      </div>
                      </div>
 
                      <div>
                      <div class="col-md-6">
-                        <label for="contact"><b>Contact:</b></label>
+                        <label for="contact"><b style="color:black ;">Contact:</b></label>
                          <input name="phone" type="text" class="form-control" value="{{auth()->user()->contact}}" placeholder="Phone number">
                      </div>
                      </div>
                      <div>
                      <div class="col-md-6">
-                        <label for="address"><b>Address:</b></label>
+                        <label for="address"><b style="color:black ;">Address:</b></label>
                          <input name="address" type="text" class="form-control" placeholder="address" value="{{auth()->user()->address}}">
                      </div>
                      
                       </div>
                       <div>
-                      <label for="images"><b>Images:</b></label>
+                      <label for="images"><b style="color:black ;">Images:</b></label>
                      <div class="col-md-6">
                          <input name="images" type="file" class="form-control" placeholder="images" >
                      </div>
@@ -109,7 +69,10 @@
                      <div class="mt-5 text-right"><button class="btn btn-primary profile-button" type="submit">Update Profile</button></div>
 
                     </form>
-                    <div><a href="{{route('tutor.webpage')}}"><span class="btn btn-danger">Go-to back</span></a></div>
+                    <div><a href="{{route('tutor.webpage')}}"><span class="btn btn-danger">Go-to back</span></a> 
+                    <a href="#" class="btn btn-success">Make-payment</a></div> 
+                    
+
                 </div>
             </div>
         </div>
@@ -415,7 +378,7 @@
             <div class="container-xl px-4 mt-4">
                 <hr class="mt-0 mb-4">
                 <div class="row">
-                    <div class="col-xl-12">
+                    <div class="col-xl-8" style="margin-left:17% ;">
          
                     <div class="card mb-4">
                         <div class="card-header"><b><h3>Payments Info </h3></b></div>
@@ -448,7 +411,7 @@
                         <td></td>
                         <td>
 
-                            <a href="#" class="btn btn-success">edit</a>
+                            <a href="#" class="btn btn-success">info</a>
                         </td>
         
                         </tr>
@@ -470,3 +433,22 @@
 
         </div>
     @endif  
+
+							
+                         
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+</section>
+
+
+
+
+
+
+
+@endsection    

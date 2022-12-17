@@ -28,7 +28,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+</section>
     </div>
 	<!-- signup section end -->
 
