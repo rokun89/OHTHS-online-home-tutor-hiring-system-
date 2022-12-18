@@ -15,8 +15,9 @@
   <thead>
     <tr>
       <th scope="col">id</th>
-      <th scope="col">Parents-name</th>
-      <th scope="col">Parents-contact</th>
+      <th scope="col">Tutor-name</th>
+      <th scope="col">Tutor-contact</th>
+      <th scope="col">Tutor-Salary</th>
       <th scope="col">Amount</th>
       <th scope="col">Dew</th>
       <th scope="col">Payment-date</th>
@@ -30,8 +31,9 @@
     @foreach($pay as $key=>$data)
      <tr>
       <th scope="row">{{$key + 1}}</th>
-      <td>{{$data->name}}</td>
-      <td>{{$data->contact}}</td>
+      <td>{{$data->tutor_name}}</td>
+      <td>{{$data->tutor_contact}}</td>
+      <td>{{$data->tutor_salary}}</td>
       <td>{{$data->amount}}</td>
       <td>{{$data->dew}}</td>
       <td>{{$data->date}}</td>

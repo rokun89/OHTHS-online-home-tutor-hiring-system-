@@ -17,19 +17,13 @@ class paymentsController extends Controller
     {
         //dd($paymentsvar->all());
 
-        /*$paymentsvar->validate(['payment_date'=>'required']);
-        $paymentsvar->validate(['parent_student_name'=>'required']);
-        $paymentsvar->validate(['parent_student_contact'=>'required']);
-        $paymentsvar->validate(['payment_amount'=>'required']);*/
-
 
         Payments::create([
-            'name'=>$paymentsvar->name,
-            'contact'=>$paymentsvar->contact,
+            'tutor_name'=>$paymentsvar->name,
+            'tutor_contact'=>$paymentsvar->contact,
             'amount'=>$paymentsvar->amount,
             'dew'=>$paymentsvar->dew,
             'date'=>$paymentsvar->date,
-            'status'=>$paymentsvar->status,
         ]);
 
         notify()->success('Submitted Successfully');
@@ -37,7 +31,26 @@ class paymentsController extends Controller
 
     }
 
+    
+    public function pay_fees()
+    {
+        return view('frontend.pages.paymentsfile.PayFeesForm');
+    }
 
+    public function fees_submit(Request $request)
+    {
+        Payments::create([
+            'tutor_name'=>$request->name,
+            'tutor_contact'=>$request->contact,
+            'amount'=>$request->amount,
+            'dew'=>$request->dew,
+            'date'=>$request->date,
+
+        ]);
+        notify()->success('Submitted Successful');
+        return redirect()->route('user.profile');
+        
+    }
 
 
 }

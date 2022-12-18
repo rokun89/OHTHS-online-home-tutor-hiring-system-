@@ -40,6 +40,8 @@ Route::post('/tutor/login',[websiteHomeController::class,'tutorlogin'])->name('t
 Route::group(['middleware'=>'auth'],function() {
     
     Route::get('/userProfile',[websiteHomeController::class,'userProfile'])->name('user.profile');
+    Route::get('/userProfile/details',[websiteHomeController::class,'userProfileDetails'])->name('user.profile.details');
+
     Route::put('/usereupdate',[websiteHomeController::class,'UserUpdate'])->name('user.update');
     Route::get('/userlogout',[websiteHomeController::class,'userlogout'])->name('user.logout');
     //Tutor route
@@ -58,6 +60,11 @@ Route::group(['middleware'=>'auth'],function() {
     Route::get('/byParents/tutor/hiringInfo/delete/{id}',[websiteHomeController::class,'parents_tutorHire_delete'])->name('parents.tutor.hire.delete');
     Route::get('/byParents/tutor/hiringInfo/edit/{id}',[websiteHomeController::class,'parents_tutorHire_edit'])->name('parents.hire.edit');
     Route::put('/byParents/tutor/hiringInfo/update/{id}',[websiteHomeController::class,'parents_tutorHire_update'])->name('parents.hire.update');
+
+
+    //Payments route(pay fees)
+    Route::get('/pay/fees',[paymentsController::class,'pay_fees'])->name('pay.fees');
+    Route::post('/pay/fees/submit',[paymentsController::class,'fees_submit'])->name('fees.submit');
 
 
     

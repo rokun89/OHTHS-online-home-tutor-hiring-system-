@@ -5,6 +5,7 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Classes;
 use App\Models\Hiretutors;
+use App\Models\Payments;
 use App\Models\Subjects;
 use App\Models\Tutions;
 use App\Models\Tutors;
@@ -12,7 +13,6 @@ use App\Models\User;
 use Database\Seeders\UserTableSeeder;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\Event\ViewEvent;
 
 use function GuzzleHttp\Promise\all;
 
@@ -84,17 +84,26 @@ class websiteHomeController extends Controller
 
     public function userProfile()
     {
+        return view('frontend.pages.profile');
+     }
+
+    public function userProfileDetails()
+    {
         if(auth()->user() && auth()->user()->role == 'tutor'){
 
             $tuition = Hiretutors::where('tutor_id',auth()->user()->id)->get();
             $tuitionPost=Tutions::where('tutor_id',auth()->user()->id)->get();
-            return view('frontend.pages.profile',compact('tuition','tuitionPost'));
+
+            return view('frontend.pages.userProfileDetails',compact('tuition','tuitionPost'));
+            
         }
         else{
             
         $hirelist = Hiretutors::where('parents_id',auth()->user()->id)->get();
-        return view('frontend.pages.profile',compact('hirelist'));
+        
+        return view('frontend.pages.userProfileDetails',compact('hirelist'));
      }
+        
     }
 
     public function tutor_tuition_delete($delete)
@@ -403,6 +412,9 @@ class websiteHomeController extends Controller
         ]);
         return back();
     }
+
+    
+
 
 
 
