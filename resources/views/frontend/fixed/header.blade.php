@@ -96,10 +96,11 @@
                 <p style="color: blue;">Not-yet Registered,Go to Registration</p>
                     
                 </div>
-				<div>
-        <button type="submit" class="site-btn">Submit</button>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
-		
 </form>
     </div>
 	 
@@ -161,9 +162,10 @@
   
 </div>
 
-<div>
-<button type="submit" class="site-btn space-ten">Submit</button>
-</div>
+<div class="modal-footer">
+        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
 <div class="space-ten"></div>
                   
 <div>

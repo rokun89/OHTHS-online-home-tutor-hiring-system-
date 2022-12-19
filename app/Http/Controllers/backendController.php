@@ -19,13 +19,16 @@ class backendController extends Controller
 {
     
     public function home()
-    {
-     
-      //return view('backend.master');   
+    {   
 
       $stdinfo=Hiretutors::with('parent')->get();
 
       return view('backend.pages.dashboard',compact('stdinfo')); 
+    }
+
+    public function Report()
+    {
+        
     }
         
 
@@ -102,10 +105,47 @@ public function paymentsPage()
     return view('backend.pages.payments',compact('pay'));
 }
 
-public function contactPage()
+public function reportPage()
 {
-    return view('backend.pages.contact');
+    return view('backend.pages.report');
+
 }
+
+public function reportSearch(Request $request)
+{
+    
+    $request->validate([
+    'from_date'    => 'required|date',
+    'to_date'      => 'required|date|after:from_date',
+     ]);
+
+
+    // $validator = Hiretutors::make($request->all(), [
+    //     'from_date'    => 'required|date',
+    //     'to_date'      => 'required|date|after:from_date',
+    // ]);
+
+//     if($validator->fails())
+//         {
+// //            notify()->error($validator->getMessageBag());
+//             notify()->error('From date and to date required and to date should greater then from date.');
+//             return redirect()->back();
+//         }
+//         $from=$request->from_date;
+//         $to=$request->to_date;
+ 
+ 
+ //       $status=$request->status;
+        $hires=Hiretutors::whereBetween('created_at', [$request->from_date,
+        
+        $request->to_date])->get();
+        // dd($hires);
+        return view('backend.pages.report',compact('hires'));
+
+    }
+
+
+
 
 public function aboutPage()
 {

@@ -21,7 +21,9 @@ class websiteHomeController extends Controller
 
     public function webhome()
     {
-        return view('frontend.pages.body');
+        $tutionlist=Tutions::paginate(8);
+        $tutorlist=User::where('role','tutor')->paginate(6);
+        return view('frontend.pages.body',compact('tutionlist','tutorlist'));
     }
 
 

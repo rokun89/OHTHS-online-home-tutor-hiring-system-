@@ -8,8 +8,7 @@
 	<section class="categories-section spad">
 		<div class="container">
 			<div class="section-title">
-				<h2>Our Course Categories</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+				<h2>Our Course Tutor</h2>
 			</div>
 			<div class="row">
 		<!-- categorie -->
@@ -24,7 +23,7 @@
 						<p>Contact: {{$list->contact}}</p>
 						<span>Subject: {{$list->subject}}</span>
 						<div class="price"> 
-						<a href="{{route('tutor.details')}}">View-Details</a>
+						<a href="{{route('tution.details',$list->id)}}">View-Details</a>
                           </div>
 						</div>
 					</div>

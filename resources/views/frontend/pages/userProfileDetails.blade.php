@@ -151,7 +151,7 @@
 
 
     <!-- tutor payments Info -->
-    @if(auth()->user()->role == 'tutor')
+    <!-- @if(auth()->user()->role == 'tutor')
         <div style="padding-top: 80px;">
 
             <div class="container-xl px-4 mt-4">
@@ -206,7 +206,7 @@
             </div>
 
         </div>
-    @endif 
+    @endif  -->
     
    
     
@@ -241,7 +241,6 @@
                     <th scope="col">Parents-Contact</th>
                     <th scope="col">Address</th>
                     <th scope="col">Hiring-Status</th>
-                    <th scope="col">Make Payments</th>
                     <th scope="col">Action</th>
                     </tr>
                     </thead>
@@ -258,12 +257,11 @@
                         <td>{{$list->parent_contact}}</td>
                         <td>{{$list->address}}</td>
                         <td>{{$list->status}}</td>
+        
                         <td>
-                            
-                            <a href="{{route('pay.fees',$list->id)}}" class="btn btn-info">pay-fees</a>
-                        </td>
-                        <td>
-                         <div><a href="{{route('parents.tutor.hire.delete',$list->id)}}" class="btn btn-danger">delete</a> 
+                         <div>
+                         <!-- <a href="{{route('pay.fees',$list->id)}}" class="btn btn-secondary">pay-fees</a> -->
+                            <a href="{{route('parents.tutor.hire.delete',$list->id)}}" class="btn btn-danger">delete</a> 
 
                         <a href="{{route('parents.hire.edit',$list->id)}}" class="btn btn-success">edit</a></div>
                         </td>
@@ -294,7 +292,7 @@
 
 
     <!-- Parents payments Info -->
-    @if(auth()->user()->role == 'parents')
+    <!-- @if(auth()->user()->role == 'parents')
         <div style="padding-top: 80px;">
 
             <div class="container-xl px-4 mt-4">
@@ -364,7 +362,7 @@
 				</div>
 			</div>
 		</div>
-
+ -->
 
 
 </section>

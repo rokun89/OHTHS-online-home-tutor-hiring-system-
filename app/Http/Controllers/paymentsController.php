@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hiretutors;
 use App\Models\Payments;
+use App\Models\Tutors;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class paymentsController extends Controller
 {
     public function payments_form_page()
-    {
-        return view('backend.pages.categories.paymentsform');
+    {   
+        $paymentTest= User::where('role','tutor')->get();
+        return view('backend.pages.categories.paymentsform',compact('paymentTest'));
 
     }
 

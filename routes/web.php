@@ -129,7 +129,12 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
     Route::get('/subject',[backendController::class,'subjectPage'])->name('subject-url');
     Route::get('/class',[backendController::class,'classpage'])->name('class-url');
     Route::get('/payments',[backendController::class,'paymentsPage'])->name('payments-url');
-    Route::get('/contact',[backendController::class,'contactPage'])->name('contact-url');
+
+    //Report generation
+    Route::get('/report',[backendController::class,'reportPage'])->name('contact-url');
+    Route::get('/report/search',[backendController::class,'reportSearch'])->name('report.search');
+    //Report Generation end
+
     Route::get('/about',[backendController::class,'aboutPage'])->name('about-url');
 
     //parents form controller route

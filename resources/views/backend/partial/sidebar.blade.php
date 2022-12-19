@@ -47,13 +47,13 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{route('payments-url')}}">
                   <span data-feather="layers"></span>
-                  Payment
+                  Payments
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{route('contact-url')}}">
                   <span data-feather="layers"></span>
-                  Contact
+                  Report
                 </a>
               </li>
               <li class="nav-item">
