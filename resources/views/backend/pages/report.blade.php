@@ -9,12 +9,12 @@
 <div class="row">
     <div class="col-md-4">
         <label for="">From date:</label>
-        <input name="from_date" type="date" class="form-control">
+        <input required name="from_date" type="date" class="form-control">
 
     </div>
     <div class="col-md-4">
         <label for="">To date:</label>
-        <input name="to_date" type="date" class="form-control">
+        <input required name="to_date" type="date" class="form-control">
     </div>
     <div class="col-md-4">
         <button type="submit" class="btn btn-success">Search</button>
@@ -22,6 +22,8 @@
 </div>
 
 </form>
+<hr>
+
 <div id="hireReport">
 
 <h1>Hiring Reports- {{date('Y-m-d')}}</h1>
@@ -42,8 +44,8 @@
         <tr>
             <td>{{$key+1}}</td>
             <td>{{$list->student_name}}</td>
-            <td>{{$list->tutor_id}}</td>
-            <td>{{$list->parents_id}}</td>
+            <td>{{$list->tutor->name}}</td>
+            <td>{{$list->parent->name}}</td>
             <td>{{$list->address}}</td>
             <td>{{$list->created_at}}</td>
 

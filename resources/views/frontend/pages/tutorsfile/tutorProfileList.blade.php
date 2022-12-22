@@ -31,9 +31,9 @@
 						<div class="ci-text">
 							<h5><b>Name:</b>  {{$list->name}}</h5>
 							<p>Contact: {{$list->contact}}</p>
-							<span><b>Subjecct: </b>{{$list->subject}}</span>
+							<p>Address: {{$list->address}}</p>
+							<span><b>Degree: </b>{{$list->degree}}</span>
 							<a href="#">
-							<p>View-Details</p>
 							</a>
 						</div>
 							

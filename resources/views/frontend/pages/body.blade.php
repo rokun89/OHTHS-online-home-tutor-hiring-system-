@@ -133,7 +133,8 @@
 					<div class="ci-text">
 						<h5><b>Name: </b>{{$list->name}}</h5>
 						<p>Contact: {{$list->contact}}</p>
-						<span>Subject: {{$list->subject}}</span>
+						<p>Address: {{$list->address}}</p>
+						<span>Degree: {{$list->degree}}</span>
 						<div class="price"> 
 						<a href="{{route('tution.details',$list->id)}}">View-Details</a>
                           </div>
@@ -145,7 +146,7 @@
 		
 				
 			</div>
-			{{$tutorlist->links()}}
+			
 		</div>
 	</section>
 	<!-- categories section end -->
@@ -181,12 +182,13 @@
 							<div class="course-text">
 								<h5><b>Subject: </b>{{$list->subject->name}} </h5>
 								<p>Title: {{$list->title}}</p>
+								<p>Class: {{$list->class->name}}</p>
 								<p> Weekend-Days:{{$list->weekend_days}}</p>
 								<div class="students"><b>Salary: </b> {{$list->salary}}</div>
 							</div>
 							<div class="course-author">
 								
-						<p> <a href="{{route('tution.details',$list->id)}}"> <span>View-Details</span></a> </p> 
+						<p> <a href="{{route('fc.tution.details',$list->id)}}"> <span>View-Details</span></a> </p> 
 							</div>
 						</div>
 					</div>
@@ -218,7 +220,9 @@
 							<li><b>Address: </b> House 73/F;Road 12/B;Sector 10 <br> Uttara, Dhaka-1230</li>
 							<li><b>Mobile: </b> +880 1609235391</li>
 							<li><b>Email: </b> 19103045@iubat.edu</li>
-							<li><b> Facebook</b>: <a href="">go_to_facebook</a></li>
+							<li><b> Facebook</b>: <a href="https://www.facebook.com/shahrier.rokun/">go_to_facebook</a></li>
+							<li><b>Linkedin</b>: <a href="https://www.linkedin.com/in/monir-hossen-768269246/">go_to_linkedin</a></li>
+							<li><b> Git-hub</b>: <a href="https://github.com/rokun89">go_to_github</a></li>
 						</ul>
 						
 

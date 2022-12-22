@@ -47,12 +47,12 @@ Route::group(['middleware'=>'auth'],function() {
     //Tutor route
     Route::get('/tutorpage',[websiteHomeController::class,'tutorpage'])->name('tutor.page');
     Route::get('/tutorDetails',[websiteHomeController::class,'tutorDetails'])->name('tutor.details');
-
+   
 
     //Tution Route
     Route::get('/tutionpage',[websiteHomeController::class,'TutionPage'])->name('tution.list');
     Route::get('/tution/details/page/{details}',[websiteHomeController::class,'tution_details'])->name('tution.details');
-
+    Route::get('/FC/tution/details/page/{id}',[websiteHomeController::class,'fc_tution_details'])->name('fc.tution.details');
     Route::get('/tution/view/hire/page/{id}',[websiteHomeController::class,'Tution_hire'])->name('tution.hire');
     Route::post('/tution/studentInfoForm/{id}',[websiteHomeController::class,'stdInfoForm'])->name('tution.stdinfoForm');
 
@@ -61,26 +61,13 @@ Route::group(['middleware'=>'auth'],function() {
     Route::get('/byParents/tutor/hiringInfo/edit/{id}',[websiteHomeController::class,'parents_tutorHire_edit'])->name('parents.hire.edit');
     Route::put('/byParents/tutor/hiringInfo/update/{id}',[websiteHomeController::class,'parents_tutorHire_update'])->name('parents.hire.update');
 
+    //About page route
+    Route::get('/about/me/page',[websiteHomeController::class,'aboutMe'])->name('about.me');
+
 
     //Payments route(pay fees)
     Route::get('/pay/fees',[paymentsController::class,'pay_fees'])->name('pay.fees');
     Route::post('/pay/fees/submit',[paymentsController::class,'fees_submit'])->name('fees.submit');
-
-
-    
-    // SSLCOMMERZ Start
-    Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
-    Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
-
-    Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
-    Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
-
-    Route::post('/success', [SslCommerzPaymentController::class, 'success']);
-    Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
-    Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
-
-    Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
-    //SSLCOMMERZ END
 
 
 });

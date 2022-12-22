@@ -27,18 +27,18 @@
 
     <div class="form-group">
         <label for="title">Title:</label>
-     <input type="text"  class="form-control" name="title" id="" cols="" rows="" placeholder="Enter Your Title Here" value="{{$Tuitionedit->title}}"></textarea>
+     <input required type="text"  class="form-control" name="title" id="" cols="" rows="" placeholder="Enter Your Title Here" value="{{$Tuitionedit->title}}"></textarea>
     </div> 
 
     <div class="form-row">
      <div class="form-group col-md-6">
      <label for="class">Tutor Name: {{$Tuitionedit->tutor->name}}</label>
-     <input type="text" readonly class="form-control" name="name" id="" cols="" rows="" placeholder="Enter Your name Here" value="{{$Tuitionedit->tutor->id}}">
+     <input required type="text" readonly class="form-control" name="name" id="" cols="" rows="" placeholder="Enter Your name Here" value="{{$Tuitionedit->tutor->id}}">
     </div>
 
     <div class="form-group col-md-6">
         <label for="class">Class</label>
-        <select name="class" id="class" class="form-control">
+        <select required name="class" id="class" class="form-control">
             @foreach($cls as $data)
                 <option value="{{$data->id}}">{{$data->name}}</option>
             @endforeach
@@ -49,7 +49,7 @@
 
      <label for="subject">Subject</label>
 
-     <select name="subject" id="class" class="form-control">
+     <select required name="subject" id="class" class="form-control">
         @foreach($sub as $data)
             <option value="{{$data->id}}">{{$data->name}}</option>
         @endforeach

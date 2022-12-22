@@ -13,10 +13,10 @@
 				<div class="col-lg-6">
 					<div class="signup-warp">
 						<div class="section-title text-white text-left">
-							<h2>Sign up to became a teacher</h2>
+							<h2>Sign up as a tutor and get a tuition</h2>
 
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
-                            <p>
+							<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p> -->
+              <p>
                          <button data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary btn-lg">LOGIN</button>
 
                          <button data-toggle="modal" data-target="#exampleModal" class="btn btn-secondary btn-lg">Registration</button></a>
@@ -139,11 +139,11 @@
 
 <div class="form-row">
     <div class="form-group col-md-6">
-<input name="name" type="text" class="form-control" id="inputName" placeholder="Enter Your Name">
+<input required name="name" type="text" class="form-control" id="inputName" placeholder="Enter Your Name">
     </div>
 
     <div class="form-group col-md-6" >
-<input name="email" type="email" class="form-control" placeholder=" E-mail">
+<input required name="email" type="email" class="form-control" placeholder=" E-mail">
     </div>
 </div>
 
@@ -161,16 +161,12 @@
     </div>    
 
     <div class="form-group col-md-6">
-<input name="salary" type="text" class="form-control" placeholder="$$$">
+   <input required name="degree" type="text" class="form-control" placeholder="degree">
     </div>
     <div>
 
 <input name="address" type="text" class="form-control" placeholder="123/Avila,CA 931">
 </div>
-    <div class="form-group col-md-6">
-
-<input name="images" type="file" class="form-control" placeholder="upload images">
-    </div>
 </div>
 
 

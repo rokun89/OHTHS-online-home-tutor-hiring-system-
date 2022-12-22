@@ -21,9 +21,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
 
+            $table->string('degree')->nullable();
             $table->string('contact')->nullable();
             $table->string('address')->nullable();
-            $table->string('images')->nullable();
             
             $table->rememberToken();
             $table->timestamps();

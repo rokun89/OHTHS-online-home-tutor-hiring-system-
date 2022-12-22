@@ -29,19 +29,19 @@
                         <!-- Form Group (username)-->
                         <div class="mb-3">
                             <label class="small mb-1" for="inputFirstName">Student-Name</label>
-                            <input name="name" class="form-control" id="inputFirstName" type="text" placeholder="Enter student name" value="{{$hireEdit->student_name}}">
+                            <input required name="name" class="form-control" id="inputFirstName" type="text" placeholder="Enter student name" value="{{$hireEdit->student_name}}">
                         </div>
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
                             
                             <div class="col-md-6">
                                 <label class="small mb-1" for=""> Class</label>
-                                <input name="class" class="form-control" id="" type="text" placeholder="Class" value="{{$hireEdit->class}}">
+                                <input required name="class" class="form-control" id="" type="text" placeholder="Class" value="{{$hireEdit->class}}">
                             </div>
                             
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputLastName">Subject</label>
-                                <input name="subject" class="form-control" id="inputLastName" type="text" placeholder="subject" value="{{$hireEdit->subject}}">
+                                <input required name="subject" class="form-control" id="inputLastName" type="text" placeholder="subject" value="{{$hireEdit->subject}}">
                             </div>
                         </div>
                         
@@ -49,18 +49,18 @@
                             
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputOrgName">Parents-Contact</label>
-                                <input name="parents_contact" class="form-control" id="inputOrgName" type="text" placeholder="parents_contact" value="{{$hireEdit->parent_contact}}">
+                                <input required name="parents_contact" class="form-control" id="inputOrgName" type="text" placeholder="parents_contact" value="{{$hireEdit->parent_contact}}">
                             </div>
                             
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputemail">Parents-email</label>
-                                <input name="parents_email" class="form-control" type="email" id="inputLocation" type="text" placeholder="Enter parents_email" value="{{$hireEdit->parent_email}}">
+                                <input required name="parents_email" class="form-control" type="email" id="inputLocation" type="text" placeholder="Enter parents_email" value="{{$hireEdit->parent_email}}">
                             </div>
                         </div>
                         
                         <div class="mb-3">
                             <label class="small mb-1" for="inputEmailAddress">Address</label>
-                            <input name="address" class="form-control" id="inputEmailAddress" type="text" placeholder="Enter your address" value="{{$hireEdit->address}}">
+                            <input required name="address" class="form-control" id="inputEmailAddress" type="text" placeholder="Enter your address" value="{{$hireEdit->address}}">
                         </div>
                         <button class="btn btn-success" type="submit">update</button>
 

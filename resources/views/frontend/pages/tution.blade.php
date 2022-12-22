@@ -57,5 +57,5 @@
 
 
 </div>
-{{$tutionlist->links()}}
+
 @endsection

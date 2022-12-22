@@ -123,11 +123,11 @@
                     <td>{{$list->parent_contact}}</td>
                     <td>{{$list->parent_email}}</td>
                     <td>{{$list->address}}</td>
-        
+            @if($list->status=='pending')
                     <td>
                         <a href="{{route('status.update',$list->id)}}" class="btn btn-primary">{{$list->status}}</a>
                     </td>
-        
+            @endif
                         </tr>
         
                     @endforeach

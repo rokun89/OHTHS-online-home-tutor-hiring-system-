@@ -1,7 +1,19 @@
 @extends('frontend.master')
 
 @section('content')
-<section class="signup-section spad">
+        <style>
+            .signup-section{
+                background-color: #d82a4e;
+            }
+            .col-xl-8{
+                margin-top: 5%;
+                margin-bottom: 5%;
+                margin-left:190px ;
+                  
+            }
+        </style>
+
+<div class="signup-section">
 		<div class="container-fluid">
 			
 				<div class="col-lg-12">
@@ -13,7 +25,7 @@
                     <!-- USER Profile Update -->
 
     
-     <div class="col-xl-8" style="margin-left:190px ;">
+     <div class="col-xl-8">
          
             <div class="card mb-4">
             <div class="card-header"><b><h3 style="color: black;">User Info </h3></b></div>
@@ -51,17 +63,20 @@
                          <input name="phone" type="text" class="form-control" value="{{auth()->user()->contact}}" placeholder="Phone number">
                      </div>
                      </div>
+
+                     @if(auth()->user()->role == 'tutor')
+                     <div>
+                     <div class="col-md-6">
+                        <label for="contact"><b style="color:black ;">Degree:</b></label>
+                         <input name="degree" type="text" class="form-control" value="{{auth()->user()->degree}}" placeholder="degree">
+                     </div>
+                     </div>
+                    @endif
+                    
                      <div>
                      <div class="col-md-6">
                         <label for="address"><b style="color:black ;">Address:</b></label>
                          <input name="address" type="text" class="form-control" placeholder="address" value="{{auth()->user()->address}}">
-                     </div>
-                     
-                      </div>
-                      <div>
-                      <label for="images"><b style="color:black ;">Images:</b></label>
-                     <div class="col-md-6">
-                         <input name="images" type="file" class="form-control" placeholder="images" >
                      </div>
                      
                       </div>
@@ -88,7 +103,7 @@
 
 
                 
-</section>
+</div>
 
 
 

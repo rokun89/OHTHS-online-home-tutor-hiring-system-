@@ -1,6 +1,8 @@
 @extends('frontend.master')
 
 @section('content')
+
+
 <div style="padding-top: 60px;">
 
 <style>
@@ -16,7 +18,7 @@
 
  <div class="container">
     <div class="row">
-    @foreach($tutordetails as $tutordetails)
+    
         <div class="col-md-4">
               <div class="thumbnail" style="background-color: #D4EFDF";>
               <div class="caption">
@@ -56,10 +58,13 @@
                 </div>
                 
               </div>
-    @endforeach          
+             
             </div>
           
 
 
 </div>
+
+
+
 @endsection

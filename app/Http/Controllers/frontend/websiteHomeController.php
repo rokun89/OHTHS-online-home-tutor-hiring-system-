@@ -21,8 +21,8 @@ class websiteHomeController extends Controller
 
     public function webhome()
     {
-        $tutionlist=Tutions::paginate(8);
-        $tutorlist=User::where('role','tutor')->paginate(6);
+        $tutionlist=Tutions::all();
+        $tutorlist=User::where('role','tutor')->get();
         return view('frontend.pages.body',compact('tutionlist','tutorlist'));
     }
 
@@ -79,7 +79,7 @@ class websiteHomeController extends Controller
 
         notify()->success('Logout Successfull');
 
-        return redirect()->back();
+        return redirect()->route('web.home');
     }
 
 
@@ -198,26 +198,17 @@ class websiteHomeController extends Controller
        // dd($request->all());
         $userupdate=User::find(auth()->user()->id);
 
-        $userimgUpdate=null;
-        if($request->hasFile('images'))
-        {
-           
-            $userimgUpdate=date('Ymdhmi').'.'.$request->file('images')->getClientOriginalExtension();
-            $request->file('images')->storeAs('/uploads',$userimgUpdate);
-        }
-
         $userupdate->update([
             'name'=>$request->user_name,
             'contact'=>$request->phone,
             'password'=>$request->password,
             'address'=>$request->address,
-            'images'=>$userimgUpdate
-            
+            'degree'=>$request->degree,            
             
             ]);
 
         notify('success','Profile Updated Successfully');
-        return redirect()->route('web.home');
+        return redirect()->back();
     }
 
 
@@ -241,15 +232,6 @@ class websiteHomeController extends Controller
 
     public function tutorReg(Request $tutorvar)
     {
-        $tutorimg=null;
-        if($tutorvar->hasFile('images'))
-        {
-           
-            $tutorimg=date('Ymdhmi').'.'.$tutorvar->file('images')->getClientOriginalExtension();
-            $tutorvar->file('images')->storeAs('/uploads',$tutorimg);
-        
-        }
-
 
         User::create([
             'name'=>$tutorvar->name,
@@ -257,7 +239,7 @@ class websiteHomeController extends Controller
             'password'=>bcrypt($tutorvar->password),
             'contact'=>$tutorvar->phone,
             'address'=>$tutorvar->address,
-            'images'=>$tutorimg,
+            'degree'=>$tutorvar->degree,
             'role'=>'tutor'
 
         ]);
@@ -305,7 +287,10 @@ class websiteHomeController extends Controller
     }
     
 
-
+    public function aboutMe()
+    {
+        return view('frontend.pages.aboutMe');
+    }
 
 
 
@@ -315,7 +300,7 @@ class websiteHomeController extends Controller
 
     public function TutionPage()
     {
-        $tutionlist=Tutions::paginate(8);
+        $tutionlist=Tutions::all();
         return view('frontend.pages.tution',compact('tutionlist'));
     }
 
@@ -324,6 +309,7 @@ class websiteHomeController extends Controller
         $tution = Tutions::find($id);
         return view('frontend.pages.tutionfile.tutionHire',compact('tution'));
     }
+
 
     public function stdInfoForm(Request $request,$id)
     {
@@ -347,8 +333,14 @@ class websiteHomeController extends Controller
 
     public function tution_details($details)
     {
-        $tutordetails=Tutions::find($details);
+        $tutordetails=Tutions::where('tutor_id',$details)->get();
         return view('frontend.pages.tutionfile.tutionDetails',compact('tutordetails'));
+    }
+
+    public function fc_tution_details($id)
+    {
+        $tutordetails=Tutions::find($id);
+        return view('frontend.pages.tutionfile.FCoursetutionDetails',compact('tutordetails'));
     }
 
     public function hire_delete($delete)
@@ -380,7 +372,7 @@ class websiteHomeController extends Controller
     {
        Tutions::create([
             'title'=>$request->title,
-            'tutor_id'=>$request->tutor,
+            'tutor_id'=>auth()->user()->id,
             'class_id'=>$request->class,
             'subject_id'=>$request->subject,
             'salary'=>$request->salary,
