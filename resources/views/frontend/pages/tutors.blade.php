@@ -17,12 +17,13 @@
 
 			<div class="col-lg-4 col-md-6">
 				<div class="categorie-item">
-				  <div class="ci-thumb set-bg" data-setbg="{{url('/')}}"></div>
+				  
 					<div class="ci-text">
-						<h5><b>Name: </b>{{$list->name}}</h5>
+						<h5 style="color: #d82a4e;"><b>Name: </b>{{$list->name}}</h5>
 						<p>Contact: {{$list->contact}}</p>
-						<span>Subject: {{$list->subject}}</span>
-						<div class="price"> 
+						<span>Degree: {{$list->degree}}</span>
+						<div class="price">
+							<hr> 
 						<a href="{{route('tution.details',$list->id)}}">View-Details</a>
                           </div>
 						</div>

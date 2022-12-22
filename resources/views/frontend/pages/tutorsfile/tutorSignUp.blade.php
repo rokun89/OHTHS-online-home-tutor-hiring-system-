@@ -2,11 +2,12 @@
 
 @section('content')
 
+  
 <!-- signup section -->
 <div style="margin: 130px;">
 
 
-<section class="signup-section spad">
+<section class="signup-section spad" style="background-color: #302939;">
 		<div class="signup-bg set-bg" data-setbg="{{url('/frontend/images/Teach.jpg')}}"></div>
 		<div class="container-fluid">
 			<div class="row">
@@ -154,11 +155,7 @@
 
 <div class="form-group col-md-6">
 <input name="phone" type="text" class="form-control" placeholder=" Contact">
-</div>
-
-    <div class="form-group col-md-6">
-<input name="subject" type="text" class="form-control" placeholder="subject">
-    </div>    
+</div>    
 
     <div class="form-group col-md-6">
    <input required name="degree" type="text" class="form-control" placeholder="degree">

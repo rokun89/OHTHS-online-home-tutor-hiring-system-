@@ -3,9 +3,11 @@
 @section('content')
         <style>
             .signup-section{
-                background-color: #d82a4e;
+                background-color: #fff;
             }
             .col-xl-8{
+                background-color: #007b5e;
+                
                 margin-top: 5%;
                 margin-bottom: 5%;
                 margin-left:190px ;
@@ -27,8 +29,8 @@
     
      <div class="col-xl-8">
          
-            <div class="card mb-4">
-            <div class="card-header"><b><h3 style="color: black;">User Info </h3></b></div>
+            <div class="card mb-4" style="background-color: #007b5e;">
+            <div class="card-header"><b><h3>User Information </h3></b> </div>
                 <div class="card-body">
 
                     <form action="{{route('user.update')}}" method="post"  enctype="multipart/form-data">

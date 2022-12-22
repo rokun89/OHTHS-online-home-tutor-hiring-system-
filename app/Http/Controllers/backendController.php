@@ -115,9 +115,9 @@ public function reportSearch(Request $request)
 {
     
     $request->validate([
-    'from_date'    => 'required|date',
+    'from_date'    => 'required|date|before_or_equal:now',
     'to_date'      => 'required|date|after:from_date',
-     ]);
+    ]);
 
 
     // $validator = Hiretutors::make($request->all(), [

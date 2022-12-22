@@ -34,22 +34,22 @@
                         </div>
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
-                            <!-- Form Group (first name)-->
+                            
                             <div class="col-md-6">
                                 <label class="small mb-1" for=""> Class</label>
-                                <input name="class" class="form-control" id="" type="text" placeholder="Class" value="">
+                                <input readonly name="class" class="form-control" id="" type="text" placeholder="Class" value="{{$tution->class->name}}">
                             </div>
-                            <!-- Form Group (last name)-->
+                           
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputLastName">Subject</label>
-                                <input name="subject" class="form-control" id="inputLastName" type="text" placeholder="subject" value="">
+                                <input readonly name="subject" class="form-control" id="inputLastName" type="text" placeholder="subject" value="{{$tution->subject->name}}">
                             </div>
                         </div>
                         <!-- Form Row        -->
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (organization name)-->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="inputOrgName">Parents-Contact</label>
+                                <label class="small mb-1" for="inputOrgName">Parents-Contact-Number</label>
                                 <input name="parents_contact" class="form-control" id="inputOrgName" type="text" placeholder="parents_contact" value="">
                             </div>
                             <!-- Form Group (location)-->

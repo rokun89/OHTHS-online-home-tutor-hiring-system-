@@ -87,9 +87,9 @@
 		<div class="container">
 			<div class="hero-text text-white">
 				<h2>Hire The Best Home Tutor.</h2>
-				<p>Elimination of travel time for both parents and tutors.Parents can get highly qualified tutors at affordable prices. <br>Tutors shares a wealth of knowledge, experience, and academic degrees which they have.</p>
+				<p>Elimination of travel time for both parents and tutors.Parents can get highly qualified tutors at affordable cost. <br>Tutors shares a wealth of knowledge, experience, and academic degrees which they have.</p>
 
-		<p>
+		<!-- <p>
 	<div class="srccontainer">
 	  <div class="search"> 
 		<i class='bx bx-search-alt'></i> 
@@ -103,12 +103,13 @@
 		</div>
 	</div>
 				
-			</p>
+			</p> -->
 
 		</div>
 			
 		</div>
 </section> 
+<hr>
 	<!-- Hero section end -->
 
 
@@ -129,13 +130,14 @@
 
 			<div class="col-lg-4 col-md-6">
 				<div class="categorie-item">
-				  <div class="ci-thumb set-bg" data-setbg="{{url('/')}}"></div>
+				 
 					<div class="ci-text">
-						<h5><b>Name: </b>{{$list->name}}</h5>
-						<p>Contact: {{$list->contact}}</p>
+					<h5><b>Name: </b>{{$list->name}}</h5>
+					<span><p>Contact: {{$list->contact}}</p></span>
 						<p>Address: {{$list->address}}</p>
 						<span>Degree: {{$list->degree}}</span>
 						<div class="price"> 
+							<hr>
 						<a href="{{route('tution.details',$list->id)}}">View-Details</a>
                           </div>
 						</div>
@@ -149,6 +151,7 @@
 			
 		</div>
 	</section>
+	<hr>
 	<!-- categories section end -->
 
 
@@ -200,11 +203,11 @@
 			</div>
 		</div>
 	</section>
-
+<hr>
 
 	 
-	<!-- signup section -->
-	<section class="signup-section spad">
+	<!-- about section -->
+	<section class="signup-section spad" style="background-color: #333333;">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-8">

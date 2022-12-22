@@ -1,7 +1,7 @@
 
 
 <!-- Header section -->
-<header style="background-color:#282A35 ;padding: 2px;margin:buttom 10%">
+<header style="background-color:#282A35 ;padding: 10px;margin:buttom 10%">
 		<div class="container">
 			<div class="row">
 					<div class="nav-switch">
@@ -15,7 +15,7 @@
     
 			<li><a href="{{route('web.home')}}">Home</a></li>
 			<li><a href="{{route('tutor.page')}}">Tutor</a></li>
-			<li><a href="{{route('tution.list')}}">Tution</a></li>
+			<li><a href="{{route('tution.list')}}">Course</a></li>
 			<li><a href="{{route('about.me')}}">About</a></li>
       <li><a href="{{route('tutor.url')}}">Become a tutor</a></li>
 			<li style="padding-left: 250px;" class="btn-group" role="group" aria-label="Basic example">
@@ -156,7 +156,7 @@
 
 <div class="form-group col-md-6">
 <label for="Contact"><b>Contact:</b></label>
-<input type="text" placeholder="Contact">
+<input required type="text" placeholder="Contact">
     </div>
   
 </div>

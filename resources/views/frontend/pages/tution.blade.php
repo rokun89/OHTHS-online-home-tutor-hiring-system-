@@ -39,7 +39,7 @@
 							</div>
 							<div class="course-author">
 								
-						<p> <a href="{{route('tution.details',$list->id)}}"> <span>View-Details</span></a> </p> 
+						<p> <a href="{{route('fc.tution.details',$list->id)}}"> <span>View-Details</span></a> </p> 
 							</div>
 						</div>
 					</div>

@@ -285,9 +285,9 @@ ol {
 	padding: 20px 0 5px;
 }
 
-.main-menu ul li a:hover {
+/* .main-menu ul li a:hover {
 	color: #d82a4e;
-}
+} */
 
 .header-btn {
 	float: right;
@@ -372,15 +372,15 @@ ol {
 	color: #d82a4e;
 }
 
-.categorie-item:hover {
-	background: #d82a4e;
+/* .categorie-item:hover {
+	background: #007b5e;
 }
 
 .categorie-item:hover .ci-text h5,
 .categorie-item:hover .ci-text p,
 .categorie-item:hover .ci-text span {
 	color: #fff;
-}
+} */
 
 /*------------------
   Search section
