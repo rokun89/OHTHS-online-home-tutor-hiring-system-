@@ -12,7 +12,7 @@
             
     @if(auth()->user()->role == 'tutor')
 
-        <div style="padding-top: 80px;">
+        <div>
 
             <div class="container-xl px-4 mt-4">
                 <hr class="mt-0 mb-4">
@@ -53,7 +53,7 @@
                                 
                     
                                 <td>
-                                    <a href="{{route('tutor.tuition.delete',$data->id)}}" class="btn btn-danger">delete</a>
+                                    <!-- <a href="{{route('tutor.tuition.delete',$data->id)}}" class="btn btn-danger">delete</a> -->
                                     <a href="{{route('tutor.tuition.edit',$data->id)}}" class="btn btn-success">edit</a>
                                 </td>
                     
@@ -86,12 +86,12 @@
 
 @auth
     @if(auth()->user()->role == 'tutor')
-     <div style="padding-top: 80px;">
+     <div style="margin-left: 15%;">
 
         <div class="container-xl px-4 mt-4">
             <hr class="mt-0 mb-4">
             <div class="row">
-                <div class="col-xl-12">
+                <div class="col-xl-10">
          
                     <div class="card mb-4">
                         <div class="card-header"><b><h3>Hiring Info </h3></b></div>
@@ -105,7 +105,6 @@
                     <tr>
                     <th scope="col">id</th>
                     <th scope="col">Student-Name</th>
-                    <th scope="col">Tutor</th>
                     <th scope="col">Class</th>
                     <th scope="col">Subject</th>
                     <th scope="col">Parents-Name</th>
@@ -121,7 +120,7 @@
                     <tr>
                     <th scope="row">{{$key + 1}}</th>
                     <td>{{$list->student_name}}</td>
-                    <td>{{$list->tutor->name}}</td>
+                    
                     <td>{{$list->class}}</td>
                     <td>{{$list->subject}}</td>
                     <td>{{$list->parent->name}}</td>
@@ -220,7 +219,7 @@
 
     <!-- Parents Hiring Info -->
     @if(auth()->user()->role == 'parents')
-        <div style="padding-top: 80px;">
+        <div>
 
             <div class="container-xl px-4 mt-4">
                 <hr class="mt-0 mb-4">
@@ -266,7 +265,7 @@
                         <td>
                          <div>
                          <!-- <a href="{{route('pay.fees',$list->id)}}" class="btn btn-secondary">pay-fees</a> -->
-                            <a href="{{route('parents.tutor.hire.delete',$list->id)}}" class="btn btn-danger">delete</a> 
+                            <!-- <a href="{{route('parents.tutor.hire.delete',$list->id)}}" class="btn btn-danger">delete</a>  -->
 
                         <a href="{{route('parents.hire.edit',$list->id)}}" class="btn btn-success">edit</a></div>
                         </td>
@@ -373,5 +372,5 @@
 </section>
 
 
-
+<hr>
 @endsection

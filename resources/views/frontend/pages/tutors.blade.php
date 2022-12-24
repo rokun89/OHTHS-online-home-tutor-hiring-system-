@@ -44,6 +44,6 @@
 
 
 
-	{{$tutorlist->links()}}
+	
 </div>
 @endsection

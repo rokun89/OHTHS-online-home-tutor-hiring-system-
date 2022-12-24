@@ -30,7 +30,8 @@
      <div class="col-xl-8">
          
             <div class="card mb-4" style="background-color: #007b5e;">
-            <div class="card-header"><b><h3>User Information </h3></b> </div>
+            <div class="card-header"><b><h3>User Information </h3></b> <a style="margin-left: 85%" href="{{route('user.profile.details')}}" class="btn btn-success">View-details</a>
+                     </div>
                 <div class="card-body">
 
                     <form action="{{route('user.update')}}" method="post"  enctype="multipart/form-data">
@@ -83,13 +84,13 @@
                      
                       </div>
                  
-                     <div class="mt-5 text-right"><button class="btn btn-primary profile-button" type="submit">Update Profile</button></div>
+                     <div class="mt-5 text-right"><button class="btn btn-secondary profile-button" type="submit">Update Profile</button></div>
 
                     </form>
 
-                    <div><a href="{{route('user.profile.details')}}" class="btn btn-success">View-Details</a></div>
+                    <!-- <div><a href="{{route('user.profile.details')}}" class="btn btn-success">View-Details</a></div> -->
 
-                    <div style="margin-top: 20px;"><a href="{{route('tutor.webpage')}}"><span class="btn btn-danger">Go-to back</span></a> </div>
+                    <p style="margin-top: 20px;"><a href="{{route('tutor.webpage')}}"><span class="btn btn-danger"><-back</span></a> </p>
                      
                     
 

@@ -1,7 +1,7 @@
 
 
 <!-- Header section -->
-<header style="background-color:#282A35 ;padding: 10px;margin:buttom 10%">
+<header style="background-color:#282A35 ;padding: 5px;margin:buttom 10%">
 		<div class="container">
 			<div class="row">
 					<div class="nav-switch">

@@ -35,20 +35,8 @@
                   <p> <label for="Name">Contact:</label>
                   <input value="{{$viewparentsTest->contact}}"></p>
 
-                  <p> <label for="Name">N-ID:</label>
-                  <input value="{{$viewparentsTest->n_id}}"></p>
-
-                  <p> <label for="Name">Contact:</label>
-                  <input value="{{$viewparentsTest->contact}}"></p>
-
-                  <p> <label for="Name">Occupation:</label>
-                  <input value="{{$viewparentsTest->occupation}}"></p>
-
                   <p> <label for="Name">Address:</label>
                   <input value="{{$viewparentsTest->address}}"></p>
-
-                  <p> <label for="Name">Status:</label>
-                  <input value="{{$viewparentsTest->status}}"></p>
 
 
                 </div>

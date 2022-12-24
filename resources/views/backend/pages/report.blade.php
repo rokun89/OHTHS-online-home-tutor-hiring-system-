@@ -18,10 +18,11 @@
         <label for="">To date:</label>
         <input required name="to_date" type="date" class="form-control">
     </div>
-    <div class="col-md-4">
+    
+</div>
+<div style="margin-top:1% ;">
         <button type="submit" class="btn btn-success">Search</button>
     </div>
-</div>
 
 </form>
 <hr>

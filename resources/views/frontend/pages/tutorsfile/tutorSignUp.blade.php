@@ -14,7 +14,7 @@
 				<div class="col-lg-6">
 					<div class="signup-warp">
 						<div class="section-title text-white text-left">
-							<h2>Sign up as a tutor and get a tuition</h2>
+							<h2>Sign up as a Tutor and get the Tuition</h2>
 
 							<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p> -->
               <p>
@@ -36,8 +36,9 @@
 
 
 
-
+  <hr>
 @endsection
+
 
 
 
@@ -96,7 +97,7 @@
       </div>
       <div class="modal-footer">
       <button type="submit" class="btn btn-Success">Submit</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       
       </div>
                  </form>
@@ -154,7 +155,7 @@
 </div>
 
 <div class="form-group col-md-6">
-<input name="phone" type="text" class="form-control" placeholder=" Contact">
+<input required name="phone" type="text" class="form-control" placeholder=" Contact">
 </div>    
 
     <div class="form-group col-md-6">
@@ -162,7 +163,7 @@
     </div>
     <div>
 
-<input name="address" type="text" class="form-control" placeholder="123/Avila,CA 931">
+ <input required name="address" type="text" class="form-control" placeholder="123/Avila,CA 931">
 </div>
 </div>
 
@@ -173,7 +174,7 @@
       </div>
       <div class="modal-footer">
       <button type="submit" class="btn btn-success">Submit</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         
       </div>
 

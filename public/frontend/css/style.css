@@ -1,7 +1,6 @@
 /* =================================
 ------------------------------------
-  WebUni - Education Template
-  Version: 1.0
+  
  ------------------------------------ 
  ====================================*/
 
@@ -285,9 +284,9 @@ ol {
 	padding: 20px 0 5px;
 }
 
-/* .main-menu ul li a:hover {
+.main-menu ul li a:hover {
 	color: #d82a4e;
-} */
+}
 
 .header-btn {
 	float: right;
@@ -374,13 +373,13 @@ ol {
 
 /* .categorie-item:hover {
 	background: #007b5e;
-}
+} */
 
 .categorie-item:hover .ci-text h5,
 .categorie-item:hover .ci-text p,
 .categorie-item:hover .ci-text span {
-	color: #fff;
-} */
+	color: #d82a4e;
+}
 
 /*------------------
   Search section

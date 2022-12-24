@@ -29,7 +29,7 @@
       
       <td>
         <a href="#" class="btn btn-primary">view</a>
-        <a href="{{route('cls.delete',$data->id)}}" class="btn btn-danger">delete</a>
+        <!-- <a href="{{route('cls.delete',$data->id)}}" class="btn btn-danger">delete</a> -->
         <a href="#" class="btn btn-warning">edit</a>
 
     </tr>

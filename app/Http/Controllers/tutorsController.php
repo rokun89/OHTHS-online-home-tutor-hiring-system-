@@ -101,25 +101,12 @@ class tutorsController extends Controller
     {
         $editTest=User::find($edit);
 
-        $tutorupdate=$editTest->images;
-
-    if($request1->hasFile('images'))
-        {
-            
-            $tutorupdate=date('Ymdhmi').'.'.$request1->file('images')->getClientOriginalExtension();
-            $request1->file('images')->storeAs('/uploads',$tutorupdate);
-        }
-
-
         $editTest->update([
             'name'=>$request1->name,
             'email'=>$request1->email,
-            'password'=>bcrypt($request1->password),
             'contact'=>$request1->phone,
             'address'=>$request1->address,
-            'subject'=>$request1->subject,
-            'salary'=>$request1->salary,
-            'images'=>$tutorupdate,
+            'degree'=>$request1->degree,
             'role'=>'tutor'
         ]);
         notify()->success('Update Successfull');

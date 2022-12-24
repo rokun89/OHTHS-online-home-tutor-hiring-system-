@@ -26,13 +26,13 @@
                   <input value="{{$viewTution->title}}"></p>
 
                   <p> <label for="Name">Name:</label>
-                  <input value="{{$viewTution->tutor_id}}"></p>
+                  <input value="{{$viewTution->tutor->name}}"></p>
 
                   <p> <label for="Name">Subject:</label>
-                  <input value="{{$viewTution->subject_id}}"></p>
+                  <input value="{{$viewTution->subject->name}}"></p>
 
                   <p> <label for="Name">Class:</label>
-                  <input value="{{$viewTution->class_id}}"></p>
+                  <input value="{{$viewTution->class->name}}"></p>
 
 
                   <p> <label for="Name">Salary:</label>

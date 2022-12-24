@@ -44,12 +44,12 @@
                   Class
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="{{route('payments-url')}}">
                   <span data-feather="layers"></span>
                   Payments
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="{{route('contact-url')}}">
                   <span data-feather="layers"></span>

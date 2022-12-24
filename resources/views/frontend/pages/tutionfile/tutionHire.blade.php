@@ -30,7 +30,7 @@
                         <!-- Form Group (username)-->
                         <div class="mb-3">
                             <label class="small mb-1" for="inputFirstName">Student-Name</label>
-                            <input name="name" class="form-control" id="inputFirstName" type="text" placeholder="Enter student name" value="">
+                            <input required name="name" class="form-control" id="inputFirstName" type="text" placeholder="Enter student name" value="">
                         </div>
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
@@ -50,32 +50,20 @@
                             <!-- Form Group (organization name)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputOrgName">Parents-Contact-Number</label>
-                                <input name="parents_contact" class="form-control" id="inputOrgName" type="text" placeholder="parents_contact" value="">
+                                <input required name="parents_contact" class="form-control" id="inputOrgName" type="text" placeholder="parents_contact" value="">
                             </div>
                             <!-- Form Group (location)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputemail">Parents-email</label>
-                                <input name="parents_email" class="form-control" type="email" id="inputLocation" type="text" placeholder="Enter parents_email" value="">
+                                <input required name="parents_email" class="form-control" type="email" id="inputLocation" type="text" placeholder="Enter parents_email" value="">
                             </div>
                         </div>
                         <!-- Form Group (email address)-->
                         <div class="mb-3">
                             <label class="small mb-1" for="inputEmailAddress">Address</label>
-                            <input name="address" class="form-control" id="inputEmailAddress" type="text" placeholder="Enter your address" value="">
+                            <input required name="address" class="form-control" id="inputEmailAddress" type="text" placeholder="Enter your address" value="">
                         </div>
-                        <!-- Form Row-->
-                        <!-- <div class="row gx-3 mb-3">
-                           
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputPhone">Phone number</label>
-                                <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567">
-                            </div>
-                           
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988">
-                            </div>
-                        </div> -->
+                        
                         <!-- Save changes button-->
                         <button class="btn btn-success" type="submit">Submit</button>
 

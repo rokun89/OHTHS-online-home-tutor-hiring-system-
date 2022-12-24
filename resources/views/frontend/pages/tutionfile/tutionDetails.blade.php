@@ -47,7 +47,7 @@
                 <div class="space-ten"></div>
                 <div class="btn-ground text-center">
                 <a href="{{route('tution.hire',$tutordetails->id)}}">
-                        <span class="btn btn-primary">Hire</span>
+                        <span class="btn btn-success">Hire</span>
                     </a>
                     
                 </div>

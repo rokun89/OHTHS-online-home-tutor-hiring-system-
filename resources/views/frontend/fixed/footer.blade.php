@@ -1,19 +1,19 @@
 
 	<!-- footer section -->
-	<!-- <style>
+	  <!-- <style>
 		footer{
 			color: #fff;
 			background-color: #282A35;
 		}
-	.footer-bottom{
+	  .footer-bottom{
 		color: white;
 		background-color: #282A35;
-	}
-	h2{
+	  }
+	  h2{
 		color: #fff;
-	}
-	</style>
-	<footer class="footer-section spad pb-0">
+	  }
+	  </style>
+	  <footer class="footer-section spad pb-0">
 		<div class="footer-top">
 			<div class="footer-warp">
 				<div class="row">
@@ -42,13 +42,13 @@
      <div class="copyrightt">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved...  </div>
 			</div>
 		</div>
-	</footer>  -->
+	  </footer>  -->
 	<!-- footer section end -->
 
 
 	
-<!-- Remove the container if you want to extend the Footer to full width. -->
 <hr>
+
 <div>
   <!-- Footer -->
   <footer

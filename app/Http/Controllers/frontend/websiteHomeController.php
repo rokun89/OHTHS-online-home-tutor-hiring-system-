@@ -225,7 +225,7 @@ class websiteHomeController extends Controller
 
     public function tutorpage()
     {
-        $tutorlist=User::where('role','tutor')->paginate(6);
+        $tutorlist=User::where('role','tutor')->get();
         return view('frontend.pages.tutors',compact('tutorlist'));
 
     }

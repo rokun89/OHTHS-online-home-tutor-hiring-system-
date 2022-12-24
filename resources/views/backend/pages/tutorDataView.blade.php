@@ -35,20 +35,11 @@
                   <p> <label for="Name">Contact:</label>
                   <input value="{{$viewtutorTest->contact}}"></p>
 
-                  <p> <label for="Name">N-ID:</label>
-                  <input value="{{$viewtutorTest->n_id}}"></p>
-
-                  <p> <label for="Name">Subject:</label>
-                  <input value="{{$viewtutorTest->subject}}"></p>
-
-                  <p> <label for="Name">Salary:</label>
-                  <input value="{{$viewtutorTest->salary}}"></p>
+                  <p> <label for="Name">Degree:</label>
+                  <input value="{{$viewtutorTest->degree}}"></p>
 
                   <p> <label for="Name">Address:</label>
                   <input value="{{$viewtutorTest->address}}"></p>
-
-                  <p> <label for="Name">Status:</label>
-                  <input value="{{$viewtutorTest->status}}"></p>
 
 
                 </div>

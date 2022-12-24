@@ -98,21 +98,10 @@ public function update(Request $request1,$edit)
 {
     $editTest=User::find($edit);
 
-    $parentsupdate=$editTest->images;
-
-  if($request1->hasFile('images'))
-      {
-          
-          $parentsupdate=date('Ymdhmi').'.'.$request1->file('images')->getClientOriginalExtension();
-          $request1->file('images')->storeAs('/uploads',$parentsupdate);
-      }
-
 
       $editTest->update([
-        'images'=>$parentsupdate,
         'name'=>$request1->name,
         'email'=>$request1->email,
-        'password'=>$request1->password,
         'contact'=>$request1->contact,
         'address'=>$request1->address,
         'role'=>'parents',

@@ -32,7 +32,7 @@
       
       <td>
         <a href="{{route('view.info',$data->id)}}" class="btn btn-primary">view</a>
-        <a href="{{route('delete.info',$data->id)}}" class="btn btn-danger">delete</a>
+        <!-- <a href="{{route('delete.info',$data->id)}}" class="btn btn-danger">delete</a> -->
         <a href="{{route('edit.info',$data)}}" class="btn btn-warning">edit</a>
 
     </tr>

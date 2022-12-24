@@ -36,6 +36,7 @@
         <label for="title">Title:</label>
     <input required type="text"  class="form-control" name="title" id="" cols="" rows="" placeholder="Enter Your Title Here"></textarea>
     </div>
+
     <div class="form-row">
     
     <div class="form-group col-md-6">
@@ -57,10 +58,12 @@
         @endforeach
     </select>
     </div>
+
     <div class="form-group col-md-6">
         <label for="salary">Salary:</label>
     <input required name="salary" type="number" class="form-control" id="inputAddress2" placeholder="salary">
     </div>
+    
     <div class="form-group col-md-6">
         <label for="days">Number of days in per week:</label>
     <input required name="days" type="number" class="form-control" id="inputAddress2" placeholder="Number of days in per week">
