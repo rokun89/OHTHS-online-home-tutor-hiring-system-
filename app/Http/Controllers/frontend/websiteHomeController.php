@@ -407,6 +407,23 @@ class websiteHomeController extends Controller
         return back();
     }
 
+    public function status_delete($id)
+    {
+        $tution=Hiretutors::find($id);
+
+        if($tution)
+        {
+            $tution->delete();
+            notify()->success('Rejected Successfull');
+            return redirect()->back();
+        }
+        else{
+            notify()->error('Request Not Found');
+            return redirect()->back();
+        }
+    
+    }
+
     
 
 

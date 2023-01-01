@@ -86,12 +86,12 @@
 
 @auth
     @if(auth()->user()->role == 'tutor')
-     <div style="margin-left: 15%;">
+     <div>
 
         <div class="container-xl px-4 mt-4">
             <hr class="mt-0 mb-4">
             <div class="row">
-                <div class="col-xl-10">
+                <div class="col-xl-12">
          
                     <div class="card mb-4">
                         <div class="card-header"><b><h3>Hiring Info </h3></b></div>
@@ -130,6 +130,8 @@
             @if($list->status=='pending')
                     <td>
                         <a href="{{route('status.update',$list->id)}}" class="btn btn-primary">{{$list->status}}</a>
+
+                        <a href="{{route('status.delete',$list->id)}}" class="btn btn-danger">Reject</a>
                     </td>
             @endif
                         </tr>

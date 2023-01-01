@@ -86,6 +86,7 @@ Route::group(['middleware'=>'tutor'],function(){
     Route::get('/tutor/tuitionInfo/edit/{id}',[websiteHomeController::class,'tutor_tuition_edit'])->name('tutor.tuition.edit');
     Route::put('/tutor/tuitionInfo/update/{id}',[websiteHomeController::class,'tutor_tuition_update'])->name('tutor.tuition.update');
     Route::get('/tuition/status/update/{id}',[websiteHomeController::class,'status_update'])->name('status.update');
+    Route::get('/tuition/status/delete/{id}',[websiteHomeController::class,'status_delete'])->name('status.delete');
 
     
 });

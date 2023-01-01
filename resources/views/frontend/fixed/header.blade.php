@@ -21,7 +21,7 @@
 			<li style="padding-left: 250px;" class="btn-group" role="group" aria-label="Basic example">
 
 @auth
-
+      
 <li class="btn-group" role="group" aria-label="Basic example">
   <a href="{{route('user.profile')}}">{{auth()->user()->name}} </a>
 <a href="{{route('user.logout')}}" style="margin-left: 2px;"><span type="button"> |

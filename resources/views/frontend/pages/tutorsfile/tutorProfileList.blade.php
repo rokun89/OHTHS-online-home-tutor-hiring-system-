@@ -13,7 +13,7 @@
 	<section class="categories-section spad">
 		<div class="container">
 			<div class="section-title">
-				<h2>Our Tutor Categories</h2>
+				<h2>Our Course Tutor</h2>
 
 					<a href="{{route('tuition.post')}}">
 						<button class="site-btn"> Post-Tuition</button>
