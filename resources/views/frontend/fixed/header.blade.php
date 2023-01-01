@@ -156,9 +156,14 @@
 
 <div class="form-group col-md-6">
 <label for="Contact"><b>Contact:</b></label>
-<input required type="text" placeholder="Contact">
+<input required name="contact" type="text" placeholder="Contact">
     </div>
-  
+
+    <div class="form-group col-md-6">
+<label for="address"><b>Address:</b></label>
+<input required name="address" type="text" placeholder="address">
+    </div>
+
 </div>
 
 <div class="modal-footer">

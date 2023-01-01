@@ -17,7 +17,7 @@
             <div class="container-xl px-4 mt-4">
                 <hr class="mt-0 mb-4">
                 <div class="row">
-                    <div class="col-xl-8" style="margin-left:17% ;">
+                    <div class="col-xl-10" style="margin-left:10% ;">
                         
                         <div class="card mb-4">
                          <div class="card-header"><b><h3>Tuition Info </h3></b></div>
@@ -37,6 +37,7 @@
                          <th scope="col">Salary</th>
                          <th scope="col">No of Weekend-Days</th>
                          <th scope="col">Action</th>
+                         <th scope="col">Status</th>
                          </tr>
                          </thead>
                          <tbody>
@@ -56,7 +57,7 @@
                                     <!-- <a href="{{route('tutor.tuition.delete',$data->id)}}" class="btn btn-danger">delete</a> -->
                                     <a href="{{route('tutor.tuition.edit',$data->id)}}" class="btn btn-success">edit</a>
                                 </td>
-                    
+                                <td>{{$data->status}}</td>
                                 </tr>
                             @endforeach
                         

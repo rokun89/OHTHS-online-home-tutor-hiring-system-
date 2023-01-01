@@ -41,9 +41,11 @@ Route::group(['middleware'=>'auth'],function() {
     
     Route::get('/userProfile',[websiteHomeController::class,'userProfile'])->name('user.profile');
     Route::get('/userProfile/details',[websiteHomeController::class,'userProfileDetails'])->name('user.profile.details');
+    Route::get('/userProfile/details/edit',[websiteHomeController::class,'user_Profile_edit'])->name('user.profile.edit.btn');
 
     Route::put('/usereupdate',[websiteHomeController::class,'UserUpdate'])->name('user.update');
     Route::get('/userlogout',[websiteHomeController::class,'userlogout'])->name('user.logout');
+
     //Tutor route
     Route::get('/tutorpage',[websiteHomeController::class,'tutorpage'])->name('tutor.page');
     Route::get('/tutorDetails',[websiteHomeController::class,'tutorDetails'])->name('tutor.details');
@@ -195,9 +197,9 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
     Route::post('/cls_form_fillup',[studentController::class,'cls_store'])->name('cls_storepage');
     Route::get('/cls/info/delete/{clsInfo}',[studentController::class,'cls_delete'])->name('cls.delete');
 
-
-
-
+    //Tuition Post status update route (Update by Admin)
+    Route::get('/tuitionPost/status/update/{id}',[tutionController::class,'tuition_post_status_update'])->name('tuition.post.status.update');
+    Route::get('/tuitionPost/status/delete/{id}',[tutionController::class,'tuition_post_status_delete'])->name('tuition.post.status.delete');
 
 });
 

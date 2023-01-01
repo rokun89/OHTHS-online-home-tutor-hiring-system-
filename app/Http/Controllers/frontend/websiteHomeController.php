@@ -82,6 +82,10 @@ class websiteHomeController extends Controller
         return redirect()->route('web.home');
     }
 
+    public function user_Profile_edit()
+    {
+        return view('frontend.pages.EditUserPage');
+    }
 
 
     public function userProfile()
@@ -414,7 +418,6 @@ class websiteHomeController extends Controller
         if($tution)
         {
             $tution->delete();
-            notify()->success('Rejected Successfull');
             return redirect()->back();
         }
         else{

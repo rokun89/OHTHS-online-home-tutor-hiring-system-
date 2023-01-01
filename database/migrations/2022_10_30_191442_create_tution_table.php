@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreignId('subject_id');
             $table->integer('salary');
             $table->integer('weekend_days');
+            $table->string('status')->default('pending');
 
             
             $table->timestamps();

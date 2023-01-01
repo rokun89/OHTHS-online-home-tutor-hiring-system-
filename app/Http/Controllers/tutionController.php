@@ -88,5 +88,28 @@ class tutionController extends Controller
 
     }
     
+    public function tuition_post_status_update($id)
+    {
+        $tuitionpost=Tutions::find($id)->update([
+            'status'=>'accepted'
+        ]);
+        return redirect()->back();
+    }
+
+    public function tuition_post_status_delete($id)
+    {
+        $tuitionpost=Tutions::find($id);
+
+        if($tuitionpost)
+        {
+            $tuitionpost->delete();
+            return back();
+        }
+        else{
+            notify()->error('Request Not Found');
+            return back();
+        }
+    }
+
 
 }

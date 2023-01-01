@@ -89,7 +89,7 @@
 				<h2>Hire The Best Home Tutor.</h2>
 				<p>Elimination of travel time for both parents and tutors.Parents can get highly qualified tutors at affordable cost. <br>Tutors shares a wealth of knowledge, experience, and academic degrees which they have.</p>
 
-		<!-- <p>
+		<p>
 	<div class="srccontainer">
 	  <div class="search"> 
 		<i class='bx bx-search-alt'></i> 
@@ -103,7 +103,7 @@
 		</div>
 	</div>
 				
-			</p> -->
+			</p>
 
 		</div>
 			
@@ -138,7 +138,7 @@
 						<span>Degree: {{$list->degree}}</span>
 						<div class="price"> 
 							<hr>
-						<a href="{{route('tution.details',$list->id)}}">View-Details</a>
+						<a style="margin-left: 30%;" href="{{route('tution.details',$list->id)}}">View-Details</a>
                           </div>
 						</div>
 					</div>
@@ -206,7 +206,7 @@
 <hr>
 
 	 
-	<!-- about section -->
+	<!-- about section (#d4dee1 ->bg color)-->
 	<section class="signup-section spad" style="background-color: #333333;">
 		<div class="container-fluid">
 			<div class="row">

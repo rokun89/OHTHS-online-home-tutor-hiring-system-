@@ -39,9 +39,15 @@
       <td>{{$data->weekend_days}}</td>
       <td>
       <a href="{{route('tution.view',$data->id)}}" class="btn btn-primary">view</a>
-      <!-- <a href="{{route('tution.delete',$data->id)}}" class="btn btn-danger">delete</a> -->
-      <a href="{{route('tution.edit',$data->id)}}" class="btn btn-warning">edit</a>
 
+      <!-- <a href="{{route('tution.delete',$data->id)}}" class="btn btn-danger">delete</a> -->
+
+      <a href="{{route('tution.edit',$data->id)}}" class="btn btn-warning">edit</a>
+      @if($data->status=='pending')
+        <a href="{{route('tuition.post.status.update',$data->id)}}" class="btn btn-success">{{$data->status}}</a>
+
+        <a href="{{route('tuition.post.status.delete',$data->id)}}" class="btn btn-danger">reject</a>
+      @endif
     </tr>
 
     
