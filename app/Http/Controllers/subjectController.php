@@ -31,8 +31,7 @@ class subjectController extends Controller
 
         Subjects::create([
 
-            'name'=>$subjectVar->name,
-            
+            'name'=>strtolower($subjectVar->name),
             'class_id'=>$subjectVar->class,
             
 
@@ -80,10 +79,9 @@ class subjectController extends Controller
 
 
             $editTest->update([
-                'name'=>$request1->name,
-                
+
+                'name'=>strtolower($request1->name),
                 'class_id'=>$request1->class,
-                
                 
               ]); 
 

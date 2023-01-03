@@ -136,9 +136,11 @@ public function reportSearch(Request $request)
  
  
  //       $status=$request->status;
+            $location = $request->location;
         $hires=Hiretutors::whereBetween('created_at', [$request->from_date,
         
-        $request->to_date])->get();
+        $request->to_date])->where('address','LIKE',"%$location%")
+        ->get();
         // dd($hires);
         return view('backend.pages.report',compact('hires'));
 

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('password');
 
             $table->string('degree')->nullable();
+            $table->string('city')->nullable();
             $table->string('contact')->nullable();
             $table->string('address')->nullable();
             

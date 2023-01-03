@@ -73,12 +73,12 @@
                      @if(auth()->user()->role == 'tutor')
                      <div>
                      <div class="col-md-6">
-                        <label for="contact"><b style="color:black ;">Degree:</b></label>
+                        <label for="degree"><b style="color:black ;">Degree:</b></label>
                          <input name="degree" type="text" class="form-control" value="{{auth()->user()->degree}}" placeholder="degree">
                      </div>
                      </div>
                     @endif
-                    
+
                      <div>
                      <div class="col-md-6">
                         <label for="address"><b style="color:black ;">Address:</b></label>
@@ -86,6 +86,15 @@
                      </div>
                      
                       </div>
+
+                    @if(auth()->user()->role == 'parents')
+                     <div>
+                     <div class="col-md-6">
+                        <label for="city"><b style="color:black ;">City:</b></label>
+                         <input name="city" type="text" class="form-control" value="{{auth()->user()->city}}" placeholder="city">
+                     </div>
+                     </div>
+                    @endif
                  
                      <div class="mt-5 text-right"><button class="btn btn-secondary profile-button" type="submit">Update Profile</button></div>
 

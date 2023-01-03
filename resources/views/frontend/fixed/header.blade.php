@@ -160,6 +160,11 @@
     </div>
 
     <div class="form-group col-md-6">
+<label for="city"><b>City:</b></label>
+<input required name="city" type="text" placeholder="Enter your city">
+    </div>
+
+    <div class="form-group col-md-6">
 <label for="address"><b>Address:</b></label>
 <input required name="address" type="text" placeholder="address">
     </div>

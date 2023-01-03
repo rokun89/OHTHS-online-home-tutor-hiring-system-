@@ -42,9 +42,11 @@ Route::group(['middleware'=>'auth'],function() {
     Route::get('/userProfile',[websiteHomeController::class,'userProfile'])->name('user.profile');
     Route::get('/userProfile/details',[websiteHomeController::class,'userProfileDetails'])->name('user.profile.details');
     Route::get('/userProfile/details/edit',[websiteHomeController::class,'user_Profile_edit'])->name('user.profile.edit.btn');
-
     Route::put('/usereupdate',[websiteHomeController::class,'UserUpdate'])->name('user.update');
     Route::get('/userlogout',[websiteHomeController::class,'userlogout'])->name('user.logout');
+
+    //Serach Route
+    Route::get('/search',[websiteHomeController::class,'user_search'])->name('user.search');
 
     //Tutor route
     Route::get('/tutorpage',[websiteHomeController::class,'tutorpage'])->name('tutor.page');

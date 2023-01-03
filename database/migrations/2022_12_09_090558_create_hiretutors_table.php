@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('student_name');
             $table->foreignId('tutor_id');
             $table->foreignId('parents_id');
+            $table->foreignId('tutions_id');
             $table->string('class');
             $table->string('subject');
             $table->string('parent_contact');

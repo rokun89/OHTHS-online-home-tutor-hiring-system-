@@ -68,7 +68,11 @@
         <label for="days">Number of days in per week:</label>
     <input required name="days" type="number" class="form-control" id="inputAddress2" placeholder="Number of days in per week">
     </div>
-    
+    <div class="form-group col-md-6">
+    <label for="days">Tution Location: <span class="text-danger">*</span> </label>
+    <input class="form-control" type="text" name="location" id="" placeholder="please enter the tution location">
+
+    </div>    
     </div>
     
     <div>

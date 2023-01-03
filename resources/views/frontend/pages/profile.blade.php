@@ -41,6 +41,10 @@
                             @if(auth()->user()->role == 'tutor')
                                 <li><b>Degree:</b> {{auth()->user()->degree}}</li>
                             @endif
+
+                            @if(auth()->user()->role == 'parents')
+                                <li><b>City:</b> {{auth()->user()->city}}</li>
+                            @endif
 						    </ul> <br> <br>
                             <p>
                                 <a style="margin-left: 65%" href="{{route('user.profile.edit.btn')}}"><span class="btn btn-primary">Edit-info</span></a>

@@ -163,7 +163,7 @@
     </div>
     <div>
 
- <input required name="address" type="text" class="form-control" placeholder="123/Avila,CA 931">
+ <input required name="address" type="text" class="form-control" placeholder="Address">
 </div>
 </div>
 

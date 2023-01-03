@@ -20,6 +20,8 @@ return new class extends Migration
             $table->foreignId('tutor_id');
             $table->foreignId('class_id');
             $table->foreignId('subject_id');
+            $table->string('subject_name');
+            $table->string('location');
             $table->integer('salary');
             $table->integer('weekend_days');
             $table->string('status')->default('pending');

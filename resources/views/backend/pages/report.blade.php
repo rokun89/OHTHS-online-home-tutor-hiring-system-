@@ -18,6 +18,10 @@
         <label for="">To date:</label>
         <input required name="to_date" type="date" class="form-control">
     </div>
+    <div class="col-md-4">
+        <label for="">Location</label>
+        <input  name="location" type="text" class="form-control">
+    </div>
     
 </div>
 <div style="margin-top:1% ;">
@@ -59,7 +63,7 @@
         </tbody>
     </table>
 </div>
-<button onclick="printDiv('hireReport')" class="btn btn-success">Print</button>
+<button onclick="printDiv('hireReport')" class="btn btn-success btn-lg">Print</button>
 
 
 <script>

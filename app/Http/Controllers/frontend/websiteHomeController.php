@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers\frontend;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Models\Tutors;
 use App\Models\Classes;
-use App\Models\Hiretutors;
+use App\Models\Tutions;
 use App\Models\Payments;
 use App\Models\Subjects;
-use App\Models\Tutions;
-use App\Models\Tutors;
-use App\Models\User;
-use Database\Seeders\UserTableSeeder;
-use Illuminate\Auth\Events\Logout;
+use App\Models\Hiretutors;
 use Illuminate\Http\Request;
-
+use Illuminate\Auth\Events\Logout;
+use App\Http\Controllers\Controller;
 use function GuzzleHttp\Promise\all;
+
+use Database\Seeders\UserTableSeeder;
+use Stevebauman\Location\Facades\Location;
 
 class websiteHomeController extends Controller
 {
@@ -37,6 +38,7 @@ class websiteHomeController extends Controller
         'email'=>$regiRequest->email,
         'password'=>bcrypt( $regiRequest->password),
         'contact'=>$regiRequest->contact,
+        'city'=>strtolower($regiRequest->city),
         'address'=>$regiRequest->address,
         'role'=>'parents'
 
@@ -207,7 +209,8 @@ class websiteHomeController extends Controller
             'contact'=>$request->phone,
             'password'=>$request->password,
             'address'=>$request->address,
-            'degree'=>$request->degree,            
+            'degree'=>$request->degree, 
+            'city'=>strtolower($request->city)          
             
             ]);
 
@@ -215,7 +218,22 @@ class websiteHomeController extends Controller
         return redirect()->back();
     }
 
+    public function user_search(Request $request)
+    {   
+        // dd($request->all());
+        $searchkey = $request->search_key;
+        $address = $request->ip();
+        $location = Location::get($address);
+        // dd($location);
+        // dd($address);
+        $userLocation = auth()->user()->address;
+        $search=Tutions::where('subject_name','LIKE',"%$searchkey%")
+        ->where('location','LIKE',"%$userLocation%")
+        ->get();
+        // dd($search);
 
+        return view('frontend.pages.Search',compact('search'));
+    }
 
 
 
@@ -317,12 +335,20 @@ class websiteHomeController extends Controller
 
     public function stdInfoForm(Request $request,$id)
     {
-        $tution = Tutions::find($id);
-        $tutor = User::where('id',$tution->tutor_id)->pluck('id');
+        if(auth()->user()->city != 'dhaka'){
+            notify()->error('Your are not from Dhaka');
+            return redirect()->route('tution.list');
+        }else{
+            $tution = Tutions::find($id);
+            $checkAvailability = Hiretutors::where('tutions_id',$tution->id)->first();
+            // dd($checkAvailability);
+        if($checkAvailability == null || $checkAvailability->parents_id != auth()->user()->id){
+            $tutor = User::where('id',$tution->tutor_id)->pluck('id');
         //dd($tutor);
         Hiretutors::create([
             'tutor_id'=> $tutor[0],
             'parents_id'=>auth()->user()->id,
+            'tutions_id'=>$tution->id,
             'student_name'=>$request->name,
             'class'=>$request->class,
             'subject'=>$request->subject,
@@ -333,6 +359,12 @@ class websiteHomeController extends Controller
         ]);
         notify()->success('Submitted Successfully');
         return redirect()->route('tution.list');
+        }else{
+            notify()->error('Tution is not available');
+        return redirect()->route('tution.list');
+        }
+           
+        }
     }
 
     public function tution_details($details)
@@ -374,11 +406,15 @@ class websiteHomeController extends Controller
 
     public function tuition_store(Request $request)
     {
+        $subjectName= Subjects::find($request->subject);
+       
        Tutions::create([
             'title'=>$request->title,
             'tutor_id'=>auth()->user()->id,
             'class_id'=>$request->class,
             'subject_id'=>$request->subject,
+            'subject_name'=>$subjectName->name,
+            'location'=>$request->location,
             'salary'=>$request->salary,
             'weekend_days'=>$request->days,
 

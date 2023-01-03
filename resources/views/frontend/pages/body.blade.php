@@ -90,20 +90,23 @@
 				<p>Elimination of travel time for both parents and tutors.Parents can get highly qualified tutors at affordable cost. <br>Tutors shares a wealth of knowledge, experience, and academic degrees which they have.</p>
 
 		<p>
-	<div class="srccontainer">
-	  <div class="search"> 
-		<i class='bx bx-search-alt'></i> 
-			<div> 
-		<div class="search-2"> 
-		   <i class='bx bxs-map' ></i> 
-			<input style="color: black;" name="" type="text" placeholder="Serach Here" value="">
+			
+				<div class="srccontainer">
+	  			<div class="search"> 
+				<i class='bx bx-search-alt'></i> 
+				<div> 
+			<form action="{{route('user.search')}}">
+				<div class="search-2"> 
+		   		<i class='bx bxs-map' ></i> 
+				<input style="color: black;" name="search_key" type="text" placeholder="Serach Here" value="">
 				<button type="submit">Search</button> 
 				</div> 
-			</div> 
-		</div>
-	</div>
+				</div> 
+				</div>
+				</div>
+			</form>
 				
-			</p>
+		</p>
 
 		</div>
 			

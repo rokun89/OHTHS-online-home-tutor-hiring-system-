@@ -24,12 +24,15 @@ class tutionController extends Controller
     public function tution_form_store(Request $request)
     {
         // dd($request->all());
-
+        $subjectName= Subjects::find($request->subject);
+        dd($subjectName);
         Tutions::create([
             'title'=>$request->title,
             'tutor_id'=>$request->tutor,
             'class_id'=>$request->class,
             'subject_id'=>$request->subject,
+            'subject_name'=>$subjectName->name,
+            'location'=>$request->location,
             'salary'=>$request->salary,
             'weekend_days'=>$request->days,
 
