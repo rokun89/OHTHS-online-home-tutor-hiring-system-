@@ -96,7 +96,7 @@
                      </div>
                     @endif
                  
-                     <div class="mt-5 text-right"><button class="btn btn-secondary profile-button" type="submit">Update Profile</button></div>
+                     <div class="mt-5 text-right"><button class="btn btn-success profile-button" type="submit">Update Profile</button></div>
 
                     </form>
 

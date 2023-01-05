@@ -39,7 +39,9 @@
                   {{$result->salary}}</p>
 
                   <p> <label for="Name">Weekend-Days:</label>
-                  {{$result->weekend_days}}</p>
+                  
+                  <p> <label for="Name">Location:</label>
+                  {{$result->location}}</p>
 
                   <p> <label for="Name">Title:</label>
                   {{$result->title}}</p>                  

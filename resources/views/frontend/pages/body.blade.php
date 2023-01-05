@@ -190,6 +190,7 @@
 								<p>Title: {{$list->title}}</p>
 								<p>Class: {{$list->class->name}}</p>
 								<p> Weekend-Days:{{$list->weekend_days}}</p>
+								<p> Location:{{$list->location}}</p>
 								<div class="students"><b>Salary: </b> {{$list->salary}}</div>
 							</div>
 							<div class="course-author">

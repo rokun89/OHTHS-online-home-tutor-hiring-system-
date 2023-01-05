@@ -73,10 +73,7 @@ Route::group(['middleware'=>'auth'],function() {
     Route::get('/pay/fees',[paymentsController::class,'pay_fees'])->name('pay.fees');
     Route::post('/pay/fees/submit',[paymentsController::class,'fees_submit'])->name('fees.submit');
 
-
 });
-
-
 
 
 //Tutor Group and middleware
@@ -91,19 +88,10 @@ Route::group(['middleware'=>'tutor'],function(){
     Route::put('/tutor/tuitionInfo/update/{id}',[websiteHomeController::class,'tutor_tuition_update'])->name('tutor.tuition.update');
     Route::get('/tuition/status/update/{id}',[websiteHomeController::class,'status_update'])->name('status.update');
     Route::get('/tuition/status/delete/{id}',[websiteHomeController::class,'status_delete'])->name('status.delete');
-
-    
+ 
 });
 
-
-
-
-
-
-
-
 //( From here i'm using the Routing for backend ---->)
-
 
 Route::get('/login',[userController::class,'login'])->name('login');
 Route::post('/do-login',[userController::class,'doLogin'])->name('do.login');
@@ -153,16 +141,11 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
     Route::get('/payments-form',[paymentsController::class,'payments_form_page'])->name('payments.form');
     Route::post('/payments-form-store',[paymentsController::class,'payments_store'])->name('payments.store.page');
 
-
-
-
-
     //students data view delete route
     Route::get('/stdinfo/delete/{stdInfo}',[studentController::class,'deleteStdInfo'])->name('stdInfo.delete');
     Route::get('/stdinfo/view/{viewstdInfo}',[studentController::class,'viewStdInfo'])->name('stdInfo.view');
     Route::get('/stdinfo/edit/{editstdInfo}',[studentController::class,'edit'])->name('students.edit');
     Route::put('/stdinfo/update/{updateInfo}',[studentController::class,'update'])->name('students.update');
-
 
     //parents data view delete update route
     Route::get('/parentsinfo/delete/{parentsInfo}',[parentsController::class,'deleteparentsInfo'])->name('parentsInfo.delete');
@@ -170,14 +153,11 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
     Route::get('/parentsinfo/edit/{parentsInfo}',[parentsController::class,'edit'])->name('parents.edit');
     Route::put('/parentsinfo/update/{parentsInfo}',[parentsController::class,'update'])->name('parents.update');
 
-
-
     //tutor data view and delete route
     Route::get('/tutorinfo/delete/{tutorInfo}',[tutorsController::class,'deleteTutorInfo'])->name('delete.tutorInfo');
     Route::get('/tutorinfo/view/{tutorInfo}',[tutorsController::class,'viewtutorInfo'])->name('view.tutorInfo');
     Route::get('/tutorinfo/edit/{tutorInfo}',[tutorsController::class,'edit'])->name('tutor.edit');
     Route::put('/tutorinfo/update/{tutorInfo}',[tutorsController::class,'update'])->name('tutor.update');
-
 
     //subject data view and delete and update
     Route::get('/subjectinfo/delete/{subjectInfo}',[subjectController::class,'delete'])->name('delete.info');
@@ -185,14 +165,11 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function() {
     Route::get('/subjectinfo/edit/{subjectInfo}',[subjectController::class,'edit'])->name('edit.info');
     Route::put('/subjectinfo/update/{subjectInfo}',[subjectController::class,'update'])->name('update.info');
 
-
     //Tution data view and delete and update
     Route::get('/tutioninfo/delete{tutionInfo}',[tutionController::class,'delete'])->name('tution.delete');
     Route::get('/tutioninfo/view/{tutionInfo}',[tutionController::class,'view'])->name('tution.view');
     Route::get('/tutioninfo/edit/{tutionInfo}',[tutionController::class,'edit'])->name('tution.edit');
     Route::put('/tutioninfo/update/{tutionInfo}',[tutionController::class,'update'])->name('tution.update');
-
-
 
     //class form route
     Route::get('/createClsPage',[studentController::class,'clsPage'])->name('cls.page');

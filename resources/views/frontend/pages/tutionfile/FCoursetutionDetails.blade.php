@@ -41,6 +41,9 @@
                   <p> <label for="Name">Weekend-Days:</label>
                   {{$tutordetails->weekend_days}}</p>
 
+                  <p> <label for="Name">Location:</label>
+                  {{$tutordetails->location}}</p>
+
                   <p> <label for="Name">Title:</label>
                   {{$tutordetails->title}}</p>                  
 

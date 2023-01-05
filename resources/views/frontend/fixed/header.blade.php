@@ -23,9 +23,9 @@
 @auth
       
 <li class="btn-group" role="group" aria-label="Basic example">
-  <a href="{{route('user.profile')}}">{{auth()->user()->name}} </a>
-<a href="{{route('user.logout')}}" style="margin-left: 2px;"><span type="button"> |
-  Logout</span></a></li>
+  <a href="{{route('user.profile')}}"> <span class="btn btn-outline-danger">{{auth()->user()->name}}</span> </a>
+  <a href="{{route('user.logout')}}" style="margin-left: 2px;"><span type="button"> |Logout</span></a>
+</li>
 
 @else
 

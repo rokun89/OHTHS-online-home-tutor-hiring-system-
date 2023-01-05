@@ -67,7 +67,7 @@
               About
             </h6>
             <p>
-			I am <b>Monir Hossen</b> #ID 19103045 Student of <b> "IUBAT-International University of Business Agricultural and Technology" </b> department of <b> "Computer Science and Engineering" </b> (CSE).
+			        I am <b>Monir Hossen</b> #ID 19103045 Student of <b> "IUBAT-International University of Business Agricultural and Technology" </b> department of <b> "Computer Science and Engineering" </b> (CSE).
             </p>
           </div>
           <!-- Grid column -->
@@ -132,7 +132,7 @@
          class="text-center p-3"
          style="background-color: rgba(0, 0, 0, 0.2)"
          >
-      © 2020 Copyright:Terms & Conditions; Privacy
+      © 2022 Copyright:Terms & Conditions; Privacy
     </div>
     <!-- Copyright -->
   </footer>

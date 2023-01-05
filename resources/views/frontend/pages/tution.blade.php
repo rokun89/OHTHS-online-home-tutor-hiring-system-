@@ -35,6 +35,7 @@
 								<h5><b>Subject: </b>{{$list->subject->name}} </h5>
 								<p>Title: {{$list->title}}</p>
 								<p> Weekend-Days:{{$list->weekend_days}}</p>
+								<p> Location:{{$list->location}}</p>
 								<div class="students"><b>Salary: </b> {{$list->salary}}</div>
 							</div>
 							<div class="course-author">
