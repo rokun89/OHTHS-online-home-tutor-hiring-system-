@@ -11,7 +11,8 @@ class apiController extends Controller
     public function tutor_api()
     {
         $tutorApi = User::where('role','tutor')->get();
-        return response()->jason([
+
+        return response()->json([
             'success'=>true,
             '$data'=>$tutorApi,
             'message'=>'All Tutor List.'

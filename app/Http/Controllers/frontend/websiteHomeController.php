@@ -406,21 +406,35 @@ class websiteHomeController extends Controller
 
     public function tuition_store(Request $request)
     {
+        
         $subjectName= Subjects::find($request->subject);
-       
-       Tutions::create([
-            'title'=>$request->title,
-            'tutor_id'=>auth()->user()->id,
-            'class_id'=>$request->class,
-            'subject_id'=>$request->subject,
-            'subject_name'=>$subjectName->name,
-            'location'=>$request->location,
-            'salary'=>$request->salary,
-            'weekend_days'=>$request->days,
 
-       ]);
-       notify()->success('Submitted Successful');
-       return redirect()->route('tutor.webpage');
+        $checkTuition = Tutions::where('subject_id',$request->subject)
+                        ->where('class_id',$request->class)
+                        ->where('location',$request->location)->first();
+                        // dd($checkTuition->created_at->addDay(30));
+
+        if(!$checkTuition || now() >= $checkTuition->created_at->addDay(90))
+        {
+            Tutions::create([
+                'title'=>$request->title,
+                'tutor_id'=>auth()->user()->id,
+                'class_id'=>$request->class,
+                'subject_id'=>$request->subject,
+                'subject_name'=>$subjectName->name,
+                'location'=>$request->location,
+                'salary'=>$request->salary,
+                'weekend_days'=>$request->days,
+    
+           ]);
+           notify()->success('Submitted Successful');
+           return redirect()->route('tutor.webpage');
+        }
+        else{
+            notify()->error('Tuition Alredy Exist For 90 Days');
+            return redirect()->route('tutor.webpage');
+        }
+      
     }
 
     public function tuitionDelete($delete)
