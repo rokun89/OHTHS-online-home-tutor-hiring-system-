@@ -159,7 +159,7 @@
 </div>    
 
     <div class="form-group col-md-6">
-   <input required name="degree" type="text" class="form-control" placeholder="degree">
+   <input required name="degree" type="text" class="form-control" placeholder="qualification">
     </div>
     <div>
 

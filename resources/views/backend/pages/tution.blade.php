@@ -22,6 +22,7 @@
       <th scope="col">Salary</th>
       <th scope="col">weekend_Days</th>
       <th scope="col">Location</th>
+      <th scope="col">Date</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -39,6 +40,7 @@
       <td>{{$data->salary}}</td>
       <td>{{$data->weekend_days}}</td>
       <td>{{$data->location}}</td>
+      <td>{{$data->created_at}}</td>
       <td>
       <a href="{{route('tution.view',$data->id)}}" class="btn btn-primary">view</a>
 

@@ -413,6 +413,7 @@ class websiteHomeController extends Controller
         $checkTuition = Tutions::where('subject_id',$request->subject)
                         ->where('class_id',$request->class)
                         ->where('location',$request->location)->first();
+                        
                         // dd($checkTuition->created_at->addDay(30));
 
         if(!$checkTuition || now() >= $checkTuition->created_at->addDay(90))
