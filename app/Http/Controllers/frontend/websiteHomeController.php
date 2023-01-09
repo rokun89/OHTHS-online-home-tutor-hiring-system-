@@ -172,6 +172,7 @@ class websiteHomeController extends Controller
             return redirect()->back();
         }
     }
+    
     public function parents_tutorHire_edit($edit)
     {
         $hireEdit=Hiretutors::find($edit);
@@ -237,7 +238,7 @@ class websiteHomeController extends Controller
 
 
 
-                        //From here Controller for Tutor Page
+            //From here Controller for Tutor Page
 
     public function tutor()
     {

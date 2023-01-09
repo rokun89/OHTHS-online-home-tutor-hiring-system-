@@ -36,6 +36,7 @@
                          <th scope="col">Subject</th>
                          <th scope="col">Salary</th>
                          <th scope="col">No of Weekend-Days</th>
+                         <th scope="col">Date</th>
                          <th scope="col">Action</th>
                          <th scope="col">Status</th>
                          </tr>
@@ -51,6 +52,7 @@
                                 <td>{{$data->subject->name}}</td>
                                 <td>{{$data->salary}}</td>
                                 <td>{{$data->weekend_days}}</td>
+                                <td>{{$data->created_at}}</td>
                                 
                     
                                 <td>

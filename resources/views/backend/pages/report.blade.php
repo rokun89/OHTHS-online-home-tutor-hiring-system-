@@ -40,6 +40,7 @@
         <th scope="col">id</th>
       <th scope="col">Student-Name</th>
       <th scope="col">Tutor-Name</th>
+      <th scope="col">Subject</th>
       <th scope="col">Parents-name</th>
       <th scope="col">Parents-Address</th>
       <th scope="col">Hiring-Date</th>
@@ -52,6 +53,7 @@
             <td>{{$key+1}}</td>
             <td>{{$list->student_name}}</td>
             <td>{{$list->tutor->name}}</td>
+            <td>{{$list->subject->name}}</td>
             <td>{{$list->parent->name}}</td>
             <td>{{$list->address}}</td>
             <td>{{$list->created_at}}</td>
